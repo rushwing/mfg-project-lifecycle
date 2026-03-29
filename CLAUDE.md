@@ -29,7 +29,8 @@ uv run python scripts/bump_version.py patch|minor|major [--dry-run]
 # Full local validation (mirrors what CI runs on PRs)
 uv run python scripts/validate_frontmatter.py && \
 uv run python scripts/check_term_consistency.py && \
-uv run python scripts/validate_structure.py
+uv run python scripts/validate_structure.py && \
+uv run python scripts/validate_i18n.py
 ```
 
 ## Architecture

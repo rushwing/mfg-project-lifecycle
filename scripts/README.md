@@ -46,7 +46,8 @@ uv run python scripts/generate_doc_index.py
 ```bash
 uv run python scripts/validate_frontmatter.py && \
 uv run python scripts/check_term_consistency.py && \
-uv run python scripts/validate_structure.py
+uv run python scripts/validate_structure.py && \
+uv run python scripts/validate_i18n.py
 ```
 
 ### Release a new KB version
