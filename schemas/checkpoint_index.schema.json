@@ -78,7 +78,7 @@
           },
           "test_stations": {
             "type": "array",
-            "items": { "type": "string", "enum": ["ICT","FCT","DIAG","BURN-IN","ATE","SYSTEM","OBA","SFC","Universal"] }
+            "items": { "type": "string", "enum": ["ICT","FCT","DIAG","BURN-IN","ATE","SYSTEM","OBA","SFC","AOI","AXI","3D-SPI","HALT","HASS","Universal"] }
           },
           "rag_chunk_strategy": {
             "type": "string",

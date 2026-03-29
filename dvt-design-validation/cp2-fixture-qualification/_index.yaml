@@ -177,6 +177,74 @@ documents:
   production_stages:
   - SMT
   - FATP
+- doc_id: DVT-CP2-HLT-006
+  title: HALT Test Protocol
+  slug: halt-test-protocol
+  doc_type: procedure
+  owner_role: MTE Lead
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - HALT
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - HALT
+  - DFT
+  - Golden Unit
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Test Objectives and Destruct Limit Strategy
+  - 3. Equipment and Chamber Specification
+  - 4. Step-Stress Profile (Temperature / Vibration)
+  - 5. Pass / Fail Criteria
+  - 6. Data Recording Requirements
+  - 7. Failure Analysis Protocol
+  - 8. Revision History
+  production_stages:
+  - FATP
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
+- doc_id: DVT-CP2-AOI-007
+  title: AOI / AXI Qualification Report
+  slug: aoi-axi-qualification-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - AOI
+  - AXI
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - AOI
+  - AXI
+  - GR&R
+  - False Fail
+  - Coverage Hole
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. AOI Program Version and Configuration
+  - 3. Coverage Achieved vs. Plan
+  - 4. False Call Rate Analysis
+  - 5. Escape Risk Assessment
+  - 6. Qualification Decision
+  - 7. Revision History
+  production_stages:
+  - SMT
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

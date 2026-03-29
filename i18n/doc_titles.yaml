@@ -865,3 +865,28 @@ SHARED-SNIP-DFT-005:
   zh-CN: "可测试性设计覆盖率表格模板"
   zh-TW: "可測試性設計覆蓋率表格模板"
   vi: "(pending)"
+
+
+EVT-CP2-AOI-006:
+  en: "AOI / AXI / 3D-SPI Coverage Plan"
+  zh-CN: "AOI / AXI / 3D-SPI 覆盖计划"
+  zh-TW: "AOI / AXI / 3D-SPI 覆蓋計畫"
+  vi: "(pending)"
+
+DVT-CP2-HLT-006:
+  en: "HALT Test Protocol"
+  zh-CN: "高加速寿命测试规程"
+  zh-TW: "高加速壽命測試規程"
+  vi: "(pending)"
+
+DVT-CP2-AOI-007:
+  en: "AOI / AXI Qualification Report"
+  zh-CN: "AOI / AXI 设备资质认证报告"
+  zh-TW: "AOI / AXI 設備資質認證報告"
+  vi: "(pending)"
+
+PVT-CP3-HSS-006:
+  en: "HASS Screening Procedure"
+  zh-CN: "高加速应力筛选程序"
+  zh-TW: "高加速應力篩選程序"
+  vi: "(pending)"

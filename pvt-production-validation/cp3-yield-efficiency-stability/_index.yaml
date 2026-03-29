@@ -174,6 +174,40 @@ documents:
   production_stages:
   - SMT
   - FATP
+- doc_id: PVT-CP3-HSS-006
+  title: HASS Screening Procedure
+  slug: hass-screening-procedure
+  doc_type: procedure
+  owner_role: MTE Lead
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - HASS
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - HASS
+  - HALT
+  - Yield
+  - False Fail
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. HASS Screen Profile Derivation (from HALT Results)
+  - 3. Equipment and Chamber Configuration
+  - 4. Screen Cycle Specification
+  - 5. Pass / Fail Criteria
+  - 6. Retest Policy
+  - 7. Yield Impact Monitoring
+  - 8. Revision History
+  production_stages:
+  - FATP
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true
