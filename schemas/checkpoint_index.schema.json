@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mfg-lifecycle/schemas/checkpoint_index.schema.json",
+  "title": "Checkpoint Index Schema",
+  "description": "JSON Schema for _index.yaml files in each checkpoint directory",
+  "type": "object",
+  "required": [
+    "checkpoint_id",
+    "checkpoint_name",
+    "phase",
+    "checkpoint_sequence",
+    "exit_criteria",
+    "documents"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "checkpoint_id": {
+      "type": "string",
+      "pattern": "^(P1|EVT|DVT|PVT|MP)-CP[1-6]$",
+      "description": "e.g. EVT-CP2"
+    },
+    "checkpoint_name": {
+      "type": "string"
+    },
+    "checkpoint_name_zh": {
+      "type": "string",
+      "description": "Chinese checkpoint name"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["P1", "EVT", "DVT", "PVT", "MP"]
+    },
+    "checkpoint_sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "description": {
+      "type": "string"
+    },
+    "entry_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "exit_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["doc_id", "title", "slug", "doc_type", "owner_role", "priority"],
+        "properties": {
+          "doc_id": {
+            "type": "string",
+            "pattern": "^(P1|EVT|DVT|PVT|MP)-CP[0-9]+-[A-Z0-9]+-[0-9]{3}$"
+          },
+          "title": { "type": "string" },
+          "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "doc_type": {
+            "type": "string",
+            "enum": ["plan","spec","report","checklist","tracker","matrix","log","analysis","procedure","playbook"]
+          },
+          "owner_role": {
+            "type": "string",
+            "enum": ["MTE Lead","MTE Staff","MTE Manager","NPI PM","Quality Engineer","Factory Ops"]
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["critical", "required", "recommended", "optional"]
+          },
+          "product_families": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["GPU","DC-L6","Automotive","Embedded","Universal"] }
+          },
+          "test_stations": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["ICT","FCT","DIAG","BURN-IN","ATE","SYSTEM","OBA","SFC","Universal"] }
+          },
+          "rag_chunk_strategy": {
+            "type": "string",
+            "enum": ["by-section","by-table","monolithic","split-h2"]
+          },
+          "embedding_priority": {
+            "type": "string",
+            "enum": ["high","medium","low","exclude"]
+          },
+          "controlled_terms": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "required_sections": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["checkpoint_id"],
+        "properties": {
+          "checkpoint_id": { "type": "string" },
+          "required_docs": { "type": "array", "items": { "type": "string" } },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "feeds_into": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["checkpoint_id"],
+        "properties": {
+          "checkpoint_id": { "type": "string" },
+          "consumed_docs": { "type": "array", "items": { "type": "string" } },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "bootstrap": {
+      "type": "object",
+      "properties": {
+        "auto_stub": { "type": "boolean" },
+        "stub_sections_from_frontmatter": { "type": "boolean" }
+      }
+    }
+  }
+}

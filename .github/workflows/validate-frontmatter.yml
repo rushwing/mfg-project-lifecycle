@@ -1,0 +1,27 @@
+name: Validate Frontmatter
+
+on:
+  pull_request:
+    paths:
+      - "**/*-template.md"
+      - "shared/_snippets/*.md"
+      - "schemas/template_frontmatter.schema.json"
+      - "scripts/validate_frontmatter.py"
+      - "pyproject.toml"
+      - "uv.lock"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Validate frontmatter
+        run: uv run python scripts/validate_frontmatter.py

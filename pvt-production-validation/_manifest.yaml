@@ -1,0 +1,39 @@
+phase_id: PVT
+phase_name: "Production Validation Test"
+phase_name_zh: "量产验证测试"
+lifecycle_sequence: 4
+directory: "pvt-production-validation"
+description: >
+  Third and final NPI phase. Validates the complete mass production flow end-to-end:
+  SFC/traceability, operator workflow, IQ/OQ station qualification, and yield/UPH
+  targets under production conditions. PVT exit is the gate to MP handover.
+typical_duration_weeks: "8-14"
+primary_owner: "MTE Lead / Factory Ops"
+key_milestones:
+  - "Mass Production Test Flow documented and approved (PVT-CP1)"
+  - "All test stations IQ/OQ qualified (PVT-CP2)"
+  - "PVT yield ≥ target FPY sustained 3 consecutive days (PVT-CP3)"
+  - "SFC traceability validated end-to-end (PVT-CP4)"
+  - "MP Release Recommendation signed (PVT-CP5)"
+  - "Handover Package delivered to Factory Ops (PVT-CP5)"
+checkpoints:
+  - checkpoint_id: "PVT-CP1"
+    checkpoint_name: "Mass Production Flow Validation"
+    directory: "cp1-mp-process-validation"
+  - checkpoint_id: "PVT-CP2"
+    checkpoint_name: "Factory Line Bring-Up and Station Qualification"
+    directory: "cp2-factory-bringup-station"
+  - checkpoint_id: "PVT-CP3"
+    checkpoint_name: "Yield / Efficiency / Stability Validation"
+    directory: "cp3-yield-efficiency-stability"
+  - checkpoint_id: "PVT-CP4"
+    checkpoint_name: "SFC / Traceability / Data Closure"
+    directory: "cp4-sfc-traceability-data"
+  - checkpoint_id: "PVT-CP5"
+    checkpoint_name: "Mass Production Sign-Off"
+    directory: "cp5-mp-sign-off"
+  - checkpoint_id: "PVT-CP6"
+    checkpoint_name: "Phase Retrospective"
+    directory: "cp6-retrospective"
+previous_phase: DVT
+next_phase: MP

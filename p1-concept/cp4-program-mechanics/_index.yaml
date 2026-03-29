@@ -1,0 +1,116 @@
+checkpoint_id: "P1-CP4"
+checkpoint_name: "Program Mechanics Establishment"
+checkpoint_name_zh: "项目机制建立"
+phase: P1
+checkpoint_sequence: 4
+description: >
+  Establish all NPI program management mechanisms: build plan, daily reporting
+  templates, RAID log, version control plan, and milestone tracker. These are
+  operational tools used throughout the entire NPI lifecycle.
+
+entry_criteria:
+  - "P1-CP1 through P1-CP3 checkpoints complete"
+  - "NPI program team identified and roles assigned"
+
+exit_criteria:
+  - "NPI Build Plan v1 baselined and approved"
+  - "BOD/EOD template defined for the program"
+  - "RAID Log initialized with all known risks and open items"
+  - "Version Control Plan covers HW, SW, FW, and Test program versioning"
+  - "Program Milestone Tracker reflects current schedule"
+
+documents:
+  - doc_id: "P1-CP4-NBP-001"
+    title: "NPI Build Plan (Initial)"
+    slug: "npi-build-plan"
+    doc_type: "plan"
+    owner_role: "NPI PM"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [NPI, EVT, DVT, PVT, MP, CAPEX]
+    required_sections:
+      - "1. Purpose and Scope"
+      - "2. Program Overview"
+      - "3. Phase and Build Schedule"
+      - "4. Resource Plan"
+      - "5. Risk and Assumptions"
+      - "6. Approval Sign-Off"
+      - "7. Revision History"
+
+  - doc_id: "P1-CP4-BOD-002"
+    title: "BOD / EOD Template"
+    slug: "bod-eod"
+    doc_type: "plan"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: ["BOD / EOD", WIP, Yield, UPH]
+    required_sections:
+      - "1. BOD Section: Targets / Open Items / Equipment Status"
+      - "2. EOD Section: Actual Results / Issues / Handover Items"
+      - "3. Revision History"
+
+  - doc_id: "P1-CP4-RAI-003"
+    title: "RAID Log (Risk / Action / Issue / Dependency)"
+    slug: "raid-log"
+    doc_type: "tracker"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: [RAID, DFT, "Test Escape", CAPEX]
+    required_sections:
+      - "1. Purpose and Usage Instructions"
+      - "2. Risk Register"
+      - "3. Action Item Tracker"
+      - "4. Issue Log"
+      - "5. Dependency Register"
+      - "6. Revision History"
+
+  - doc_id: "P1-CP4-VCP-004"
+    title: "Version Control Plan (HW / SW / Test)"
+    slug: "version-control-plan"
+    doc_type: "plan"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [ECO, ECN, NPI, EVT, DVT, PVT, MP]
+    required_sections:
+      - "1. Purpose and Scope"
+      - "2. HW Version Control Policy"
+      - "3. SW / FW Version Control Policy"
+      - "4. Test Program Version Control Policy"
+      - "5. Version Matrix Format"
+      - "6. Change Control Process"
+      - "7. Revision History"
+
+  - doc_id: "P1-CP4-PMT-005"
+    title: "Program Milestone Tracker"
+    slug: "program-milestone-tracker"
+    doc_type: "tracker"
+    owner_role: "NPI PM"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [NPI, EVT, DVT, PVT, MP, CAPEX]
+    required_sections:
+      - "1. Purpose"
+      - "2. Milestone Table"
+      - "3. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

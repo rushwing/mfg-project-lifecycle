@@ -1,0 +1,103 @@
+checkpoint_id: "MP-CP2"
+checkpoint_name: "Version and Change Management"
+checkpoint_name_zh: "版本与变更管理"
+phase: MP
+checkpoint_sequence: 2
+description: >
+  Manage all SW, FW, and test program changes during MP. Track ECO/ECN implementation.
+  Maintain Golden Unit records. Ensure all changes are qualified and controlled.
+
+entry_criteria:
+  - "MP operations running"
+  - "Change management process in place"
+
+exit_criteria:
+  - "N/A — ongoing process"
+
+documents:
+  - doc_id: "MP-CP2-MRN-001"
+    title: "MP Release Note"
+    slug: "mp-release-note"
+    doc_type: "log"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [ECO, ECN, MP, Yield]
+    required_sections:
+      - "1. Release Summary"
+      - "2. Version Numbers"
+      - "3. Changes"
+      - "4. Qualification Evidence"
+      - "5. Distribution"
+
+  - doc_id: "MP-CP2-CML-002"
+    title: "Change Management Log"
+    slug: "change-management-log"
+    doc_type: "log"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: [ECO, ECN, BOM, CAPA, "Golden Unit"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Change Log Table"
+      - "3. Revision History"
+
+  - doc_id: "MP-CP2-EIT-003"
+    title: "ECO / ECN Implementation Tracker"
+    slug: "eco-ecn-implementation-tracker"
+    doc_type: "tracker"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [ECO, ECN, BOM, Yield, "Golden Unit"]
+    required_sections:
+      - "1. Purpose"
+      - "2. ECO/ECN Tracker Table"
+      - "3. Revision History"
+
+  - doc_id: "MP-CP2-TPR-004"
+    title: "Test Program Revision History"
+    slug: "test-program-revision-history"
+    doc_type: "log"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT, DIAG]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [ECO, ECN, "False Fail", Yield]
+    required_sections:
+      - "1. Purpose"
+      - "2. Revision History Table"
+      - "3. Current Version Summary"
+
+  - doc_id: "MP-CP2-GUM-005"
+    title: "Golden Unit Maintenance Record"
+    slug: "golden-unit-maintenance-record"
+    doc_type: "log"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: ["Golden Unit", GR&R, Retest, ECO]
+    required_sections:
+      - "1. Purpose"
+      - "2. Golden Unit Inventory Table"
+      - "3. Re-verification Log"
+      - "4. Retirement Records"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

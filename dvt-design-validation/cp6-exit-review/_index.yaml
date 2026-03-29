@@ -1,0 +1,98 @@
+checkpoint_id: "DVT-CP6"
+checkpoint_name: "Phase Exit Review"
+checkpoint_name_zh: "阶段退出评审"
+phase: DVT
+checkpoint_sequence: 6
+description: >
+  Conduct DVT formal exit review. Gate PVT readiness. Document all exit criteria status,
+  open issue closure plans, DVT summary findings, and present PVT Readiness Review Deck
+  to program leadership.
+
+entry_criteria:
+  - "DVT-CP1 through DVT-CP5 complete"
+  - "All critical-priority issues resolved or have waiver approval"
+  - "Yield baseline established"
+
+exit_criteria:
+  - "DVT Exit Criteria Checklist: all criteria met or formally waived"
+  - "Open Issue Closure Plan covers all outstanding items with owners/dates"
+  - "DVT Summary Report approved by MTE Manager and PM"
+  - "PVT Readiness Review Deck presented and approved"
+
+documents:
+  - doc_id: "DVT-CP6-DEC-001"
+    title: "DVT Exit Criteria Checklist"
+    slug: "dvt-exit-criteria-checklist"
+    doc_type: "checklist"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [DVT, PVT, Yield, GR&R, TRP, "Coverage Hole", CAPA]
+    required_sections:
+      - "1. Purpose"
+      - "2. Exit Criteria Checklist"
+      - "3. Waived Items with Justification"
+      - "4. Sign-Off"
+
+  - doc_id: "DVT-CP6-OIC-002"
+    title: "Open Issue Closure Plan"
+    slug: "open-issue-closure-plan"
+    doc_type: "tracker"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: [RAID, CAPA, DVT, PVT]
+    required_sections:
+      - "1. Purpose"
+      - "2. Open Issues Table (with owner, due date, PVT impact)"
+      - "3. Revision History"
+
+  - doc_id: "DVT-CP6-DSR-003"
+    title: "DVT Summary Report"
+    slug: "dvt-summary-report"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [DVT, PVT, Yield, GR&R, UPH, FA, RCA, CAPA, "Coverage Hole"]
+    required_sections:
+      - "1. Executive Summary"
+      - "2. Build Overview"
+      - "3. Coverage Achieved"
+      - "4. Fixture Qualification Results"
+      - "5. UPH Baseline"
+      - "6. Yield Baseline"
+      - "7. Key Failures and CAPAs"
+      - "8. PVT Readiness Assessment"
+      - "9. Revision History"
+
+  - doc_id: "DVT-CP6-PRD-004"
+    title: "PVT Readiness Review Deck"
+    slug: "pvt-readiness-review-deck"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [PVT, DVT, Yield, UPH, SFC, Traceability, IQ, OQ]
+    required_sections:
+      - "1. DVT Summary (executive)"
+      - "2. PVT Plan Overview"
+      - "3. Outstanding Risks"
+      - "4. Go / No-Go Recommendation"
+      - "5. Approval"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

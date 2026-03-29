@@ -1,0 +1,119 @@
+checkpoint_id: "PVT-CP4"
+checkpoint_name: "SFC / Traceability / Data Closure"
+checkpoint_name_zh: "SFC / Traceability / 数据闭环"
+phase: PVT
+checkpoint_sequence: 4
+description: >
+  Validate end-to-end SFC integration, traceability data completeness, data upload
+  to factory systems, serial number control, and repair/rework flow. Ensures all
+  unit manufacturing data is captured and queryable before MP handover.
+
+entry_criteria:
+  - "SFC system live and accepting data from all test stations"
+  - "PVT build units with serial numbers flowing through all stations"
+
+exit_criteria:
+  - "SFC Validation Report: 100% of test results uploaded for PVT sample units"
+  - "Traceability Mapping Document reviewed and signed"
+  - "Data Upload Validation: zero data loss events"
+  - "Serial Number Control Plan approved"
+  - "Repair/Rework Flow Spec validated with actual repair cases"
+
+documents:
+  - doc_id: "PVT-CP4-SVR-001"
+    title: "SFC Validation Report"
+    slug: "sfc-validation-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [SFC]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [SFC, Traceability, WIP]
+    required_sections:
+      - "1. Purpose"
+      - "2. SFC System Under Test"
+      - "3. Validation Test Cases"
+      - "4. Results"
+      - "5. Issues Found"
+      - "6. Sign-Off"
+
+  - doc_id: "PVT-CP4-TMD-002"
+    title: "Traceability Mapping Document"
+    slug: "traceability-mapping-document"
+    doc_type: "spec"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Traceability, SFC, IQC, RMA]
+    required_sections:
+      - "1. Purpose"
+      - "2. Traceability Data Model"
+      - "3. Data Capture Points (per station)"
+      - "4. Data Retention Policy"
+      - "5. Query and Retrieval Procedures"
+      - "6. Revision History"
+
+  - doc_id: "PVT-CP4-DUV-003"
+    title: "Data Upload Validation Report"
+    slug: "data-upload-validation-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [SFC]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [SFC, Traceability]
+    required_sections:
+      - "1. Purpose"
+      - "2. Validation Scope"
+      - "3. Upload Accuracy Results"
+      - "4. Data Loss / Error Rate"
+      - "5. Conclusion"
+
+  - doc_id: "PVT-CP4-SNC-004"
+    title: "Serial Number Control Plan"
+    slug: "serial-number-control-plan"
+    doc_type: "plan"
+    owner_role: "Factory Ops"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [SFC, Traceability, BOM]
+    required_sections:
+      - "1. Purpose"
+      - "2. Serial Number Format"
+      - "3. Assignment and Control Process"
+      - "4. Label Spec"
+      - "5. Revision History"
+
+  - doc_id: "PVT-CP4-RWF-005"
+    title: "Repair / Rework Flow Spec"
+    slug: "repair-rework-flow-spec"
+    doc_type: "spec"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Retest, "True Fail", FA, SFC, Traceability, NCR]
+    required_sections:
+      - "1. Purpose"
+      - "2. Repair Eligibility Criteria"
+      - "3. Repair Flow Diagram"
+      - "4. Re-test Requirements After Repair"
+      - "5. Scrap Disposition"
+      - "6. SFC Repair Records"
+      - "7. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

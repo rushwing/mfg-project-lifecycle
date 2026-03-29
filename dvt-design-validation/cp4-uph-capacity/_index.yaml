@@ -1,0 +1,119 @@
+checkpoint_id: "DVT-CP4"
+checkpoint_name: "UPH and Capacity Assessment"
+checkpoint_name_zh: "UPH 与产能评估"
+phase: DVT
+checkpoint_sequence: 4
+description: >
+  Establish UPH baseline for each test station. Perform cycle time breakdown analysis.
+  Validate station loading against production demand. Identify bottlenecks and plan
+  mitigations. Produce headcount and machine count plan for MP ramp.
+
+entry_criteria:
+  - "DVT build units available for UPH measurement (min 30 units per station)"
+  - "Test program stable and not undergoing active changes"
+  - "Production demand plan (Takt Time) available from PM"
+
+exit_criteria:
+  - "UPH Study Report completed for all stations"
+  - "Cycle Time Breakdown shows no unaccounted overhead > 10%"
+  - "Station Loading Analysis confirms capacity meets demand"
+  - "Bottleneck Analysis identifies constraint station and mitigation plan"
+  - "Headcount/Machine Planning Sheet approved by MTE Manager"
+
+documents:
+  - doc_id: "DVT-CP4-UPH-001"
+    title: "UPH Study Report"
+    slug: "uph-study-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT, DIAG, BURN-IN, SYSTEM]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [UPH, "Cycle Time", "Takt Time", Bottleneck, OEE, "False Fail"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Study Methodology"
+      - "3. UPH Results by Station"
+      - "4. UPH vs. Target Comparison"
+      - "5. Key Findings"
+      - "6. Improvement Recommendations"
+      - "7. Revision History"
+
+  - doc_id: "DVT-CP4-CTB-002"
+    title: "Cycle Time Breakdown"
+    slug: "cycle-time-breakdown"
+    doc_type: "analysis"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT, DIAG]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: ["Cycle Time", UPH, Bottleneck, DIAG, FCT, ICT]
+    required_sections:
+      - "1. Purpose"
+      - "2. Cycle Time Breakdown Table (per station)"
+      - "3. Optimization Opportunities"
+      - "4. Revision History"
+
+  - doc_id: "DVT-CP4-SLA-003"
+    title: "Station Loading Analysis"
+    slug: "station-loading-analysis"
+    doc_type: "analysis"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [UPH, "Cycle Time", "Takt Time", Bottleneck, WIP, OEE]
+    required_sections:
+      - "1. Purpose"
+      - "2. Production Demand (Takt Time)"
+      - "3. Station Cycle Time vs. Takt Time"
+      - "4. Loading Chart"
+      - "5. Bottleneck Identification"
+      - "6. Revision History"
+
+  - doc_id: "DVT-CP4-HMP-004"
+    title: "Headcount / Machine Planning Sheet"
+    slug: "headcount-machine-planning"
+    doc_type: "plan"
+    owner_role: "MTE Manager"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [UPH, CAPEX, "Takt Time", Bottleneck]
+    required_sections:
+      - "1. Purpose"
+      - "2. Machine Count Plan by Station"
+      - "3. Headcount Plan"
+      - "4. CAPEX Requirements"
+      - "5. Revision History"
+
+  - doc_id: "DVT-CP4-BOT-005"
+    title: "Bottleneck Analysis Report"
+    slug: "bottleneck-analysis-report"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Bottleneck, UPH, "Cycle Time", OEE, WIP]
+    required_sections:
+      - "1. Purpose"
+      - "2. Bottleneck Station Identification"
+      - "3. Root Cause Analysis"
+      - "4. Mitigation Options"
+      - "5. Recommended Action Plan"
+      - "6. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true
