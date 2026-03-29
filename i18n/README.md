@@ -41,10 +41,24 @@ def get_doc_title(doc_id: str, lang: str = "en") -> str:
     return entry.get(lang) or entry.get("en", doc_id)
 
 def get_section_title(en_heading: str, lang: str = "en") -> str:
+    """Localize a section heading.
+
+    required_sections values are numbered: "1. Purpose and Scope".
+    section_titles.yaml is keyed by bare labels: "Purpose and Scope".
+    This function strips the leading "N. " prefix for lookup, then
+    re-attaches it to the localized result.
+    """
     if lang == "en":
         return en_heading
-    entry = section_titles.get(en_heading, {})
-    return entry.get(lang) or en_heading
+    import re
+    prefix_match = re.match(r"^(\d+\.\s+)(.*)", en_heading)
+    if prefix_match:
+        prefix, bare = prefix_match.group(1), prefix_match.group(2)
+    else:
+        prefix, bare = "", en_heading
+    entry = section_titles.get(bare, {})
+    localized = entry.get(lang) or bare
+    return prefix + localized
 ```
 
 ### System Prompt Integration

@@ -1,8 +1,14 @@
 # i18n/section_titles.yaml
 #
 # Localized section headings for common required_sections entries.
-# English headings are the ground truth (as they appear in template required_sections).
-# Used by RAG agent to generate section headers in target language documents.
+#
+# IMPORTANT: Keys are bare labels WITHOUT the leading number prefix.
+#   required_sections values look like: "1. Purpose and Scope"
+#   Keys in this file look like:        "Purpose and Scope"
+#
+# The lookup helper must strip the "N. " prefix before matching, then
+# re-attach it to the localized result. See i18n/README.md for the
+# canonical get_section_title() implementation.
 #
 # Languages:
 #   zh-CN — Simplified Chinese (深圳/大陆工厂)

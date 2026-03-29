@@ -88,7 +88,7 @@ def parse_glossary_terms(glossary_path: Path) -> dict[str, dict]:
 
         # **Canonical Form:** `term` — register the backtick form as canonical (English)
         # **Canonical Form (zh-CN/zh-TW/vi):** `term` — register multilingual canonical forms
-        canonical_match = re.match(r"\*\*Canonical Form(?:\s*\([^)]+\))?\*\*: `(.+?)`", line)
+        canonical_match = re.match(r"\*\*Canonical Form(?:\s*\([^)]+\))?:\*\* `(.+?)`", line)
         if canonical_match and current_term:
             canonical_form = canonical_match.group(1).strip()
             if canonical_form and canonical_form != "(pending)":
