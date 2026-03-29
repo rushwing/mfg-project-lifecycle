@@ -1,0 +1,64 @@
+# i18n/section_titles.yaml
+#
+# Static translations for universal structural section headings — the small
+# set of labels that appear verbatim in current required_sections values and
+# where consistent terminology across documents is important.
+#
+# SCOPE: Only headings that (a) appear in actual required_sections values
+# AND (b) are generic enough to warrant a locked translation belong here.
+# All other section headings are translated dynamically by the RAG agent
+# at generation time using GLOSSARY.md canonical forms. Do not add headings
+# to this file just because a translation is convenient; prefer the dynamic
+# path so this file stays authoritative and small.
+#
+# IMPORTANT: Keys are bare labels WITHOUT the leading number prefix.
+#   required_sections values look like: "1. Purpose and Scope"
+#   Keys in this file look like:        "Purpose and Scope"
+#
+# The lookup helper strips "N. " before matching and re-attaches it to the
+# result. See i18n/README.md for the canonical get_section_title() implementation.
+#
+# Languages:
+#   zh-CN — Simplified Chinese (深圳/大陆工厂)
+#   zh-TW — Traditional Chinese (台湾工厂)
+#   vi    — Vietnamese (待定 / pending)
+
+"Purpose and Scope":
+  zh-CN: "目的与范围"
+  zh-TW: "目的與範圍"
+  vi: "(pending)"
+
+"Revision History":
+  zh-CN: "版本历史"
+  zh-TW: "版本歷史"
+  vi: "(pending)"
+
+"Exit Criteria":
+  zh-CN: "退出准则"
+  zh-TW: "退出準則"
+  vi: "(pending)"
+
+"Pass / Fail Criteria":
+  zh-CN: "通过 / 失效判定准则"
+  zh-TW: "通過 / 失效判定準則"
+  vi: "(pending)"
+
+"Retest Policy":
+  zh-CN: "复测政策"
+  zh-TW: "複測政策"
+  vi: "(pending)"
+
+"Root Cause Analysis":
+  zh-CN: "根因分析"
+  zh-TW: "根因分析"
+  vi: "(pending)"
+
+"Corrective Actions":
+  zh-CN: "纠正措施"
+  zh-TW: "矯正措施"
+  vi: "(pending)"
+
+"Equipment List":
+  zh-CN: "设备清单"
+  zh-TW: "設備清單"
+  vi: "(pending)"
