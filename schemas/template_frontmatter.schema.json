@@ -167,6 +167,11 @@
       },
       "description": "Section headings bootstrap_templates.py will stub out. Empty array allowed for shared snippets."
     },
+    "priority": {
+      "type": "string",
+      "enum": ["critical", "required", "recommended", "optional"],
+      "description": "Lifecycle gate priority. Required for all lifecycle templates (phase != Universal). Shared snippets omit this field."
+    },
     "supersedes": {
       "type": ["string", "null"],
       "description": "doc_id this document replaces"
@@ -176,5 +181,14 @@
       "enum": ["P1", "EVT", "DVT", "PVT", "MP", "N/A"],
       "description": "Phase at which this document becomes obsolete"
     }
+  },
+  "if": {
+    "properties": {
+      "phase": { "not": { "enum": ["Universal"] } }
+    },
+    "required": ["phase"]
+  },
+  "then": {
+    "required": ["priority"]
   }
 }

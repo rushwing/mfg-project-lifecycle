@@ -43,8 +43,14 @@ def log(msg: str, style: str = "") -> None:
 def parse_glossary_terms(glossary_path: Path) -> dict[str, dict]:
     """
     Parse GLOSSARY.md and extract:
-    - canonical_terms: set of canonical form strings (from ## Term headings)
+    - canonical_terms: set of canonical form strings (from ### Term headings)
     - aliases: mapping of alias -> canonical form
+
+    GLOSSARY structure:
+      ## Category heading   — section divider, does NOT define a term
+      ### Term Name         — individual term; sets current_term context
+        **Canonical Form:** `Term` — authoritative spelling
+        **Aliases:** a, b, c     — alternate names mapping to the canonical form
     """
     if not glossary_path.exists():
         log(f"[red]ERROR[/red] GLOSSARY.md not found at {glossary_path}", "red")
@@ -56,16 +62,20 @@ def parse_glossary_terms(glossary_path: Path) -> dict[str, dict]:
 
     current_term = None
     for line in content.splitlines():
-        # Match ## Term Name headings (but not ### sub-headings)
-        h2_match = re.match(r"^## (.+)$", line)
-        if h2_match:
-            current_term = h2_match.group(1).strip()
+        # ## headings are category dividers — reset term context, don't register as a term
+        if re.match(r"^## ", line):
+            current_term = None
+            continue
+
+        # ### headings are individual term entries
+        h3_match = re.match(r"^### (.+)$", line)
+        if h3_match:
+            current_term = h3_match.group(1).strip()
             canonical_terms.add(current_term)
-            # Also map canonical to itself
             aliases_map[current_term.lower()] = current_term
             continue
 
-        # Match **Aliases:** lines
+        # **Aliases:** line — attach to current_term (a ### heading)
         if current_term and line.startswith("**Aliases:**"):
             aliases_raw = line.replace("**Aliases:**", "").strip()
             for alias in re.split(r",|;", aliases_raw):
@@ -73,7 +83,7 @@ def parse_glossary_terms(glossary_path: Path) -> dict[str, dict]:
                 if alias:
                     aliases_map[alias.lower()] = current_term
 
-        # Match **Canonical Form:** `term` lines
+        # **Canonical Form:** `term` — register the backtick form as canonical
         canonical_match = re.match(r"\*\*Canonical Form:\*\* `(.+?)`", line)
         if canonical_match and current_term:
             canonical_form = canonical_match.group(1).strip()
