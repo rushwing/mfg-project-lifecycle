@@ -23,8 +23,8 @@ Benefits:
 | Code | Language | Factory | doc_titles | section_titles |
 |------|----------|---------|-----------|---------------|
 | `en` | English | — | Ground truth | Ground truth |
-| `zh-CN` | Simplified Chinese | 深圳 | ✅ 136/136 | ✅ Structural (8/456 labels; remainder via RAG) |
-| `zh-TW` | Traditional Chinese | 台湾 | ✅ 136/136 | ✅ Structural (8/456 labels; remainder via RAG) |
+| `zh-CN` | Simplified Chinese | 深圳 | ✅ 136/136 | ✅ 8 structural labels; remainder via RAG |
+| `zh-TW` | Traditional Chinese | 台湾 | ✅ 136/136 | ✅ 8 structural labels; remainder via RAG |
 | `vi` | Vietnamese | Vietnam | 🔲 Stub | 🔲 Stub |
 
 ## Two-Tier Section Heading Localization
@@ -128,4 +128,4 @@ When ready to add full Vietnamese support:
 ## Coverage
 
 - `doc_titles.yaml`: 136 entries (131 lifecycle docs + 5 shared snippets)
-- `section_titles.yaml`: 8 universal structural headings with zh-CN/zh-TW translations; document-specific headings handled by RAG agent at runtime
+- `section_titles.yaml`: 8 entries — only labels that appear verbatim in current `required_sections` values and warrant a locked translation; all other headings handled by RAG agent at runtime
