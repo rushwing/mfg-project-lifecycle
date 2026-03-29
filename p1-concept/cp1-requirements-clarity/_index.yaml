@@ -1,121 +1,177 @@
-checkpoint_id: "P1-CP1"
-checkpoint_name: "Requirements Clarification and Testability Input"
-checkpoint_name_zh: "需求澄清与可测试性输入"
+checkpoint_id: P1-CP1
+checkpoint_name: Requirements Clarification and Testability Input
+checkpoint_name_zh: 需求澄清与可测试性输入
 phase: P1
 checkpoint_sequence: 1
-description: >
-  Capture and baseline product/market requirements, hardware specs, DFT/DFX
-  requirements, and initial test strategy. MTE provides testability requirements
-  to HW design teams before architecture is frozen.
+description: 'Capture and baseline product/market requirements, hardware specs, DFT/DFX
+  requirements, and initial test strategy. MTE provides testability requirements to
+  HW design teams before architecture is frozen.
 
+  '
 entry_criteria:
-  - "Product concept approved by PM"
-  - "Preliminary product spec or MRD available"
-
+- Product concept approved by PM
+- Preliminary product spec or MRD available
 exit_criteria:
-  - "PRD/MRD reviewed by MTE and testability requirements extracted"
-  - "DFT/DFX requirements documented and submitted to HW Design"
-  - "Test Strategy Overview reviewed by MTE Lead and PM"
-  - "Initial Risk List created with all known test risks"
-
+- PRD/MRD reviewed by MTE and testability requirements extracted
+- DFT/DFX requirements documented and submitted to HW Design
+- Test Strategy Overview reviewed by MTE Lead and PM
+- Initial Risk List created with all known test risks
 documents:
-  - doc_id: "P1-CP1-PMR-001"
-    title: "PRD / MRD (Manufacturing Testability Review)"
-    slug: "prd-mrd"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [NPI, DFT, DFX]
-    required_sections:
-      - "1. Purpose"
-      - "2. Product Overview"
-      - "3. Key Functional Requirements"
-      - "4. Testability Requirements Extracted"
-      - "5. Open Items / Risks"
-      - "6. Revision History"
-
-  - doc_id: "P1-CP1-HWS-002"
-    title: "HW Spec / System Spec (Testability Annotations)"
-    slug: "hw-spec-system-spec"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [DFT, Boundary Scan, BIST]
-    required_sections:
-      - "1. Purpose"
-      - "2. Hardware Architecture Summary"
-      - "3. Interface List and Testability Assessment"
-      - "4. DFT Hook Requirements"
-      - "5. Known Testability Constraints"
-      - "6. Revision History"
-
-  - doc_id: "P1-CP1-DFT-003"
-    title: "DFT / DFX Requirement"
-    slug: "dft-dfx-requirement"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [DFT, DFX, BIST, "Boundary Scan", ICT, FCT, DIAG]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. DFT Requirements by Test Station"
-      - "3. BIST Coverage Requirements"
-      - "4. Boundary Scan / JTAG Requirements"
-      - "5. Physical Access Requirements (ICT)"
-      - "6. DFM / DFA Considerations"
-      - "7. Automotive / Functional Safety (if applicable)"
-      - "8. Open Issues"
-      - "9. Revision History"
-
-  - doc_id: "P1-CP1-TSO-004"
-    title: "Test Strategy Overview"
-    slug: "test-strategy-overview"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ICT, FCT, DIAG, NPI, EVT, DVT, PVT, TRP, "Coverage Hole"]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Product Overview"
-      - "3. Test Station Strategy"
-      - "4. Coverage Goals by Station"
-      - "5. Phase-by-Phase Test Objectives"
-      - "6. High-Level Risk Assessment"
-      - "7. Revision History"
-
-  - doc_id: "P1-CP1-RSK-005"
-    title: "Risk List / Open Issue List"
-    slug: "risk-list-open-issue"
-    doc_type: "tracker"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [RAID, DFT, "Test Escape"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Risk Register Table"
-      - "3. Open Issue Table"
-      - "4. Revision History"
-
+- doc_id: P1-CP1-PMR-001
+  title: PRD / MRD (Manufacturing Testability Review)
+  slug: prd-mrd
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - NPI
+  - DFT
+  - DFX
+  required_sections:
+  - 1. Purpose
+  - 2. Product Overview
+  - 3. Key Functional Requirements
+  - 4. Testability Requirements Extracted
+  - 5. Open Items / Risks
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: P1-CP1-HWS-002
+  title: HW Spec / System Spec (Testability Annotations)
+  slug: hw-spec-system-spec
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - DFT
+  - Boundary Scan
+  - BIST
+  required_sections:
+  - 1. Purpose
+  - 2. Hardware Architecture Summary
+  - 3. Interface List and Testability Assessment
+  - 4. DFT Hook Requirements
+  - 5. Known Testability Constraints
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: P1-CP1-DFT-003
+  title: DFT / DFX Requirement
+  slug: dft-dfx-requirement
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - DFT
+  - DFX
+  - BIST
+  - Boundary Scan
+  - ICT
+  - FCT
+  - DIAG
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. DFT Requirements by Test Station
+  - 3. BIST Coverage Requirements
+  - 4. Boundary Scan / JTAG Requirements
+  - 5. Physical Access Requirements (ICT)
+  - 6. DFM / DFA Considerations
+  - 7. Automotive / Functional Safety (if applicable)
+  - 8. Open Issues
+  - 9. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: P1-CP1-TSO-004
+  title: Test Strategy Overview
+  slug: test-strategy-overview
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ICT
+  - FCT
+  - DIAG
+  - NPI
+  - EVT
+  - DVT
+  - PVT
+  - TRP
+  - Coverage Hole
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Product Overview
+  - 3. Test Station Strategy
+  - 4. Coverage Goals by Station
+  - 5. Phase-by-Phase Test Objectives
+  - 6. High-Level Risk Assessment
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: P1-CP1-RSK-005
+  title: Risk List / Open Issue List
+  slug: risk-list-open-issue
+  doc_type: tracker
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - RAID
+  - DFT
+  - Test Escape
+  required_sections:
+  - 1. Purpose
+  - 2. Risk Register Table
+  - 3. Open Issue Table
+  - 4. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

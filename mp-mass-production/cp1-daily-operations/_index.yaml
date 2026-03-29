@@ -1,106 +1,158 @@
-checkpoint_id: "MP-CP1"
-checkpoint_name: "Daily Production Operations"
-checkpoint_name_zh: "量产日常运营"
+checkpoint_id: MP-CP1
+checkpoint_name: Daily Production Operations
+checkpoint_name_zh: 量产日常运营
 phase: MP
 checkpoint_sequence: 1
-description: >
-  Day-to-day production monitoring and reporting. Track yield, UPH, WIP, downtime,
-  and escalations on a shift/daily basis. These documents are the operational
+description: 'Day-to-day production monitoring and reporting. Track yield, UPH, WIP,
+  downtime, and escalations on a shift/daily basis. These documents are the operational
   heartbeat of the production floor.
 
+  '
 entry_criteria:
-  - "PVT-CP5 Handover Package received by Factory Ops"
-  - "First production lot started"
-
+- PVT-CP5 Handover Package received by Factory Ops
+- First production lot started
 exit_criteria:
-  - "N/A — ongoing operational cadence"
-
+- N/A — ongoing operational cadence
 documents:
-  - doc_id: "MP-CP1-DPR-001"
-    title: "Daily Production Report"
-    slug: "daily-production-report"
-    doc_type: "report"
-    owner_role: "Factory Ops"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [Yield, UPH, WIP, OEE, "True Fail", "False Fail"]
-    required_sections:
-      - "1. Date and Shift"
-      - "2. Production Summary (Input / Output / WIP)"
-      - "3. Yield by Station"
-      - "4. UPH by Station"
-      - "5. Top Issues"
-      - "6. Actions"
-
-  - doc_id: "MP-CP1-BOD-002"
-    title: "BOD / EOD Report"
-    slug: "bod-eod-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: ["BOD / EOD", WIP, Yield, UPH]
-    required_sections:
-      - "1. BOD: Targets / Open Items / Equipment Status"
-      - "2. EOD: Actual Results / Issues / Handover Items"
-
-  - doc_id: "MP-CP1-WIO-003"
-    title: "WIP / Input-Output Report"
-    slug: "wip-io-report"
-    doc_type: "report"
-    owner_role: "Factory Ops"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [WIP, SFC, Traceability, Bottleneck]
-    required_sections:
-      - "1. WIP Level by Station"
-      - "2. Input / Output Flow"
-      - "3. Aging WIP"
-      - "4. Revision History"
-
-  - doc_id: "MP-CP1-YDB-004"
-    title: "Yield Dashboard"
-    slug: "yield-dashboard"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "high"
-    controlled_terms: [Yield, DPM, "True Fail", "False Fail", "Test Escape", Retest]
-    required_sections:
-      - "1. Weekly / Monthly Yield Trend"
-      - "2. Yield by Station"
-      - "3. Top Failure Modes"
-      - "4. Action Items"
-
-  - doc_id: "MP-CP1-DEL-005"
-    title: "Downtime / Escalation Log"
-    slug: "downtime-escalation-log"
-    doc_type: "log"
-    owner_role: "Factory Ops"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [OEE, Bottleneck, Fixture, CAPA]
-    required_sections:
-      - "1. Downtime Events Table"
-      - "2. Escalation Events Table"
-      - "3. Root Cause Summary"
-      - "4. Revision History"
-
+- doc_id: MP-CP1-DPR-001
+  title: Daily Production Report
+  slug: daily-production-report
+  doc_type: report
+  owner_role: Factory Ops
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - Yield
+  - UPH
+  - WIP
+  - OEE
+  - True Fail
+  - False Fail
+  required_sections:
+  - 1. Date and Shift
+  - 2. Production Summary (Input / Output / WIP)
+  - 3. Yield by Station
+  - 4. UPH by Station
+  - 5. Top Issues
+  - 6. Actions
+  production_stages:
+  - All
+- doc_id: MP-CP1-BOD-002
+  title: BOD / EOD Report
+  slug: bod-eod-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - BOD / EOD
+  - WIP
+  - Yield
+  - UPH
+  required_sections:
+  - '1. BOD: Targets / Open Items / Equipment Status'
+  - '2. EOD: Actual Results / Issues / Handover Items'
+  production_stages:
+  - All
+- doc_id: MP-CP1-WIO-003
+  title: WIP / Input-Output Report
+  slug: wip-io-report
+  doc_type: report
+  owner_role: Factory Ops
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - WIP
+  - SFC
+  - Traceability
+  - Bottleneck
+  required_sections:
+  - 1. WIP Level by Station
+  - 2. Input / Output Flow
+  - 3. Aging WIP
+  - 4. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP1-YDB-004
+  title: Yield Dashboard
+  slug: yield-dashboard
+  doc_type: report
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: high
+  controlled_terms:
+  - Yield
+  - DPM
+  - True Fail
+  - False Fail
+  - Test Escape
+  - Retest
+  required_sections:
+  - 1. Weekly / Monthly Yield Trend
+  - 2. Yield by Station
+  - 3. Top Failure Modes
+  - 4. Action Items
+  production_stages:
+  - All
+- doc_id: MP-CP1-DEL-005
+  title: Downtime / Escalation Log
+  slug: downtime-escalation-log
+  doc_type: log
+  owner_role: Factory Ops
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - OEE
+  - Bottleneck
+  - Fixture
+  - CAPA
+  required_sections:
+  - 1. Downtime Events Table
+  - 2. Escalation Events Table
+  - 3. Root Cause Summary
+  - 4. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

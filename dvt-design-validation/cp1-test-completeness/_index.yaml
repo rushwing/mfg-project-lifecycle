@@ -1,120 +1,178 @@
-checkpoint_id: "DVT-CP1"
-checkpoint_name: "Test Completeness Improvement"
-checkpoint_name_zh: "测试完整性提升"
+checkpoint_id: DVT-CP1
+checkpoint_name: Test Completeness Improvement
+checkpoint_name_zh: 测试完整性提升
 phase: DVT
 checkpoint_sequence: 1
-description: >
-  Elevate test coverage to production-target levels. Update TRP and Test Plan based
-  on EVT learnings. Identify and close coverage holes. Enhance diagnostic capability.
-  DVT builds provide more stable hardware to characterize coverage gaps.
+description: 'Elevate test coverage to production-target levels. Update TRP and Test
+  Plan based on EVT learnings. Identify and close coverage holes. Enhance diagnostic
+  capability. DVT builds provide more stable hardware to characterize coverage gaps.
 
+  '
 entry_criteria:
-  - "EVT Phase Summary Report approved"
-  - "DVT hardware samples received"
-  - "EVT coverage gaps identified and prioritized"
-
+- EVT Phase Summary Report approved
+- DVT hardware samples received
+- EVT coverage gaps identified and prioritized
 exit_criteria:
-  - "Updated TRP/Test Plan reflects EVT lessons learned"
-  - "Detailed Coverage Report shows ≥ 90% functional coverage"
-  - "Test Gap Analysis completed: all gaps dispositioned (fix/accept/DFT change)"
-  - "Diagnostic Enhancement Plan approved by MTE Lead"
-
+- Updated TRP/Test Plan reflects EVT lessons learned
+- Detailed Coverage Report shows ≥ 90% functional coverage
+- 'Test Gap Analysis completed: all gaps dispositioned (fix/accept/DFT change)'
+- Diagnostic Enhancement Plan approved by MTE Lead
 documents:
-  - doc_id: "DVT-CP1-DBP-001"
-    title: "DVT Build Plan"
-    slug: "dvt-build-plan"
-    doc_type: "plan"
-    owner_role: "NPI PM"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [DVT, NPI, Yield, UPH]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Build Quantity by SKU"
-      - "3. Build Schedule"
-      - "4. DVT Test Objectives"
-      - "5. Exit Criteria"
-      - "6. Resource Plan"
-      - "7. Revision History"
-
-  - doc_id: "DVT-CP1-TRP-002"
-    title: "Updated TRP / Test Plan"
-    slug: "updated-trp-test-plan"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [TRP, ICT, FCT, DIAG, "Coverage Hole", "Test Escape", Yield]
-    related_docs: ["EVT-CP2-TRP-001"]
-    required_sections:
-      - "1. Purpose (DVT Update)"
-      - "2. EVT Lessons Learned Incorporated"
-      - "3. DVT Coverage Targets"
-      - "4. Station Plan Updates"
-      - "5. Approval Sign-Off"
-      - "6. Revision History"
-
-  - doc_id: "DVT-CP1-DCR-003"
-    title: "Detailed Coverage Report"
-    slug: "detailed-coverage-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "high"
-    controlled_terms: [DFT, BIST, "Boundary Scan", ICT, FCT, DIAG, "Coverage Hole", DPM]
-    required_sections:
-      - "1. Purpose"
-      - "2. Coverage Summary by Station"
-      - "3. Detailed Coverage Matrix"
-      - "4. Improvement vs. EVT Baseline"
-      - "5. Revision History"
-
-  - doc_id: "DVT-CP1-TGA-004"
-    title: "Test Gap Analysis"
-    slug: "test-gap-analysis"
-    doc_type: "analysis"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: ["Coverage Hole", "Test Escape", DFT, DFX, BIST, "Boundary Scan"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Gap Identification Methodology"
-      - "3. Gap List Table (Gap / Risk / Disposition)"
-      - "4. DFT Change Requests"
-      - "5. Accepted Risks with Justification"
-      - "6. Revision History"
-
-  - doc_id: "DVT-CP1-DEP-005"
-    title: "Diagnostic Enhancement Plan"
-    slug: "diagnostic-enhancement-plan"
-    doc_type: "plan"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [DIAG, BIST, "Coverage Hole", TRP]
-    required_sections:
-      - "1. Purpose"
-      - "2. Current DIAG Coverage Baseline"
-      - "3. Enhancement Scope"
-      - "4. Development Schedule"
-      - "5. Revision History"
-
+- doc_id: DVT-CP1-DBP-001
+  title: DVT Build Plan
+  slug: dvt-build-plan
+  doc_type: plan
+  owner_role: NPI PM
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - DVT
+  - NPI
+  - Yield
+  - UPH
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Build Quantity by SKU
+  - 3. Build Schedule
+  - 4. DVT Test Objectives
+  - 5. Exit Criteria
+  - 6. Resource Plan
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP1-TRP-002
+  title: Updated TRP / Test Plan
+  slug: updated-trp-test-plan
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - TRP
+  - ICT
+  - FCT
+  - DIAG
+  - Coverage Hole
+  - Test Escape
+  - Yield
+  related_docs:
+  - EVT-CP2-TRP-001
+  required_sections:
+  - 1. Purpose (DVT Update)
+  - 2. EVT Lessons Learned Incorporated
+  - 3. DVT Coverage Targets
+  - 4. Station Plan Updates
+  - 5. Approval Sign-Off
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP1-DCR-003
+  title: Detailed Coverage Report
+  slug: detailed-coverage-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: high
+  controlled_terms:
+  - DFT
+  - BIST
+  - Boundary Scan
+  - ICT
+  - FCT
+  - DIAG
+  - Coverage Hole
+  - DPM
+  required_sections:
+  - 1. Purpose
+  - 2. Coverage Summary by Station
+  - 3. Detailed Coverage Matrix
+  - 4. Improvement vs. EVT Baseline
+  - 5. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP1-TGA-004
+  title: Test Gap Analysis
+  slug: test-gap-analysis
+  doc_type: analysis
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Coverage Hole
+  - Test Escape
+  - DFT
+  - DFX
+  - BIST
+  - Boundary Scan
+  required_sections:
+  - 1. Purpose
+  - 2. Gap Identification Methodology
+  - 3. Gap List Table (Gap / Risk / Disposition)
+  - 4. DFT Change Requests
+  - 5. Accepted Risks with Justification
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP1-DEP-005
+  title: Diagnostic Enhancement Plan
+  slug: diagnostic-enhancement-plan
+  doc_type: plan
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - DIAG
+  - BIST
+  - Coverage Hole
+  - TRP
+  required_sections:
+  - 1. Purpose
+  - 2. Current DIAG Coverage Baseline
+  - 3. Enhancement Scope
+  - 4. Development Schedule
+  - 5. Revision History
+  production_stages:
+  - FATP
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

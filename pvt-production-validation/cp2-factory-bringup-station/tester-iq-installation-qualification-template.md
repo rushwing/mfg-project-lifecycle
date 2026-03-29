@@ -18,6 +18,7 @@ test_stations:
 - FCT
 - DIAG
 - ATE
+production_stages: [SMT, FATP]
 owner_role: MTE Staff
 status: template-stub
 created_date: '2026-03-29'

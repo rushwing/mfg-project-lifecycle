@@ -52,7 +52,7 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["doc_id", "title", "slug", "doc_type", "owner_role", "priority"],
+        "required": ["doc_id", "title", "slug", "doc_type", "owner_role", "priority", "production_stages"],
         "properties": {
           "doc_id": {
             "type": "string",
@@ -87,6 +87,11 @@
           "embedding_priority": {
             "type": "string",
             "enum": ["high","medium","low","exclude"]
+          },
+          "production_stages": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "enum": ["SMT", "FATP", "PACK", "All"] }
           },
           "controlled_terms": {
             "type": "array",

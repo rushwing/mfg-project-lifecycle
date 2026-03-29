@@ -1,119 +1,182 @@
-checkpoint_id: "DVT-CP2"
-checkpoint_name: "Fixture Qualification and Repeatability Verification"
-checkpoint_name_zh: "治具/设备定版与重复性验证"
+checkpoint_id: DVT-CP2
+checkpoint_name: Fixture Qualification and Repeatability Verification
+checkpoint_name_zh: 治具/设备定版与重复性验证
 phase: DVT
 checkpoint_sequence: 2
-description: >
-  Formally qualify test fixtures for production use. Execute GR&R studies to
-  validate measurement repeatability and reproducibility. Issue Fixture Acceptance
+description: 'Formally qualify test fixtures for production use. Execute GR&R studies
+  to validate measurement repeatability and reproducibility. Issue Fixture Acceptance
   Report. Establish equipment calibration and preventive maintenance plans.
 
+  '
 entry_criteria:
-  - "DVT fixture build complete (production-intent tooling)"
-  - "Test program stable enough for GR&R study execution"
-  - "Golden Sample units available and characterized"
-
+- DVT fixture build complete (production-intent tooling)
+- Test program stable enough for GR&R study execution
+- Golden Sample units available and characterized
 exit_criteria:
-  - "Fixture Qualification Plan executed per plan"
-  - "GR&R Report: %GR&R < 10% for all critical parametric measurements"
-  - "Fixture Acceptance Report signed by MTE Lead and Quality Engineer"
-  - "Equipment Calibration Plan in place"
-  - "PM Plan established and handed to factory ops"
-
+- Fixture Qualification Plan executed per plan
+- 'GR&R Report: %GR&R < 10% for all critical parametric measurements'
+- Fixture Acceptance Report signed by MTE Lead and Quality Engineer
+- Equipment Calibration Plan in place
+- PM Plan established and handed to factory ops
 documents:
-  - doc_id: "DVT-CP2-FQP-001"
-    title: "Fixture Qualification Plan"
-    slug: "fixture-qualification-plan"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [Fixture, GR&R, IQ, OQ, "Golden Unit"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Qualification Scope"
-      - "3. GR&R Study Plan"
-      - "4. Acceptance Criteria"
-      - "5. Schedule"
-      - "6. Revision History"
-
-  - doc_id: "DVT-CP2-GRR-002"
-    title: "GR&R Report (Gauge R&R)"
-    slug: "grr-report"
-    doc_type: "report"
-    owner_role: "Quality Engineer"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [GR&R, Fixture, "Golden Unit", "False Fail", Yield]
-    required_sections:
-      - "1. Purpose"
-      - "2. Study Design (operators, units, replications)"
-      - "3. Results: %GR&R by Measurement"
-      - "4. Acceptance Criteria vs. Results"
-      - "5. Pass / Fail Conclusion"
-      - "6. Corrective Actions (if failed)"
-      - "7. Revision History"
-
-  - doc_id: "DVT-CP2-FAR-003"
-    title: "Fixture Acceptance Report"
-    slug: "fixture-acceptance-report"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [Fixture, GR&R, IQ, OQ, CAPEX]
-    required_sections:
-      - "1. Purpose"
-      - "2. Fixture Under Test"
-      - "3. Qualification Activities Summary"
-      - "4. GR&R Results Summary"
-      - "5. Outstanding Issues"
-      - "6. Acceptance Decision"
-      - "7. Sign-Off"
-
-  - doc_id: "DVT-CP2-ECP-004"
-    title: "Equipment Calibration Plan"
-    slug: "equipment-calibration-plan"
-    doc_type: "plan"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG, ATE]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [IQ, OQ, GR&R, "Golden Unit"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Equipment List and Calibration Intervals"
-      - "3. Calibration Procedure Reference"
-      - "4. Revision History"
-
-  - doc_id: "DVT-CP2-PMP-005"
-    title: "Preventive Maintenance Plan"
-    slug: "preventive-maintenance-plan"
-    doc_type: "plan"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [Fixture, OEE, UPH]
-    required_sections:
-      - "1. Purpose"
-      - "2. PM Schedule Table"
-      - "3. PM Procedure Reference"
-      - "4. Revision History"
-
+- doc_id: DVT-CP2-FQP-001
+  title: Fixture Qualification Plan
+  slug: fixture-qualification-plan
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Fixture
+  - GR&R
+  - IQ
+  - OQ
+  - Golden Unit
+  required_sections:
+  - 1. Purpose
+  - 2. Qualification Scope
+  - 3. GR&R Study Plan
+  - 4. Acceptance Criteria
+  - 5. Schedule
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: DVT-CP2-GRR-002
+  title: GR&R Report (Gauge R&R)
+  slug: grr-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - GR&R
+  - Fixture
+  - Golden Unit
+  - False Fail
+  - Yield
+  required_sections:
+  - 1. Purpose
+  - 2. Study Design (operators, units, replications)
+  - '3. Results: %GR&R by Measurement'
+  - 4. Acceptance Criteria vs. Results
+  - 5. Pass / Fail Conclusion
+  - 6. Corrective Actions (if failed)
+  - 7. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: DVT-CP2-FAR-003
+  title: Fixture Acceptance Report
+  slug: fixture-acceptance-report
+  doc_type: report
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Fixture
+  - GR&R
+  - IQ
+  - OQ
+  - CAPEX
+  required_sections:
+  - 1. Purpose
+  - 2. Fixture Under Test
+  - 3. Qualification Activities Summary
+  - 4. GR&R Results Summary
+  - 5. Outstanding Issues
+  - 6. Acceptance Decision
+  - 7. Sign-Off
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: DVT-CP2-ECP-004
+  title: Equipment Calibration Plan
+  slug: equipment-calibration-plan
+  doc_type: plan
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  - ATE
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - IQ
+  - OQ
+  - GR&R
+  - Golden Unit
+  required_sections:
+  - 1. Purpose
+  - 2. Equipment List and Calibration Intervals
+  - 3. Calibration Procedure Reference
+  - 4. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: DVT-CP2-PMP-005
+  title: Preventive Maintenance Plan
+  slug: preventive-maintenance-plan
+  doc_type: plan
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - Fixture
+  - OEE
+  - UPH
+  required_sections:
+  - 1. Purpose
+  - 2. PM Schedule Table
+  - 3. PM Procedure Reference
+  - 4. Revision History
+  production_stages:
+  - SMT
+  - FATP
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

@@ -1,110 +1,163 @@
-checkpoint_id: "MP-CP3"
-checkpoint_name: "Incoming Quality and Anomaly Management"
-checkpoint_name_zh: "来料与异常管理"
+checkpoint_id: MP-CP3
+checkpoint_name: Incoming Quality and Anomaly Management
+checkpoint_name_zh: 来料与异常管理
 phase: MP
 checkpoint_sequence: 3
-description: >
-  Monitor and manage incoming material quality, supplier issues, and production
+description: 'Monitor and manage incoming material quality, supplier issues, and production
   anomalies. Issue NCRs, escalate to MRB, and implement containment actions.
 
+  '
 entry_criteria:
-  - "IQC process established and running"
-  - "Supplier qualification complete"
-
+- IQC process established and running
+- Supplier qualification complete
 exit_criteria:
-  - "N/A — ongoing process"
-
+- N/A — ongoing process
 documents:
-  - doc_id: "MP-CP3-IQR-001"
-    title: "Incoming Quality Report / IQC Report"
-    slug: "iqc-incoming-quality-report"
-    doc_type: "report"
-    owner_role: "Quality Engineer"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [IQC, NCR, MRB, BOM, CAPA]
-    required_sections:
-      - "1. Period"
-      - "2. Incoming Lot Summary"
-      - "3. Inspection Results"
-      - "4. NCRs Issued"
-      - "5. Supplier Action Items"
-
-  - doc_id: "MP-CP3-SIT-002"
-    title: "Supplier Issue Tracker"
-    slug: "supplier-issue-tracker"
-    doc_type: "tracker"
-    owner_role: "Quality Engineer"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [IQC, NCR, MRB, CAPA, RMA]
-    required_sections:
-      - "1. Purpose"
-      - "2. Supplier Issue Table"
-      - "3. CAPA Status"
-      - "4. Revision History"
-
-  - doc_id: "MP-CP3-NMR-003"
-    title: "NCR / MRB Report"
-    slug: "ncr-mrb-report"
-    doc_type: "report"
-    owner_role: "Quality Engineer"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [NCR, MRB, IQC, CAPA, BOM]
-    required_sections:
-      - "1. NCR Description"
-      - "2. Non-Conformance Details"
-      - "3. Containment Action"
-      - "4. MRB Disposition"
-      - "5. CAPA Reference"
-      - "6. Sign-Off"
-
-  - doc_id: "MP-CP3-CRA-004"
-    title: "Component Risk Assessment"
-    slug: "component-risk-assessment"
-    doc_type: "analysis"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [IQC, BOM, "Test Escape", NCR, CAPA]
-    required_sections:
-      - "1. Purpose"
-      - "2. Component Risk Table"
-      - "3. Test Coverage for At-Risk Components"
-      - "4. Mitigation Actions"
-      - "5. Revision History"
-
-  - doc_id: "MP-CP3-CAR-005"
-    title: "Containment Action Report"
-    slug: "containment-action-report"
-    doc_type: "report"
-    owner_role: "Quality Engineer"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [CAPA, NCR, MRB, "Test Escape", Yield]
-    required_sections:
-      - "1. Issue Description"
-      - "2. Containment Actions Taken"
-      - "3. Affected Lot Disposition"
-      - "4. Root Cause Investigation Status"
-      - "5. Revision History"
-
+- doc_id: MP-CP3-IQR-001
+  title: Incoming Quality Report / IQC Report
+  slug: iqc-incoming-quality-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - IQC
+  - NCR
+  - MRB
+  - BOM
+  - CAPA
+  required_sections:
+  - 1. Period
+  - 2. Incoming Lot Summary
+  - 3. Inspection Results
+  - 4. NCRs Issued
+  - 5. Supplier Action Items
+  production_stages:
+  - All
+- doc_id: MP-CP3-SIT-002
+  title: Supplier Issue Tracker
+  slug: supplier-issue-tracker
+  doc_type: tracker
+  owner_role: Quality Engineer
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - IQC
+  - NCR
+  - MRB
+  - CAPA
+  - RMA
+  required_sections:
+  - 1. Purpose
+  - 2. Supplier Issue Table
+  - 3. CAPA Status
+  - 4. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP3-NMR-003
+  title: NCR / MRB Report
+  slug: ncr-mrb-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - NCR
+  - MRB
+  - IQC
+  - CAPA
+  - BOM
+  required_sections:
+  - 1. NCR Description
+  - 2. Non-Conformance Details
+  - 3. Containment Action
+  - 4. MRB Disposition
+  - 5. CAPA Reference
+  - 6. Sign-Off
+  production_stages:
+  - All
+- doc_id: MP-CP3-CRA-004
+  title: Component Risk Assessment
+  slug: component-risk-assessment
+  doc_type: analysis
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - IQC
+  - BOM
+  - Test Escape
+  - NCR
+  - CAPA
+  required_sections:
+  - 1. Purpose
+  - 2. Component Risk Table
+  - 3. Test Coverage for At-Risk Components
+  - 4. Mitigation Actions
+  - 5. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP3-CAR-005
+  title: Containment Action Report
+  slug: containment-action-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - CAPA
+  - NCR
+  - MRB
+  - Test Escape
+  - Yield
+  required_sections:
+  - 1. Issue Description
+  - 2. Containment Actions Taken
+  - 3. Affected Lot Disposition
+  - 4. Root Cause Investigation Status
+  - 5. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

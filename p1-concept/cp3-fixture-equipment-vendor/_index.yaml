@@ -1,122 +1,183 @@
-checkpoint_id: "P1-CP3"
-checkpoint_name: "Fixture / Equipment / Vendor Pre-Evaluation"
-checkpoint_name_zh: "夹具/设备/供应商前期评估"
+checkpoint_id: P1-CP3
+checkpoint_name: Fixture / Equipment / Vendor Pre-Evaluation
+checkpoint_name_zh: 夹具/设备/供应商前期评估
 phase: P1
 checkpoint_sequence: 3
-description: >
-  Evaluate fixture concepts, define equipment requirements, issue RFQs to vendors,
-  conduct feasibility reviews, and establish CAPEX budget. Long fixture lead times
-  make early vendor engagement critical for EVT schedule.
+description: 'Evaluate fixture concepts, define equipment requirements, issue RFQs
+  to vendors, conduct feasibility reviews, and establish CAPEX budget. Long fixture
+  lead times make early vendor engagement critical for EVT schedule.
 
+  '
 entry_criteria:
-  - "P1-CP2 MFG Test Architecture Spec approved"
-  - "Preliminary HW layout/package information available"
-
+- P1-CP2 MFG Test Architecture Spec approved
+- Preliminary HW layout/package information available
 exit_criteria:
-  - "Fixture Concept Proposal reviewed by MTE Lead and HW Design"
-  - "Equipment Requirement Spec (ERS) issued to at least 2 vendors"
-  - "Vendor RFQ responses received and evaluated"
-  - "CAPEX Budget Draft approved by MTE Manager"
-  - "Fixture feasibility confirmed (no showstoppers)"
-
+- Fixture Concept Proposal reviewed by MTE Lead and HW Design
+- Equipment Requirement Spec (ERS) issued to at least 2 vendors
+- Vendor RFQ responses received and evaluated
+- CAPEX Budget Draft approved by MTE Manager
+- Fixture feasibility confirmed (no showstoppers)
 documents:
-  - doc_id: "P1-CP3-FCP-001"
-    title: "Fixture Concept Proposal"
-    slug: "fixture-concept-proposal"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [Fixture, ICT, FCT, CAPEX, DFT]
-    required_sections:
-      - "1. Purpose"
-      - "2. Product Under Test (PUT) Overview"
-      - "3. Fixture Concept Options"
-      - "4. Preferred Concept and Rationale"
-      - "5. Feasibility Risks"
-      - "6. Revision History"
-
-  - doc_id: "P1-CP3-ERS-002"
-    title: "Equipment Requirement Spec (ERS)"
-    slug: "equipment-requirement-spec"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ERS, ATE, ICT, FCT, DIAG, UPH, CAPEX]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Functional Requirements"
-      - "3. Performance Requirements (UPH, Accuracy)"
-      - "4. Interface Requirements"
-      - "5. Environmental and Safety Requirements"
-      - "6. Compliance and Certification"
-      - "7. Revision History"
-
-  - doc_id: "P1-CP3-RFQ-003"
-    title: "Vendor RFQ / Vendor Selection Criteria"
-    slug: "vendor-rfq-selection-criteria"
-    doc_type: "tracker"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [RFQ, CAPEX, Fixture, ERS]
-    required_sections:
-      - "1. Purpose"
-      - "2. Vendor Candidate List"
-      - "3. RFQ Scope and Requirements"
-      - "4. Selection Criteria and Weighting"
-      - "5. Vendor Response Summary"
-      - "6. Recommendation and Decision"
-      - "7. Revision History"
-
-  - doc_id: "P1-CP3-FFR-004"
-    title: "Fixture Feasibility Review Notes"
-    slug: "fixture-feasibility-review"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [Fixture, ICT, DFT, "Coverage Hole"]
-    required_sections:
-      - "1. Review Date and Attendees"
-      - "2. Fixture Concept Reviewed"
-      - "3. Feasibility Findings"
-      - "4. Issues Identified"
-      - "5. Action Items"
-      - "6. Revision History"
-
-  - doc_id: "P1-CP3-CAP-005"
-    title: "CAPEX Budget Draft"
-    slug: "capex-budget-draft"
-    doc_type: "plan"
-    owner_role: "MTE Manager"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [CAPEX, Fixture, ATE, ICT, FCT, DIAG]
-    required_sections:
-      - "1. Purpose"
-      - "2. CAPEX Summary Table"
-      - "3. Assumptions"
-      - "4. Phase-by-Phase Spend Plan"
-      - "5. Approval Sign-Off"
-      - "6. Revision History"
-
+- doc_id: P1-CP3-FCP-001
+  title: Fixture Concept Proposal
+  slug: fixture-concept-proposal
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Fixture
+  - ICT
+  - FCT
+  - CAPEX
+  - DFT
+  required_sections:
+  - 1. Purpose
+  - 2. Product Under Test (PUT) Overview
+  - 3. Fixture Concept Options
+  - 4. Preferred Concept and Rationale
+  - 5. Feasibility Risks
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: P1-CP3-ERS-002
+  title: Equipment Requirement Spec (ERS)
+  slug: equipment-requirement-spec
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ERS
+  - ATE
+  - ICT
+  - FCT
+  - DIAG
+  - UPH
+  - CAPEX
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Functional Requirements
+  - 3. Performance Requirements (UPH, Accuracy)
+  - 4. Interface Requirements
+  - 5. Environmental and Safety Requirements
+  - 6. Compliance and Certification
+  - 7. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: P1-CP3-RFQ-003
+  title: Vendor RFQ / Vendor Selection Criteria
+  slug: vendor-rfq-selection-criteria
+  doc_type: tracker
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - RFQ
+  - CAPEX
+  - Fixture
+  - ERS
+  required_sections:
+  - 1. Purpose
+  - 2. Vendor Candidate List
+  - 3. RFQ Scope and Requirements
+  - 4. Selection Criteria and Weighting
+  - 5. Vendor Response Summary
+  - 6. Recommendation and Decision
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: P1-CP3-FFR-004
+  title: Fixture Feasibility Review Notes
+  slug: fixture-feasibility-review
+  doc_type: report
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - Fixture
+  - ICT
+  - DFT
+  - Coverage Hole
+  required_sections:
+  - 1. Review Date and Attendees
+  - 2. Fixture Concept Reviewed
+  - 3. Feasibility Findings
+  - 4. Issues Identified
+  - 5. Action Items
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: P1-CP3-CAP-005
+  title: CAPEX Budget Draft
+  slug: capex-budget-draft
+  doc_type: plan
+  owner_role: MTE Manager
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - CAPEX
+  - Fixture
+  - ATE
+  - ICT
+  - FCT
+  - DIAG
+  required_sections:
+  - 1. Purpose
+  - 2. CAPEX Summary Table
+  - 3. Assumptions
+  - 4. Phase-by-Phase Spend Plan
+  - 5. Approval Sign-Off
+  - 6. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

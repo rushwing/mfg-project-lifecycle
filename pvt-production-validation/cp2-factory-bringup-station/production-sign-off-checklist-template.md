@@ -15,6 +15,7 @@ product_families:
 - Embedded
 test_stations:
 - Universal
+production_stages: [All]
 owner_role: MTE Manager
 status: template-stub
 created_date: '2026-03-29'

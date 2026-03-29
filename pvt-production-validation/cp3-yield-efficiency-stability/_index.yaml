@@ -1,123 +1,179 @@
-checkpoint_id: "PVT-CP3"
-checkpoint_name: "Yield / Efficiency / Stability Validation"
-checkpoint_name_zh: "良率/效率/稳定性验证"
+checkpoint_id: PVT-CP3
+checkpoint_name: Yield / Efficiency / Stability Validation
+checkpoint_name_zh: 良率/效率/稳定性验证
 phase: PVT
 checkpoint_sequence: 3
-description: >
-  Validate that yield, UPH, and equipment stability meet MP targets under real
-  production conditions over a sustained period. Identify and resolve any escapes,
+description: 'Validate that yield, UPH, and equipment stability meet MP targets under
+  real production conditions over a sustained period. Identify and resolve any escapes,
   false fails, or downtime sources before MP handover.
 
+  '
 entry_criteria:
-  - "PVT-CP2 station qualifications (IQ/OQ) complete"
-  - "PVT build running (min 3 consecutive production days)"
-  - "SFC data collection active"
-
+- PVT-CP2 station qualifications (IQ/OQ) complete
+- PVT build running (min 3 consecutive production days)
+- SFC data collection active
 exit_criteria:
-  - "First Pass Yield ≥ target sustained over 3 consecutive days"
-  - "UPH Validation Report confirms UPH meets MP requirement"
-  - "Downtime Report: OEE ≥ target for all critical stations"
-  - "Escape/Leakage Analysis: no new coverage gaps identified"
-  - "False Fail rate ≤ 2% for all test items"
-
+- First Pass Yield ≥ target sustained over 3 consecutive days
+- UPH Validation Report confirms UPH meets MP requirement
+- 'Downtime Report: OEE ≥ target for all critical stations'
+- 'Escape/Leakage Analysis: no new coverage gaps identified'
+- False Fail rate ≤ 2% for all test items
 documents:
-  - doc_id: "PVT-CP3-PYR-001"
-    title: "PVT Yield Report"
-    slug: "pvt-yield-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [Yield, "True Fail", "False Fail", DPM, Retest, CAPA]
-    required_sections:
-      - "1. Purpose"
-      - "2. Build Period and Sample Size"
-      - "3. Yield by Station"
-      - "4. Yield Trend Chart"
-      - "5. Top Failure Modes"
-      - "6. Actions"
-      - "7. Revision History"
-
-  - doc_id: "PVT-CP3-UPH-002"
-    title: "UPH Validation Report"
-    slug: "uph-validation-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [UPH, "Cycle Time", "Takt Time", Bottleneck, OEE]
-    required_sections:
-      - "1. Purpose"
-      - "2. UPH Results vs. DVT Baseline vs. MP Target"
-      - "3. Cycle Time Stability"
-      - "4. Bottleneck Status"
-      - "5. Conclusion"
-      - "6. Revision History"
-
-  - doc_id: "PVT-CP3-DTR-003"
-    title: "Downtime Report"
-    slug: "downtime-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [OEE, UPH, Bottleneck, Fixture]
-    required_sections:
-      - "1. Purpose"
-      - "2. Downtime Summary by Station"
-      - "3. Root Cause Categories"
-      - "4. OEE Calculation"
-      - "5. Action Items"
-      - "6. Revision History"
-
-  - doc_id: "PVT-CP3-ELA-004"
-    title: "Escape / Leakage Analysis"
-    slug: "escape-leakage-analysis"
-    doc_type: "analysis"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: ["Test Escape", "Coverage Hole", DPM, CAPA, TRP]
-    required_sections:
-      - "1. Purpose"
-      - "2. Escape / Leakage Definition"
-      - "3. Analysis Methodology"
-      - "4. Known Escapes / Potential Gaps"
-      - "5. Mitigation Actions"
-      - "6. Residual Risk Acceptance"
-      - "7. Revision History"
-
-  - doc_id: "PVT-CP3-FFR-005"
-    title: "False Fail / Retest Reduction Report"
-    slug: "false-fail-retest-reduction-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: ["False Fail", Retest, "Marginal Fail", Yield, GR&R]
-    required_sections:
-      - "1. Purpose"
-      - "2. Current False Fail Rate by Test Item"
-      - "3. Root Cause Analysis"
-      - "4. Limit / Threshold Optimization"
-      - "5. Results After Optimization"
-      - "6. Revision History"
-
+- doc_id: PVT-CP3-PYR-001
+  title: PVT Yield Report
+  slug: pvt-yield-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Yield
+  - True Fail
+  - False Fail
+  - DPM
+  - Retest
+  - CAPA
+  required_sections:
+  - 1. Purpose
+  - 2. Build Period and Sample Size
+  - 3. Yield by Station
+  - 4. Yield Trend Chart
+  - 5. Top Failure Modes
+  - 6. Actions
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP3-UPH-002
+  title: UPH Validation Report
+  slug: uph-validation-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - UPH
+  - Cycle Time
+  - Takt Time
+  - Bottleneck
+  - OEE
+  required_sections:
+  - 1. Purpose
+  - 2. UPH Results vs. DVT Baseline vs. MP Target
+  - 3. Cycle Time Stability
+  - 4. Bottleneck Status
+  - 5. Conclusion
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP3-DTR-003
+  title: Downtime Report
+  slug: downtime-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - OEE
+  - UPH
+  - Bottleneck
+  - Fixture
+  required_sections:
+  - 1. Purpose
+  - 2. Downtime Summary by Station
+  - 3. Root Cause Categories
+  - 4. OEE Calculation
+  - 5. Action Items
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP3-ELA-004
+  title: Escape / Leakage Analysis
+  slug: escape-leakage-analysis
+  doc_type: analysis
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Test Escape
+  - Coverage Hole
+  - DPM
+  - CAPA
+  - TRP
+  required_sections:
+  - 1. Purpose
+  - 2. Escape / Leakage Definition
+  - 3. Analysis Methodology
+  - 4. Known Escapes / Potential Gaps
+  - 5. Mitigation Actions
+  - 6. Residual Risk Acceptance
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP3-FFR-005
+  title: False Fail / Retest Reduction Report
+  slug: false-fail-retest-reduction-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - False Fail
+  - Retest
+  - Marginal Fail
+  - Yield
+  - GR&R
+  required_sections:
+  - 1. Purpose
+  - 2. Current False Fail Rate by Test Item
+  - 3. Root Cause Analysis
+  - 4. Limit / Threshold Optimization
+  - 5. Results After Optimization
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

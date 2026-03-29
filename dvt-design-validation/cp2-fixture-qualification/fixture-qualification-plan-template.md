@@ -16,6 +16,7 @@ product_families:
 test_stations:
 - ICT
 - FCT
+production_stages: [SMT, FATP]
 owner_role: MTE Lead
 status: template-stub
 created_date: '2026-03-29'
