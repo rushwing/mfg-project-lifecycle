@@ -147,9 +147,11 @@ def generate_markdown(grouped: dict, total: int) -> str:
                 doc_id = doc.get("doc_id", "—")
                 title = doc.get("title", "—")
                 doc_type = doc.get("doc_type", "—")
-                priority = doc.get("priority", doc.get("embedding_priority", "—"))
+                priority = doc.get("priority", "—")
                 owner = doc.get("owner_role", "—")
-                rag = doc.get("rag_chunk_strategy", "—")
+                rag_strategy = doc.get("rag_chunk_strategy", "—")
+                embed_pri = doc.get("embedding_priority")
+                rag = f"{rag_strategy} · {embed_pri}" if embed_pri else rag_strategy
                 status = doc.get("status", "—")
                 file_path = doc.get("_file", "")
 
