@@ -173,6 +173,42 @@ documents:
   - 6. Revision History
   production_stages:
   - All
+- doc_id: P1-CP2-PFM-006
+  title: Process FMEA (PFMEA)
+  slug: process-fmea
+  doc_type: analysis
+  owner_role: Quality Engineer
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: high
+  controlled_terms:
+  - PFMEA
+  - RPN
+  - DFT
+  - SFC
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Process Step Identification
+  - 3. Potential Failure Modes
+  - 4. Potential Effects of Failure (Severity)
+  - 5. Potential Causes of Failure (Occurrence)
+  - 6. Current Controls (Detection)
+  - 7. RPN Calculation and Ranking
+  - 8. Recommended Actions
+  - 9. Action Results and Updated RPN
+  - 10. Revision History
+  production_stages:
+  - All
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true
