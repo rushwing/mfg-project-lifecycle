@@ -40,7 +40,11 @@ def log(msg: str, style: str = "") -> None:
 
 
 def find_templates() -> list[Path]:
-    return sorted(ROOT.rglob("*-template.md"))
+    results = set(ROOT.rglob("*-template.md"))
+    snippets_dir = ROOT / "shared" / "_snippets"
+    if snippets_dir.exists():
+        results |= set(snippets_dir.glob("*.md"))
+    return sorted(results)
 
 
 def load_template_metadata(templates: list[Path]) -> list[dict]:
@@ -178,7 +182,11 @@ def main():
 
     output_path = Path(args.output)
     output_path.write_text(markdown, encoding="utf-8")
-    log(f"\n[green]✓ DOC_INDEX.md written to {output_path.relative_to(ROOT)}[/green]")
+    try:
+        display_path = output_path.relative_to(ROOT)
+    except ValueError:
+        display_path = output_path
+    log(f"\n[green]✓ DOC_INDEX.md written to {display_path}[/green]")
     log(f"  Total documents indexed: {len(docs)}")
 
 

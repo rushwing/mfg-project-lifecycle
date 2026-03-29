@@ -160,7 +160,7 @@ def count_glossary_terms() -> int:
     if not glossary.exists():
         return 0
     content = glossary.read_text(encoding="utf-8")
-    return len(re.findall(r"^## ", content, re.MULTILINE))
+    return len(re.findall(r"^### ", content, re.MULTILINE))
 
 
 def main():

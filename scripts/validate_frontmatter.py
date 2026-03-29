@@ -45,8 +45,12 @@ def log(msg: str, style: str = "") -> None:
 
 
 def find_templates(search_path: Path) -> list[Path]:
-    """Find all *-template.md files under search_path."""
-    return sorted(search_path.rglob("*-template.md"))
+    """Find all *-template.md files under search_path, plus shared snippets."""
+    results = set(search_path.rglob("*-template.md"))
+    snippets_dir = ROOT / "shared" / "_snippets"
+    if snippets_dir.exists():
+        results |= set(snippets_dir.glob("*.md"))
+    return sorted(results)
 
 
 def load_schema() -> dict:

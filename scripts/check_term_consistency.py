@@ -130,7 +130,11 @@ def check_template(template_path: Path, glossary_data: dict, check_body: bool = 
 
 
 def find_templates(search_path: Path) -> list[Path]:
-    return sorted(search_path.rglob("*-template.md"))
+    results = set(search_path.rglob("*-template.md"))
+    snippets_dir = ROOT / "shared" / "_snippets"
+    if snippets_dir.exists():
+        results |= set(snippets_dir.glob("*.md"))
+    return sorted(results)
 
 
 def main():

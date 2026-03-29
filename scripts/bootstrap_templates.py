@@ -76,6 +76,7 @@ def build_frontmatter(doc: dict, checkpoint_id: str, phase: str, checkpoint_name
         "checkpoint": checkpoint_id.split("-")[1],  # CP1, CP2, etc.
         "checkpoint_name": checkpoint_name,
         "doc_type": doc.get("doc_type", "plan"),
+        "priority": doc.get("priority", "required"),
         "product_families": product_families,
         "test_stations": test_stations,
         "owner_role": doc.get("owner_role", "MTE Staff"),
