@@ -47,10 +47,13 @@ def parse_glossary_terms(glossary_path: Path) -> dict[str, dict]:
     - aliases: mapping of alias -> canonical form
 
     GLOSSARY structure:
-      ## Category heading   — section divider, does NOT define a term
-      ### Term Name         — individual term; sets current_term context
-        **Canonical Form:** `Term` — authoritative spelling
-        **Aliases:** a, b, c     — alternate names mapping to the canonical form
+      ## Category heading            — section divider, does NOT define a term
+      ### Term Name                  — individual term; sets current_term context
+        **Canonical Form:** `Term`       — authoritative English spelling
+        **Canonical Form (zh-CN):** `术语` — Simplified Chinese canonical form
+        **Canonical Form (zh-TW):** `術語` — Traditional Chinese canonical form
+        **Canonical Form (vi):** `...`   — Vietnamese canonical form (or "(pending)")
+        **Aliases:** a, b, c             — alternate names mapping to the canonical form
     """
     if not glossary_path.exists():
         log(f"[red]ERROR[/red] GLOSSARY.md not found at {glossary_path}", "red")
@@ -83,12 +86,14 @@ def parse_glossary_terms(glossary_path: Path) -> dict[str, dict]:
                 if alias:
                     aliases_map[alias.lower()] = current_term
 
-        # **Canonical Form:** `term` — register the backtick form as canonical
-        canonical_match = re.match(r"\*\*Canonical Form:\*\* `(.+?)`", line)
+        # **Canonical Form:** `term` — register the backtick form as canonical (English)
+        # **Canonical Form (zh-CN/zh-TW/vi):** `term` — register multilingual canonical forms
+        canonical_match = re.match(r"\*\*Canonical Form(?:\s*\([^)]+\))?\*\*: `(.+?)`", line)
         if canonical_match and current_term:
             canonical_form = canonical_match.group(1).strip()
-            canonical_terms.add(canonical_form)
-            aliases_map[canonical_form.lower()] = canonical_form
+            if canonical_form and canonical_form != "(pending)":
+                canonical_terms.add(canonical_form)
+                aliases_map[canonical_form.lower()] = canonical_form
 
     return {"canonical": canonical_terms, "aliases": aliases_map}
 

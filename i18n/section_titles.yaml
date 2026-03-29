@@ -1,0 +1,205 @@
+# i18n/section_titles.yaml
+#
+# Localized section headings for common required_sections entries.
+# English headings are the ground truth (as they appear in template required_sections).
+# Used by RAG agent to generate section headers in target language documents.
+#
+# Languages:
+#   zh-CN — Simplified Chinese (深圳/大陆工厂)
+#   zh-TW — Traditional Chinese (台湾工厂)
+#   vi    — Vietnamese (待定 / pending)
+#
+# Usage:
+#   section_zh = section_titles[en_heading].get("zh-CN", en_heading)
+
+# ─── Universal / Structural ──────────────────────────────────────────────────
+
+"Purpose and Scope":
+  zh-CN: "目的与范围"
+  zh-TW: "目的與範圍"
+  vi: "(pending)"
+
+"References":
+  zh-CN: "参考文件"
+  zh-TW: "參考文件"
+  vi: "(pending)"
+
+"Revision History":
+  zh-CN: "版本历史"
+  zh-TW: "版本歷史"
+  vi: "(pending)"
+
+"Glossary / Acronyms":
+  zh-CN: "术语表 / 缩略语"
+  zh-TW: "術語表 / 縮略語"
+  vi: "(pending)"
+
+"Open Issues / Action Items":
+  zh-CN: "未决问题 / 行动事项"
+  zh-TW: "未決問題 / 行動事項"
+  vi: "(pending)"
+
+"Approvals":
+  zh-CN: "审批"
+  zh-TW: "審批"
+  vi: "(pending)"
+
+# ─── Planning / Requirements ─────────────────────────────────────────────────
+
+"Background and Motivation":
+  zh-CN: "背景与动机"
+  zh-TW: "背景與動機"
+  vi: "(pending)"
+
+"Test Objectives":
+  zh-CN: "测试目标"
+  zh-TW: "測試目標"
+  vi: "(pending)"
+
+"Test Coverage":
+  zh-CN: "测试覆盖"
+  zh-TW: "測試覆蓋"
+  vi: "(pending)"
+
+"Test Coverage Matrix Summary":
+  zh-CN: "测试覆盖矩阵摘要"
+  zh-TW: "測試覆蓋矩陣摘要"
+  vi: "(pending)"
+
+"Entry and Exit Criteria":
+  zh-CN: "准入与退出准则"
+  zh-TW: "準入與退出準則"
+  vi: "(pending)"
+
+"Exit Criteria":
+  zh-CN: "退出准则"
+  zh-TW: "退出準則"
+  vi: "(pending)"
+
+"Station Ownership":
+  zh-CN: "测试站负责人"
+  zh-TW: "測試站負責人"
+  vi: "(pending)"
+
+"Station Flow":
+  zh-CN: "测试站流程"
+  zh-TW: "測試站流程"
+  vi: "(pending)"
+
+"Risk Assessment":
+  zh-CN: "风险评估"
+  zh-TW: "風險評估"
+  vi: "(pending)"
+
+"Assumptions and Constraints":
+  zh-CN: "假设与约束"
+  zh-TW: "假設與約束"
+  vi: "(pending)"
+
+# ─── Build / Execution ───────────────────────────────────────────────────────
+
+"Build Configuration":
+  zh-CN: "试产配置"
+  zh-TW: "試產配置"
+  vi: "(pending)"
+
+"Test Procedure":
+  zh-CN: "测试步骤"
+  zh-TW: "測試步驟"
+  vi: "(pending)"
+
+"Pass / Fail Criteria":
+  zh-CN: "通过 / 失效判定准则"
+  zh-TW: "通過 / 失效判定準則"
+  vi: "(pending)"
+
+"Defect Classification":
+  zh-CN: "缺陷分类"
+  zh-TW: "缺陷分類"
+  vi: "(pending)"
+
+"Retest Policy":
+  zh-CN: "复测政策"
+  zh-TW: "複測政策"
+  vi: "(pending)"
+
+# ─── Analysis / Reporting ────────────────────────────────────────────────────
+
+"Summary and Results":
+  zh-CN: "总结与结果"
+  zh-TW: "總結與結果"
+  vi: "(pending)"
+
+"Yield Analysis":
+  zh-CN: "良率分析"
+  zh-TW: "良率分析"
+  vi: "(pending)"
+
+"Failure Analysis":
+  zh-CN: "失效分析"
+  zh-TW: "失效分析"
+  vi: "(pending)"
+
+"Root Cause Analysis":
+  zh-CN: "根因分析"
+  zh-TW: "根因分析"
+  vi: "(pending)"
+
+"Corrective Actions":
+  zh-CN: "纠正措施"
+  zh-TW: "矯正措施"
+  vi: "(pending)"
+
+"Lessons Learned":
+  zh-CN: "经验总结"
+  zh-TW: "經驗總結"
+  vi: "(pending)"
+
+"Recommendations":
+  zh-CN: "建议"
+  zh-TW: "建議"
+  vi: "(pending)"
+
+# ─── Equipment / Fixture ─────────────────────────────────────────────────────
+
+"Equipment List":
+  zh-CN: "设备清单"
+  zh-TW: "設備清單"
+  vi: "(pending)"
+
+"Fixture Description":
+  zh-CN: "治具描述"
+  zh-TW: "治具描述"
+  vi: "(pending)"
+
+"Calibration Requirements":
+  zh-CN: "校准要求"
+  zh-TW: "校準要求"
+  vi: "(pending)"
+
+"Maintenance Schedule":
+  zh-CN: "维护计划"
+  zh-TW: "維護計畫"
+  vi: "(pending)"
+
+# ─── Production / Operations ─────────────────────────────────────────────────
+
+"Production Summary":
+  zh-CN: "生产摘要"
+  zh-TW: "生產摘要"
+  vi: "(pending)"
+
+"UPH / Capacity":
+  zh-CN: "每小时产出 / 产能"
+  zh-TW: "每小時產出 / 產能"
+  vi: "(pending)"
+
+"Traceability":
+  zh-CN: "可追溯性"
+  zh-TW: "可追溯性"
+  vi: "(pending)"
+
+"Change Control":
+  zh-CN: "变更管控"
+  zh-TW: "變更管控"
+  vi: "(pending)"

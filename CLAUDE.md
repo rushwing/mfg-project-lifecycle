@@ -101,3 +101,32 @@ When editing `_index.yaml` or frontmatter, the constrained enums are:
 | `owner_role` | `MTE Lead`, `MTE Staff`, `MTE Manager`, `NPI PM`, `Quality Engineer`, `Factory Ops` |
 | `test_stations` | `ICT`, `FCT`, `DIAG`, `BURN-IN`, `ATE`, `SYSTEM`, `OBA`, `SFC`, `Universal` |
 | `product_families` | `GPU`, `DC-L6`, `Automotive`, `Embedded`, `Universal` |
+| `production_stages` | `SMT`, `FATP`, `PACK`, `All` |
+| `priority` | `critical`, `required`, `recommended`, `optional` (lifecycle templates only; not required for Universal/snippets) |
+
+The `production_stages` field is derived from `test_stations` by `bootstrap_templates.py` (`ICT`→`SMT`, `FCT/DIAG/BURN-IN/ATE/SYSTEM`→`FATP`, `OBA`→`PACK`, `SFC/Universal`→`All`).
+
+### i18n
+
+**Design principle:** English Markdown is the single ground truth. Translations live in `i18n/` YAML files only — never in template frontmatter or `_index.yaml`.
+
+| File | Purpose |
+|------|---------|
+| `i18n/doc_titles.yaml` | Localized document titles for all 136 `doc_id`s (131 lifecycle + 5 snippets) |
+| `i18n/section_titles.yaml` | Localized section headings for ~35 common `required_sections` entries |
+| `i18n/README.md` | Usage instructions and RAG agent integration example |
+
+**Multilingual canonical forms in GLOSSARY.md:** Each of the 59 terms has three additional lines after `**Canonical Form:** \`X\``:
+```
+**Canonical Form (zh-CN):** `简体中文`
+**Canonical Form (zh-TW):** `繁體中文`
+**Canonical Form (vi):** *(pending)*
+```
+
+`check_term_consistency.py` parses all `**Canonical Form (...)**` lines (English + multilingual) and registers them as valid canonical terms. This allows templates to reference Chinese terms in `controlled_terms` when generating localized documents.
+
+Supported languages: `zh-CN` (深圳), `zh-TW` (台湾), `vi` (stub — pending).
+
+### Inference architecture reference
+
+`docs/agentic-rag-inference.md` documents the recommended on-premise LLM stack for the document generation agent: SGLang + PD separation + Radix Attention + xGrammar structured output. GLOSSARY.md is designed as a shared system prompt prefix that benefits from Radix Attention KV cache reuse across a generation batch.

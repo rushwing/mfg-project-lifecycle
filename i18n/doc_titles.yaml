@@ -1,0 +1,843 @@
+# i18n/doc_titles.yaml
+#
+# Localized document titles keyed by doc_id.
+# English title is the ground truth in each _index.yaml.
+# This file provides translated titles for RAG agent document generation.
+#
+# Languages:
+#   en    — English (ground truth, matches _index.yaml)
+#   zh-CN — Simplified Chinese (深圳/大陆工厂)
+#   zh-TW — Traditional Chinese (台湾工厂)
+#   vi    — Vietnamese (待定 / pending)
+#
+# Usage:
+#   agent = DocumentAgent(language="zh-CN")
+#   title = doc_titles[doc_id].get("zh-CN", doc_titles[doc_id]["en"])
+
+# ─── P1: Concept / Pre-NPI ──────────────────────────────────────────────────
+
+P1-CP1-PMR-001:
+  en: "PRD / MRD (Manufacturing Testability Review)"
+  zh-CN: "产品需求文档 / 市场需求文档（制造可测试性评审）"
+  zh-TW: "產品需求文件 / 市場需求文件（製造可測試性審查）"
+  vi: "(pending)"
+
+P1-CP1-HWS-002:
+  en: "HW Spec / System Spec (Testability Annotations)"
+  zh-CN: "硬件规格 / 系统规格（可测试性标注）"
+  zh-TW: "硬體規格 / 系統規格（可測試性標註）"
+  vi: "(pending)"
+
+P1-CP1-DFT-003:
+  en: "DFT / DFX Requirement"
+  zh-CN: "可测试性设计 / 面向X设计需求"
+  zh-TW: "可測試性設計 / 面向X設計需求"
+  vi: "(pending)"
+
+P1-CP1-TSO-004:
+  en: "Test Strategy Overview"
+  zh-CN: "测试策略总览"
+  zh-TW: "測試策略總覽"
+  vi: "(pending)"
+
+P1-CP1-RSK-005:
+  en: "Risk List / Open Issue List"
+  zh-CN: "风险清单 / 未决问题清单"
+  zh-TW: "風險清單 / 未決問題清單"
+  vi: "(pending)"
+
+P1-CP2-TAS-001:
+  en: "MFG Test Architecture Spec"
+  zh-CN: "制造测试架构规格"
+  zh-TW: "製造測試架構規格"
+  vi: "(pending)"
+
+P1-CP2-SFD-002:
+  en: "Station Flow Diagram / Test Flow Diagram"
+  zh-CN: "测试站流程图 / 测试流程图"
+  zh-TW: "測試站流程圖 / 測試流程圖"
+  vi: "(pending)"
+
+P1-CP2-TCM-003:
+  en: "High-Level Test Coverage Matrix"
+  zh-CN: "高层测试覆盖矩阵"
+  zh-TW: "高層測試覆蓋矩陣"
+  vi: "(pending)"
+
+P1-CP2-TEL-004:
+  en: "Test Equipment List"
+  zh-CN: "测试设备清单"
+  zh-TW: "測試設備清單"
+  vi: "(pending)"
+
+P1-CP2-CAP-005:
+  en: "Capacity Planning Draft / UPH Estimation Draft"
+  zh-CN: "产能规划草案 / UPH估算草案"
+  zh-TW: "產能規劃草案 / UPH估算草案"
+  vi: "(pending)"
+
+P1-CP3-FCP-001:
+  en: "Fixture Concept Proposal"
+  zh-CN: "治具概念方案"
+  zh-TW: "治具概念方案"
+  vi: "(pending)"
+
+P1-CP3-ERS-002:
+  en: "Equipment Requirement Spec (ERS)"
+  zh-CN: "设备需求规格（ERS）"
+  zh-TW: "設備需求規格（ERS）"
+  vi: "(pending)"
+
+P1-CP3-RFQ-003:
+  en: "Vendor RFQ / Vendor Selection Criteria"
+  zh-CN: "供应商询价单 / 供应商选择标准"
+  zh-TW: "供應商詢價單 / 供應商選擇標準"
+  vi: "(pending)"
+
+P1-CP3-FFR-004:
+  en: "Fixture Feasibility Review Notes"
+  zh-CN: "治具可行性评审记录"
+  zh-TW: "治具可行性審查記錄"
+  vi: "(pending)"
+
+P1-CP3-CAP-005:
+  en: "CAPEX Budget Draft"
+  zh-CN: "资本支出预算草案"
+  zh-TW: "資本支出預算草案"
+  vi: "(pending)"
+
+P1-CP4-NBP-001:
+  en: "NPI Build Plan (Initial)"
+  zh-CN: "新品导入试产计划（初稿）"
+  zh-TW: "新品導入試產計畫（初稿）"
+  vi: "(pending)"
+
+P1-CP4-BOD-002:
+  en: "BOD / EOD Template"
+  zh-CN: "班前/班后会议模板"
+  zh-TW: "班前/班後會議模板"
+  vi: "(pending)"
+
+P1-CP4-RAI-003:
+  en: "RAID Log (Risk / Action / Issue / Dependency)"
+  zh-CN: "RAID日志（风险 / 行动 / 问题 / 依赖）"
+  zh-TW: "RAID日誌（風險 / 行動 / 問題 / 依賴）"
+  vi: "(pending)"
+
+P1-CP4-VCP-004:
+  en: "Version Control Plan (HW / SW / Test)"
+  zh-CN: "版本控制计划（硬件 / 软件 / 测试）"
+  zh-TW: "版本控制計畫（硬體 / 軟體 / 測試）"
+  vi: "(pending)"
+
+P1-CP4-PMT-005:
+  en: "Program Milestone Tracker"
+  zh-CN: "项目里程碑追踪表"
+  zh-TW: "專案里程碑追蹤表"
+  vi: "(pending)"
+
+# ─── EVT: Engineering Validation ────────────────────────────────────────────
+
+EVT-CP1-EBP-001:
+  en: "EVT Build Plan"
+  zh-CN: "EVT试产计划"
+  zh-TW: "EVT試產計畫"
+  vi: "(pending)"
+
+EVT-CP1-BBC-002:
+  en: "Board Bring-Up Checklist"
+  zh-CN: "电路板上电检查清单"
+  zh-TW: "電路板上電檢查清單"
+  vi: "(pending)"
+
+EVT-CP1-TRC-003:
+  en: "Test Readiness Checklist"
+  zh-CN: "测试就绪检查清单"
+  zh-TW: "測試就緒檢查清單"
+  vi: "(pending)"
+
+EVT-CP1-GSD-004:
+  en: "Golden Sample Definition"
+  zh-CN: "黄金样机定义"
+  zh-TW: "黃金樣機定義"
+  vi: "(pending)"
+
+EVT-CP1-VXM-005:
+  en: "HW / SW / FW Version Matrix"
+  zh-CN: "硬件 / 软件 / 固件版本矩阵"
+  zh-TW: "硬體 / 軟體 / 韌體版本矩陣"
+  vi: "(pending)"
+
+EVT-CP2-TRP-001:
+  en: "TRP (Test Requirement Plan / Test Readiness Plan)"
+  zh-CN: "测试需求计划（TRP）"
+  zh-TW: "測試需求計畫（TRP）"
+  vi: "(pending)"
+
+EVT-CP2-TCP-002:
+  en: "Test Plan (ICT / FCT / DIAG)"
+  zh-CN: "测试计划（在路测试 / 功能测试 / 诊断）"
+  zh-TW: "測試計畫（在路測試 / 功能測試 / 診斷）"
+  vi: "(pending)"
+
+EVT-CP2-TCM-003:
+  en: "Test Coverage Matrix (Detailed)"
+  zh-CN: "详细测试覆盖矩阵"
+  zh-TW: "詳細測試覆蓋矩陣"
+  vi: "(pending)"
+
+EVT-CP2-FCP-004:
+  en: "Failure Criteria / Pass-Fail Criteria"
+  zh-CN: "失效判定准则 / 通过-失效准则"
+  zh-TW: "失效判定準則 / 通過-失效準則"
+  vi: "(pending)"
+
+EVT-CP2-TCL-005:
+  en: "Test Case List / Test Item Spec"
+  zh-CN: "测试用例清单 / 测试项目规格"
+  zh-TW: "測試案例清單 / 測試項目規格"
+  vi: "(pending)"
+
+EVT-CP3-TFI-001:
+  en: "Test Framework Integration Plan"
+  zh-CN: "测试框架集成计划"
+  zh-TW: "測試框架整合計畫"
+  vi: "(pending)"
+
+EVT-CP3-SWA-002:
+  en: "SW Architecture for MFG Test"
+  zh-CN: "制造测试软件架构"
+  zh-TW: "製造測試軟體架構"
+  vi: "(pending)"
+
+EVT-CP3-DDP-003:
+  en: "DIAG Development Plan"
+  zh-CN: "诊断开发计划"
+  zh-TW: "診斷開發計畫"
+  vi: "(pending)"
+
+EVT-CP3-LTS-004:
+  en: "Logging and Traceability Spec"
+  zh-CN: "日志与可追溯性规格"
+  zh-TW: "日誌與可追溯性規格"
+  vi: "(pending)"
+
+EVT-CP3-SFR-005:
+  en: "SFC Interface Requirement"
+  zh-CN: "车间流程控制接口需求"
+  zh-TW: "車間流程控制介面需求"
+  vi: "(pending)"
+
+EVT-CP4-FDS-001:
+  en: "Fixture Design Spec"
+  zh-CN: "治具设计规格"
+  zh-TW: "治具設計規格"
+  vi: "(pending)"
+
+EVT-CP4-FBM-002:
+  en: "Fixture BOM"
+  zh-CN: "治具物料清单"
+  zh-TW: "治具物料清單"
+  vi: "(pending)"
+
+EVT-CP4-FDR-003:
+  en: "Fixture Debug Report"
+  zh-CN: "治具调试报告"
+  zh-TW: "治具調試報告"
+  vi: "(pending)"
+
+EVT-CP4-ESI-004:
+  en: "Equipment Setup Instruction"
+  zh-CN: "设备安装调试指导"
+  zh-TW: "設備安裝調試指導"
+  vi: "(pending)"
+
+EVT-CP4-VAT-005:
+  en: "Vendor Action Tracker"
+  zh-CN: "供应商行动追踪表"
+  zh-TW: "供應商行動追蹤表"
+  vi: "(pending)"
+
+EVT-CP5-DBR-001:
+  en: "EVT Daily Build Report"
+  zh-CN: "EVT每日试产报告"
+  zh-TW: "EVT每日試產報告"
+  vi: "(pending)"
+
+EVT-CP5-DTL-002:
+  en: "Defect Tracking List / Bug List"
+  zh-CN: "缺陷追踪清单 / Bug列表"
+  zh-TW: "缺陷追蹤清單 / Bug清單"
+  vi: "(pending)"
+
+EVT-CP5-RCA-003:
+  en: "Root Cause Analysis Report (Initial)"
+  zh-CN: "根因分析报告（初版）"
+  zh-TW: "根因分析報告（初版）"
+  vi: "(pending)"
+
+EVT-CP5-ECR-004:
+  en: "EVT Exit Criteria Review"
+  zh-CN: "EVT退出准则评审"
+  zh-TW: "EVT退出準則審查"
+  vi: "(pending)"
+
+EVT-CP5-EPR-005:
+  en: "EVT Phase Summary Report"
+  zh-CN: "EVT阶段总结报告"
+  zh-TW: "EVT階段總結報告"
+  vi: "(pending)"
+
+# ─── DVT: Design Validation ──────────────────────────────────────────────────
+
+DVT-CP1-DBP-001:
+  en: "DVT Build Plan"
+  zh-CN: "DVT试产计划"
+  zh-TW: "DVT試產計畫"
+  vi: "(pending)"
+
+DVT-CP1-TRP-002:
+  en: "Updated TRP / Test Plan"
+  zh-CN: "更新版测试需求计划 / 测试计划"
+  zh-TW: "更新版測試需求計畫 / 測試計畫"
+  vi: "(pending)"
+
+DVT-CP1-DCR-003:
+  en: "Detailed Coverage Report"
+  zh-CN: "详细覆盖率报告"
+  zh-TW: "詳細覆蓋率報告"
+  vi: "(pending)"
+
+DVT-CP1-TGA-004:
+  en: "Test Gap Analysis"
+  zh-CN: "测试差距分析"
+  zh-TW: "測試差距分析"
+  vi: "(pending)"
+
+DVT-CP1-DEP-005:
+  en: "Diagnostic Enhancement Plan"
+  zh-CN: "诊断增强计划"
+  zh-TW: "診斷增強計畫"
+  vi: "(pending)"
+
+DVT-CP2-FQP-001:
+  en: "Fixture Qualification Plan"
+  zh-CN: "治具认证计划"
+  zh-TW: "治具認證計畫"
+  vi: "(pending)"
+
+DVT-CP2-GRR-002:
+  en: "GR&R Report (Gauge R&R)"
+  zh-CN: "量具重复性与再现性报告（GR&R）"
+  zh-TW: "量具重複性與再現性報告（GR&R）"
+  vi: "(pending)"
+
+DVT-CP2-FAR-003:
+  en: "Fixture Acceptance Report"
+  zh-CN: "治具验收报告"
+  zh-TW: "治具驗收報告"
+  vi: "(pending)"
+
+DVT-CP2-ECP-004:
+  en: "Equipment Calibration Plan"
+  zh-CN: "设备校准计划"
+  zh-TW: "設備校準計畫"
+  vi: "(pending)"
+
+DVT-CP2-PMP-005:
+  en: "Preventive Maintenance Plan"
+  zh-CN: "预防性维护计划"
+  zh-TW: "預防性維護計畫"
+  vi: "(pending)"
+
+DVT-CP3-RNT-001:
+  en: "Release Note (Test SW / FW / DIAG)"
+  zh-CN: "发布说明（测试软件 / 固件 / 诊断）"
+  zh-TW: "發布說明（測試軟體 / 韌體 / 診斷）"
+  vi: "(pending)"
+
+DVT-CP3-VRP-002:
+  en: "Version Release Plan"
+  zh-CN: "版本发布计划"
+  zh-TW: "版本發布計畫"
+  vi: "(pending)"
+
+DVT-CP3-CCM-003:
+  en: "Configuration Control Matrix"
+  zh-CN: "配置控制矩阵"
+  zh-TW: "配置控制矩陣"
+  vi: "(pending)"
+
+DVT-CP3-SCL-004:
+  en: "Software Change Log"
+  zh-CN: "软件变更日志"
+  zh-TW: "軟體變更日誌"
+  vi: "(pending)"
+
+DVT-CP3-EIA-005:
+  en: "ECO / ECN Impact Assessment"
+  zh-CN: "工程变更通知影响评估"
+  zh-TW: "工程變更通知影響評估"
+  vi: "(pending)"
+
+DVT-CP4-UPH-001:
+  en: "UPH Study Report"
+  zh-CN: "每小时产出研究报告"
+  zh-TW: "每小時產出研究報告"
+  vi: "(pending)"
+
+DVT-CP4-CTB-002:
+  en: "Cycle Time Breakdown"
+  zh-CN: "节拍时间细分分析"
+  zh-TW: "節拍時間細分分析"
+  vi: "(pending)"
+
+DVT-CP4-SLA-003:
+  en: "Station Loading Analysis"
+  zh-CN: "测试站负荷分析"
+  zh-TW: "測試站負荷分析"
+  vi: "(pending)"
+
+DVT-CP4-HMP-004:
+  en: "Headcount / Machine Planning Sheet"
+  zh-CN: "人力 / 设备规划表"
+  zh-TW: "人力 / 設備規劃表"
+  vi: "(pending)"
+
+DVT-CP4-BOT-005:
+  en: "Bottleneck Analysis Report"
+  zh-CN: "瓶颈分析报告"
+  zh-TW: "瓶頸分析報告"
+  vi: "(pending)"
+
+DVT-CP5-FAR-001:
+  en: "FA Request / FA Report"
+  zh-CN: "失效分析申请 / 失效分析报告"
+  zh-TW: "失效分析申請 / 失效分析報告"
+  vi: "(pending)"
+
+DVT-CP5-PAR-002:
+  en: "Pareto Report"
+  zh-CN: "帕累托分析报告"
+  zh-TW: "帕累托分析報告"
+  vi: "(pending)"
+
+DVT-CP5-YTR-003:
+  en: "Yield Trend Report"
+  zh-CN: "良率趋势报告"
+  zh-TW: "良率趨勢報告"
+  vi: "(pending)"
+
+DVT-CP5-RTA-004:
+  en: "Retest Analysis Report"
+  zh-CN: "复测分析报告"
+  zh-TW: "複測分析報告"
+  vi: "(pending)"
+
+DVT-CP5-CAP-005:
+  en: "CAPA (Corrective Action and Preventive Action)"
+  zh-CN: "纠正及预防措施（CAPA）"
+  zh-TW: "矯正及預防措施（CAPA）"
+  vi: "(pending)"
+
+DVT-CP6-DEC-001:
+  en: "DVT Exit Criteria Checklist"
+  zh-CN: "DVT退出准则检查清单"
+  zh-TW: "DVT退出準則檢查清單"
+  vi: "(pending)"
+
+DVT-CP6-OIC-002:
+  en: "Open Issue Closure Plan"
+  zh-CN: "未决问题关闭计划"
+  zh-TW: "未決問題關閉計畫"
+  vi: "(pending)"
+
+DVT-CP6-DSR-003:
+  en: "DVT Summary Report"
+  zh-CN: "DVT阶段总结报告"
+  zh-TW: "DVT階段總結報告"
+  vi: "(pending)"
+
+DVT-CP6-PRD-004:
+  en: "PVT Readiness Review Deck"
+  zh-CN: "PVT就绪评审材料"
+  zh-TW: "PVT就緒審查材料"
+  vi: "(pending)"
+
+# ─── PVT: Production Validation ──────────────────────────────────────────────
+
+PVT-CP1-PBP-001:
+  en: "PVT Build Plan"
+  zh-CN: "PVT试产计划"
+  zh-TW: "PVT試產計畫"
+  vi: "(pending)"
+
+PVT-CP1-MTF-002:
+  en: "Mass Production Test Flow"
+  zh-CN: "量产测试流程"
+  zh-TW: "量產測試流程"
+  vi: "(pending)"
+
+PVT-CP1-SOP-003:
+  en: "SOP / WI (Work Instruction)"
+  zh-CN: "标准作业程序 / 工作指导书"
+  zh-TW: "標準作業程序 / 工作指導書"
+  vi: "(pending)"
+
+PVT-CP1-OTM-004:
+  en: "Operator Training Material"
+  zh-CN: "操作员培训材料"
+  zh-TW: "操作員培訓材料"
+  vi: "(pending)"
+
+PVT-CP1-LQP-005:
+  en: "Line Qualification Plan"
+  zh-CN: "产线认证计划"
+  zh-TW: "產線認證計畫"
+  vi: "(pending)"
+
+PVT-CP2-LBC-001:
+  en: "Line Bring-Up Checklist"
+  zh-CN: "产线上线检查清单"
+  zh-TW: "產線上線檢查清單"
+  vi: "(pending)"
+
+PVT-CP2-SRC-002:
+  en: "Site Readiness Checklist"
+  zh-CN: "厂区就绪检查清单"
+  zh-TW: "廠區就緒檢查清單"
+  vi: "(pending)"
+
+PVT-CP2-TIQ-003:
+  en: "Tester Installation Qualification (IQ)"
+  zh-CN: "测试机安装确认（IQ）"
+  zh-TW: "測試機安裝確認（IQ）"
+  vi: "(pending)"
+
+PVT-CP2-TOQ-004:
+  en: "Tester Operational Qualification (OQ)"
+  zh-CN: "测试机运行确认（OQ）"
+  zh-TW: "測試機運行確認（OQ）"
+  vi: "(pending)"
+
+PVT-CP2-PSC-005:
+  en: "Production Sign-Off Checklist"
+  zh-CN: "量产签核检查清单"
+  zh-TW: "量產簽核檢查清單"
+  vi: "(pending)"
+
+PVT-CP3-PYR-001:
+  en: "PVT Yield Report"
+  zh-CN: "PVT良率报告"
+  zh-TW: "PVT良率報告"
+  vi: "(pending)"
+
+PVT-CP3-UPH-002:
+  en: "UPH Validation Report"
+  zh-CN: "每小时产出验证报告"
+  zh-TW: "每小時產出驗證報告"
+  vi: "(pending)"
+
+PVT-CP3-DTR-003:
+  en: "Downtime Report"
+  zh-CN: "停机报告"
+  zh-TW: "停機報告"
+  vi: "(pending)"
+
+PVT-CP3-ELA-004:
+  en: "Escape / Leakage Analysis"
+  zh-CN: "测试逃逸 / 泄漏分析"
+  zh-TW: "測試逃逸 / 洩漏分析"
+  vi: "(pending)"
+
+PVT-CP3-FFR-005:
+  en: "False Fail / Retest Reduction Report"
+  zh-CN: "误判失效 / 复测削减报告"
+  zh-TW: "誤判失效 / 複測削減報告"
+  vi: "(pending)"
+
+PVT-CP4-SVR-001:
+  en: "SFC Validation Report"
+  zh-CN: "车间流程控制验证报告"
+  zh-TW: "車間流程控制驗證報告"
+  vi: "(pending)"
+
+PVT-CP4-TMD-002:
+  en: "Traceability Mapping Document"
+  zh-CN: "可追溯性映射文档"
+  zh-TW: "可追溯性映射文件"
+  vi: "(pending)"
+
+PVT-CP4-DUV-003:
+  en: "Data Upload Validation Report"
+  zh-CN: "数据上传验证报告"
+  zh-TW: "數據上傳驗證報告"
+  vi: "(pending)"
+
+PVT-CP4-SNC-004:
+  en: "Serial Number Control Plan"
+  zh-CN: "序列号管控计划"
+  zh-TW: "序列號管控計畫"
+  vi: "(pending)"
+
+PVT-CP4-RWF-005:
+  en: "Repair / Rework Flow Spec"
+  zh-CN: "维修 / 返工流程规格"
+  zh-TW: "維修 / 返工流程規格"
+  vi: "(pending)"
+
+PVT-CP5-PER-001:
+  en: "PVT Exit Report"
+  zh-CN: "PVT退出报告"
+  zh-TW: "PVT退出報告"
+  vi: "(pending)"
+
+PVT-CP5-MPR-002:
+  en: "MP Release Recommendation"
+  zh-CN: "量产发布建议"
+  zh-TW: "量產發布建議"
+  vi: "(pending)"
+
+PVT-CP5-CTP-003:
+  en: "Control Plan"
+  zh-CN: "管控计划"
+  zh-TW: "管控計畫"
+  vi: "(pending)"
+
+PVT-CP5-CEP-004:
+  en: "Contingency / Escalation Plan"
+  zh-CN: "应急 / 升级处理计划"
+  zh-TW: "應急 / 升級處理計畫"
+  vi: "(pending)"
+
+PVT-CP5-HPF-005:
+  en: "Handover Package to Factory Ops"
+  zh-CN: "工厂运营交接包"
+  zh-TW: "工廠運營交接包"
+  vi: "(pending)"
+
+PVT-CP6-PLL-001:
+  en: "PVT Lessons Learned"
+  zh-CN: "PVT经验总结"
+  zh-TW: "PVT經驗總結"
+  vi: "(pending)"
+
+PVT-CP6-OIT-002:
+  en: "Open Issues for MP Tracker"
+  zh-CN: "量产未决问题追踪表"
+  zh-TW: "量產未決問題追蹤表"
+  vi: "(pending)"
+
+PVT-CP6-PRN-003:
+  en: "Phase Retrospective Notes"
+  zh-CN: "阶段回顾记录"
+  zh-TW: "階段回顧記錄"
+  vi: "(pending)"
+
+# ─── MP: Mass Production ─────────────────────────────────────────────────────
+
+MP-CP1-DPR-001:
+  en: "Daily Production Report"
+  zh-CN: "每日生产报告"
+  zh-TW: "每日生產報告"
+  vi: "(pending)"
+
+MP-CP1-BOD-002:
+  en: "BOD / EOD Report"
+  zh-CN: "班前/班后会议报告"
+  zh-TW: "班前/班後會議報告"
+  vi: "(pending)"
+
+MP-CP1-WIO-003:
+  en: "WIP / Input-Output Report"
+  zh-CN: "在制品 / 进出量报告"
+  zh-TW: "在製品 / 進出量報告"
+  vi: "(pending)"
+
+MP-CP1-YDB-004:
+  en: "Yield Dashboard"
+  zh-CN: "良率看板"
+  zh-TW: "良率看板"
+  vi: "(pending)"
+
+MP-CP1-DEL-005:
+  en: "Downtime / Escalation Log"
+  zh-CN: "停机 / 升级处理日志"
+  zh-TW: "停機 / 升級處理日誌"
+  vi: "(pending)"
+
+MP-CP2-MRN-001:
+  en: "MP Release Note"
+  zh-CN: "量产发布说明"
+  zh-TW: "量產發布說明"
+  vi: "(pending)"
+
+MP-CP2-CML-002:
+  en: "Change Management Log"
+  zh-CN: "变更管理日志"
+  zh-TW: "變更管理日誌"
+  vi: "(pending)"
+
+MP-CP2-EIT-003:
+  en: "ECO / ECN Implementation Tracker"
+  zh-CN: "工程变更通知实施追踪表"
+  zh-TW: "工程變更通知實施追蹤表"
+  vi: "(pending)"
+
+MP-CP2-TPR-004:
+  en: "Test Program Revision History"
+  zh-CN: "测试程序版本历史"
+  zh-TW: "測試程序版本歷史"
+  vi: "(pending)"
+
+MP-CP2-GUM-005:
+  en: "Golden Unit Maintenance Record"
+  zh-CN: "黄金样机维护记录"
+  zh-TW: "黃金樣機維護記錄"
+  vi: "(pending)"
+
+MP-CP3-IQR-001:
+  en: "Incoming Quality Report / IQC Report"
+  zh-CN: "来料质量报告 / IQC报告"
+  zh-TW: "來料品質報告 / IQC報告"
+  vi: "(pending)"
+
+MP-CP3-SIT-002:
+  en: "Supplier Issue Tracker"
+  zh-CN: "供应商问题追踪表"
+  zh-TW: "供應商問題追蹤表"
+  vi: "(pending)"
+
+MP-CP3-NMR-003:
+  en: "NCR / MRB Report"
+  zh-CN: "不合格品报告 / 物料审查委员会报告"
+  zh-TW: "不合格品報告 / 物料審查委員會報告"
+  vi: "(pending)"
+
+MP-CP3-CRA-004:
+  en: "Component Risk Assessment"
+  zh-CN: "零件风险评估"
+  zh-TW: "零件風險評估"
+  vi: "(pending)"
+
+MP-CP3-CAR-005:
+  en: "Containment Action Report"
+  zh-CN: "遏制行动报告"
+  zh-TW: "遏制行動報告"
+  vi: "(pending)"
+
+MP-CP4-YIP-001:
+  en: "Yield Improvement Plan"
+  zh-CN: "良率改善计划"
+  zh-TW: "良率改善計畫"
+  vi: "(pending)"
+
+MP-CP4-CRP-002:
+  en: "Cost Reduction Plan"
+  zh-CN: "成本削减计划"
+  zh-TW: "成本削減計畫"
+  vi: "(pending)"
+
+MP-CP4-TTO-003:
+  en: "Test Time Optimization Report"
+  zh-CN: "测试时间优化报告"
+  zh-TW: "測試時間優化報告"
+  vi: "(pending)"
+
+MP-CP4-SCP-004:
+  en: "Station Consolidation Proposal"
+  zh-CN: "测试站合并方案"
+  zh-TW: "測試站合併方案"
+  vi: "(pending)"
+
+MP-CP4-PAP-005:
+  en: "Preventive Action Plan"
+  zh-CN: "预防行动计划"
+  zh-TW: "預防行動計畫"
+  vi: "(pending)"
+
+MP-CP5-MSR-001:
+  en: "MP Phase Summary Report"
+  zh-CN: "量产阶段总结报告"
+  zh-TW: "量產階段總結報告"
+  vi: "(pending)"
+
+MP-CP5-FLL-002:
+  en: "Final Lessons Learned"
+  zh-CN: "最终经验总结"
+  zh-TW: "最終經驗總結"
+  vi: "(pending)"
+
+MP-CP5-BPP-003:
+  en: "Best Practice / Playbook"
+  zh-CN: "最佳实践 / 操作手册"
+  zh-TW: "最佳實踐 / 操作手冊"
+  vi: "(pending)"
+
+MP-CP5-KBU-004:
+  en: "Knowledge Base Update"
+  zh-CN: "知识库更新"
+  zh-TW: "知識庫更新"
+  vi: "(pending)"
+
+MP-CP5-PCR-005:
+  en: "Project Closure Report"
+  zh-CN: "项目结项报告"
+  zh-TW: "專案結項報告"
+  vi: "(pending)"
+
+MP-CP6-DFF-001:
+  en: "DFT / DFX Feedback Report"
+  zh-CN: "可测试性设计 / 面向X设计反馈报告"
+  zh-TW: "可測試性設計 / 面向X設計回饋報告"
+  vi: "(pending)"
+
+MP-CP6-FRA-002:
+  en: "Field Return / RMA Analysis Summary"
+  zh-CN: "现场返厂 / 退货授权分析总结"
+  zh-TW: "現場返廠 / 退貨授權分析總結"
+  vi: "(pending)"
+
+MP-CP6-TES-003:
+  en: "Test Escape Summary"
+  zh-CN: "测试逃逸总结"
+  zh-TW: "測試逃逸總結"
+  vi: "(pending)"
+
+MP-CP6-NFD-004:
+  en: "NPI Feedback to Design Team"
+  zh-CN: "新品导入向设计团队反馈"
+  zh-TW: "新品導入向設計團隊回饋"
+  vi: "(pending)"
+
+# ─── Shared Snippets ─────────────────────────────────────────────────────────
+
+SHARED-SNIP-PFC-001:
+  en: "Pass/Fail Criteria Boilerplate"
+  zh-CN: "通过/失效判定准则样板"
+  zh-TW: "通過/失效判定準則樣板"
+  vi: "(pending)"
+
+SHARED-SNIP-ELD-002:
+  en: "Escape / Leakage Definition Reference"
+  zh-CN: "测试逃逸 / 泄漏定义参考"
+  zh-TW: "測試逃逸 / 洩漏定義參考"
+  vi: "(pending)"
+
+SHARED-SNIP-UPH-003:
+  en: "UPH Calculation Method"
+  zh-CN: "每小时产出计算方法"
+  zh-TW: "每小時產出計算方法"
+  vi: "(pending)"
+
+SHARED-SNIP-GRR-004:
+  en: "GR&R Acceptance Criteria Reference"
+  zh-CN: "量具重复性与再现性验收准则参考"
+  zh-TW: "量具重複性與再現性驗收準則參考"
+  vi: "(pending)"
+
+SHARED-SNIP-DFT-005:
+  en: "DFT Coverage Table Template"
+  zh-CN: "可测试性设计覆盖率表格模板"
+  zh-TW: "可測試性設計覆蓋率表格模板"
+  vi: "(pending)"
