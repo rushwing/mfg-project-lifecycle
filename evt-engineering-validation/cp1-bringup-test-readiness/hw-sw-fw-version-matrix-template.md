@@ -7,6 +7,7 @@ phase: EVT
 checkpoint: CP1
 checkpoint_name: Sample Receipt and Basic Bring-Up
 doc_type: tracker
+priority: required
 product_families:
 - GPU
 - DC-L6

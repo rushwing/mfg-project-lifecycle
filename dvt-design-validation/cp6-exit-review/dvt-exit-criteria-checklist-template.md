@@ -7,6 +7,7 @@ phase: DVT
 checkpoint: CP6
 checkpoint_name: Phase Exit Review
 doc_type: checklist
+priority: critical
 product_families:
 - GPU
 - DC-L6

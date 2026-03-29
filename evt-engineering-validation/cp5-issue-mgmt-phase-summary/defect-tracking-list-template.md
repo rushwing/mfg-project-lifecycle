@@ -7,6 +7,7 @@ phase: EVT
 checkpoint: CP5
 checkpoint_name: Issue Management and Phase Summary
 doc_type: tracker
+priority: critical
 product_families:
 - GPU
 - DC-L6

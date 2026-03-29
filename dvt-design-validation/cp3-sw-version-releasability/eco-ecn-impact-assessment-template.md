@@ -7,6 +7,7 @@ phase: DVT
 checkpoint: CP3
 checkpoint_name: Software Version Management and Releasability
 doc_type: analysis
+priority: required
 product_families:
 - GPU
 - DC-L6

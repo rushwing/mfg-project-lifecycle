@@ -7,6 +7,7 @@ phase: MP
 checkpoint: CP3
 checkpoint_name: Incoming Quality and Anomaly Management
 doc_type: report
+priority: critical
 product_families:
 - GPU
 - DC-L6

@@ -7,6 +7,7 @@ phase: DVT
 checkpoint: CP5
 checkpoint_name: Failure Analysis and Yield Improvement
 doc_type: report
+priority: critical
 product_families:
 - GPU
 - DC-L6

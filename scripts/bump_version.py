@@ -151,7 +151,11 @@ def update_changelog(old_version: str, new_version: str, release_date: str) -> N
 
 def count_templates() -> int:
     """Count current template files for release notes."""
-    return len(list(ROOT.rglob("*-template.md")))
+    results = set(ROOT.rglob("*-template.md"))
+    snippets_dir = ROOT / "shared" / "_snippets"
+    if snippets_dir.exists():
+        results |= set(snippets_dir.glob("*.md"))
+    return len(results)
 
 
 def count_glossary_terms() -> int:

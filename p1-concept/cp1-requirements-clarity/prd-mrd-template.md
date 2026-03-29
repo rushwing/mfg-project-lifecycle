@@ -7,6 +7,7 @@ phase: P1
 checkpoint: CP1
 checkpoint_name: Requirements Clarification and Testability Input
 doc_type: spec
+priority: required
 product_families:
 - GPU
 - DC-L6

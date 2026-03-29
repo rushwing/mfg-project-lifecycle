@@ -7,6 +7,7 @@ phase: MP
 checkpoint: CP5
 checkpoint_name: Project Closure and Knowledge Archival
 doc_type: report
+priority: required
 product_families:
 - GPU
 - DC-L6

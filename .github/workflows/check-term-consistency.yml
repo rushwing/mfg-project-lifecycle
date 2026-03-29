@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "**/*-template.md"
+      - "shared/_snippets/*.md"
       - "GLOSSARY.md"
       - "scripts/check_term_consistency.py"
       - "pyproject.toml"

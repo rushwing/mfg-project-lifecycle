@@ -7,6 +7,7 @@ phase: DVT
 checkpoint: CP2
 checkpoint_name: Fixture Qualification and Repeatability Verification
 doc_type: plan
+priority: required
 product_families:
 - GPU
 - DC-L6

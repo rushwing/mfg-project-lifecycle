@@ -7,6 +7,7 @@ phase: PVT
 checkpoint: CP4
 checkpoint_name: SFC / Traceability / Data Closure
 doc_type: plan
+priority: required
 product_families:
 - GPU
 - DC-L6

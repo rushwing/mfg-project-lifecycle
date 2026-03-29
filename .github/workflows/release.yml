@@ -54,7 +54,7 @@ jobs:
       - name: Collect KB stats
         id: stats
         run: |
-          templates=$(find . -name "*-template.md" | wc -l | tr -d ' ')
+          templates=$(find . \( -name "*-template.md" -o -path "*/shared/_snippets/*.md" \) | sort -u | wc -l | tr -d ' ')
           glossary=$(grep -c "^### " GLOSSARY.md || true)
           echo "templates=${templates}" >> "$GITHUB_OUTPUT"
           echo "glossary=${glossary}" >> "$GITHUB_OUTPUT"

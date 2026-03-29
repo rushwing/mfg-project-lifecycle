@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "**/*-template.md"
+      - "shared/_snippets/*.md"
       - "scripts/generate_doc_index.py"
       - "pyproject.toml"
 

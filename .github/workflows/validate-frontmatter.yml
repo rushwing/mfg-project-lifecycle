@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "**/*-template.md"
+      - "shared/_snippets/*.md"
       - "schemas/template_frontmatter.schema.json"
       - "scripts/validate_frontmatter.py"
       - "pyproject.toml"

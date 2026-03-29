@@ -7,6 +7,7 @@ phase: P1
 checkpoint: CP4
 checkpoint_name: Program Mechanics Establishment
 doc_type: tracker
+priority: required
 product_families:
 - GPU
 - DC-L6

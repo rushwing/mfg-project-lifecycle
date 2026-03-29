@@ -7,6 +7,7 @@ phase: MP
 checkpoint: CP2
 checkpoint_name: Version and Change Management
 doc_type: tracker
+priority: required
 product_families:
 - GPU
 - DC-L6

@@ -7,6 +7,7 @@ phase: P1
 checkpoint: CP3
 checkpoint_name: Fixture / Equipment / Vendor Pre-Evaluation
 doc_type: tracker
+priority: required
 product_families:
 - GPU
 - DC-L6

@@ -7,6 +7,7 @@ phase: MP
 checkpoint: CP1
 checkpoint_name: Daily Production Operations
 doc_type: report
+priority: required
 product_families:
 - GPU
 - DC-L6

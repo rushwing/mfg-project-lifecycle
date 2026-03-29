@@ -7,6 +7,7 @@ phase: PVT
 checkpoint: CP5
 checkpoint_name: Mass Production Sign-Off
 doc_type: plan
+priority: critical
 product_families:
 - GPU
 - DC-L6

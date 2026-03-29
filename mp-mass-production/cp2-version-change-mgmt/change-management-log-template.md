@@ -7,6 +7,7 @@ phase: MP
 checkpoint: CP2
 checkpoint_name: Version and Change Management
 doc_type: log
+priority: critical
 product_families:
 - GPU
 - DC-L6

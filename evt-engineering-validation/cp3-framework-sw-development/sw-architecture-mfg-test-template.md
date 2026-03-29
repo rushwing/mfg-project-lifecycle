@@ -7,6 +7,7 @@ phase: EVT
 checkpoint: CP3
 checkpoint_name: Test Framework Integration and Initial Program Development
 doc_type: spec
+priority: required
 product_families:
 - GPU
 - DC-L6

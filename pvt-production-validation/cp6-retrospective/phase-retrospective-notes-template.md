@@ -7,6 +7,7 @@ phase: PVT
 checkpoint: CP6
 checkpoint_name: Phase Retrospective
 doc_type: log
+priority: recommended
 product_families:
 - GPU
 - DC-L6

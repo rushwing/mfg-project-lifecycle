@@ -7,6 +7,7 @@ phase: P1
 checkpoint: CP2
 checkpoint_name: Test Architecture and Station Planning
 doc_type: spec
+priority: critical
 product_families:
 - GPU
 - DC-L6

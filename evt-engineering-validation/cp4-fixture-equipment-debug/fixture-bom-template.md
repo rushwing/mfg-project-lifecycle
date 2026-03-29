@@ -7,6 +7,7 @@ phase: EVT
 checkpoint: CP4
 checkpoint_name: Fixture Prototype and Equipment Bring-Up
 doc_type: tracker
+priority: required
 product_families:
 - GPU
 - DC-L6

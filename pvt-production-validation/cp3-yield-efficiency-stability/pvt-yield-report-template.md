@@ -7,6 +7,7 @@ phase: PVT
 checkpoint: CP3
 checkpoint_name: Yield / Efficiency / Stability Validation
 doc_type: report
+priority: critical
 product_families:
 - GPU
 - DC-L6

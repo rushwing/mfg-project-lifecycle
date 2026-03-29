@@ -7,6 +7,7 @@ phase: DVT
 checkpoint: CP4
 checkpoint_name: UPH and Capacity Assessment
 doc_type: report
+priority: critical
 product_families:
 - GPU
 - DC-L6

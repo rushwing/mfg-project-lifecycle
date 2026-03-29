@@ -28,7 +28,7 @@ except ImportError:
 
 ROOT = Path(__file__).parent.parent
 DEFAULT_OUTPUT = ROOT / "DOC_INDEX.md"
-PHASE_ORDER = ["P1", "EVT", "DVT", "PVT", "MP"]
+PHASE_ORDER = ["P1", "EVT", "DVT", "PVT", "MP", "Universal"]
 console = Console() if USE_RICH else None
 
 
@@ -130,12 +130,15 @@ def generate_markdown(grouped: dict, total: int) -> str:
 
         phase_docs = grouped[phase]
         phase_total = sum(len(docs) for docs in phase_docs.values())
-        lines.append(f"## {phase} — {phase_total} documents")
+        phase_label = "Shared Snippets" if phase == "Universal" else phase
+        lines.append(f"## {phase_label} — {phase_total} documents")
         lines.append("")
 
         for (checkpoint, checkpoint_name), docs in sorted(phase_docs.items()):
-            anchor = f"{phase.lower()}-{checkpoint.lower()}"
-            lines.append(f"### {phase} {checkpoint}: {checkpoint_name}")
+            if phase == "Universal":
+                lines.append(f"### {checkpoint_name}")
+            else:
+                lines.append(f"### {phase} {checkpoint}: {checkpoint_name}")
             lines.append("")
             lines.append("| Doc ID | Title | Type | Priority | Owner | RAG Strategy | Status |")
             lines.append("|--------|-------|------|----------|-------|-------------|--------|")

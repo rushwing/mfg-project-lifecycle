@@ -7,6 +7,7 @@ phase: P1
 checkpoint: CP4
 checkpoint_name: Program Mechanics Establishment
 doc_type: plan
+priority: critical
 product_families:
 - GPU
 - DC-L6

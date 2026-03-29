@@ -7,6 +7,7 @@ phase: PVT
 checkpoint: CP2
 checkpoint_name: Factory Line Bring-Up and Station Qualification
 doc_type: report
+priority: critical
 product_families:
 - GPU
 - DC-L6

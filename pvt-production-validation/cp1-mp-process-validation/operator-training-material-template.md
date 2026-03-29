@@ -7,6 +7,7 @@ phase: PVT
 checkpoint: CP1
 checkpoint_name: Mass Production Flow Validation
 doc_type: procedure
+priority: required
 product_families:
 - GPU
 - DC-L6

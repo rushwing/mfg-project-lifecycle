@@ -7,6 +7,7 @@ phase: DVT
 checkpoint: CP1
 checkpoint_name: Test Completeness Improvement
 doc_type: plan
+priority: critical
 product_families:
 - GPU
 - DC-L6

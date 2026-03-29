@@ -7,6 +7,7 @@ phase: MP
 checkpoint: CP6
 checkpoint_name: Next-Generation Product Feedback
 doc_type: report
+priority: critical
 product_families:
 - GPU
 - DC-L6

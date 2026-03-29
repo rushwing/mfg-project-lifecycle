@@ -7,6 +7,7 @@ phase: EVT
 checkpoint: CP2
 checkpoint_name: Test Requirements Freeze and Plan Elaboration
 doc_type: matrix
+priority: critical
 product_families:
 - GPU
 - DC-L6
