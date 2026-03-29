@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mfg-lifecycle/schemas/template_frontmatter.schema.json",
+  "title": "MFG Template Frontmatter Schema",
+  "description": "JSON Schema for YAML frontmatter in all *-template.md files",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "title",
+    "slug",
+    "version",
+    "phase",
+    "checkpoint",
+    "checkpoint_name",
+    "doc_type",
+    "product_families",
+    "test_stations",
+    "owner_role",
+    "status",
+    "created_date",
+    "last_updated",
+    "rag_chunk_strategy",
+    "embedding_priority",
+    "controlled_terms",
+    "required_sections"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "doc_id": {
+      "type": "string",
+      "description": "Globally unique document ID. Lifecycle templates: {PHASE}-CP{N}-{DOC_SHORT}-{SEQ3}. Shared snippets: SHARED-{TYPE}-{SHORT}-{SEQ3}",
+      "pattern": "^((P1|EVT|DVT|PVT|MP)-CP[0-9]+-[A-Z0-9]+-[0-9]{3}|SHARED-[A-Z0-9]+-[A-Z0-9]+-[0-9]{3})$",
+      "examples": ["EVT-CP2-TRP-001", "DVT-CP5-CAPA-003", "SHARED-SNIP-PFC-001"]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Human-readable document title (English)"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-safe slug matching filename (without -template.md suffix)",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string",
+      "description": "SemVer: 0.x.x = stub/draft, 1.x.x = ratified",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["P1", "EVT", "DVT", "PVT", "MP", "Universal"],
+      "description": "Lifecycle phase. Use 'Universal' for shared snippets."
+    },
+    "checkpoint": {
+      "type": "string",
+      "pattern": "^(CP[1-6]|Universal)$",
+      "description": "Checkpoint within phase, e.g. CP1, CP2. Use 'Universal' for shared snippets."
+    },
+    "checkpoint_name": {
+      "type": "string",
+      "description": "Human-readable checkpoint name"
+    },
+    "doc_type": {
+      "type": "string",
+      "enum": [
+        "plan",
+        "spec",
+        "report",
+        "checklist",
+        "tracker",
+        "matrix",
+        "log",
+        "analysis",
+        "procedure",
+        "playbook"
+      ],
+      "description": "Document type classification"
+    },
+    "product_families": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["GPU", "DC-L6", "Automotive", "Embedded", "Universal"]
+      },
+      "description": "NVIDIA product families this template applies to"
+    },
+    "test_stations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ICT",
+          "FCT",
+          "DIAG",
+          "BURN-IN",
+          "ATE",
+          "SYSTEM",
+          "OBA",
+          "SFC",
+          "Universal"
+        ]
+      },
+      "description": "Test stations this document is relevant to"
+    },
+    "owner_role": {
+      "type": "string",
+      "enum": [
+        "MTE Lead",
+        "MTE Staff",
+        "MTE Manager",
+        "NPI PM",
+        "Quality Engineer",
+        "Factory Ops"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "template-stub",
+        "draft",
+        "in-review",
+        "approved",
+        "superseded",
+        "archived"
+      ]
+    },
+    "created_date": {
+      "type": "string",
+      "pattern": "^(YYYY-MM-DD|[0-9]{4}-[0-9]{2}-[0-9]{2})$",
+      "description": "ISO 8601 date or placeholder YYYY-MM-DD"
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^(YYYY-MM-DD|[0-9]{4}-[0-9]{2}-[0-9]{2})$"
+    },
+    "rag_chunk_strategy": {
+      "type": "string",
+      "enum": ["by-section", "by-table", "monolithic", "split-h2"],
+      "description": "How the RAG pipeline should chunk this document"
+    },
+    "embedding_priority": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "exclude"]
+    },
+    "controlled_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Terms used in this doc that must match GLOSSARY.md canonical forms. Validated by check_term_consistency.py"
+    },
+    "related_docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(P1|EVT|DVT|PVT|MP)-CP[0-9]+-[A-Z0-9]+-[0-9]{3}$"
+      },
+      "description": "doc_id list of related documents"
+    },
+    "required_sections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Section headings bootstrap_templates.py will stub out. Empty array allowed for shared snippets."
+    },
+    "supersedes": {
+      "type": ["string", "null"],
+      "description": "doc_id this document replaces"
+    },
+    "expiry_phase": {
+      "type": "string",
+      "enum": ["P1", "EVT", "DVT", "PVT", "MP", "N/A"],
+      "description": "Phase at which this document becomes obsolete"
+    }
+  }
+}

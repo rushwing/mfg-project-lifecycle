@@ -1,0 +1,39 @@
+phase_id: MP
+phase_name: "Mass Production"
+phase_name_zh: "量产"
+lifecycle_sequence: 5
+directory: "mp-mass-production"
+description: >
+  Sustained production phase following PVT exit. Engineering transitions to support
+  mode. Focus: daily production operations, yield monitoring, change management,
+  incoming quality control, continuous improvement, and eventual knowledge archival.
+  MP continues until EOL decision.
+typical_duration_weeks: "ongoing"
+primary_owner: "Factory Ops / MTE Manager"
+key_milestones:
+  - "First production lot shipped"
+  - "Yield/UPH stable at target for 30 days"
+  - "All ECO/ECN changes qualified"
+  - "Knowledge base updated with MP lessons learned"
+  - "EOL documentation completed (when applicable)"
+checkpoints:
+  - checkpoint_id: "MP-CP1"
+    checkpoint_name: "Daily Production Operations"
+    directory: "cp1-daily-operations"
+  - checkpoint_id: "MP-CP2"
+    checkpoint_name: "Version and Change Management"
+    directory: "cp2-version-change-mgmt"
+  - checkpoint_id: "MP-CP3"
+    checkpoint_name: "Incoming Quality and Anomaly Management"
+    directory: "cp3-incoming-quality-anomaly"
+  - checkpoint_id: "MP-CP4"
+    checkpoint_name: "Continuous Improvement"
+    directory: "cp4-continuous-improvement"
+  - checkpoint_id: "MP-CP5"
+    checkpoint_name: "Project Closure and Knowledge Archival"
+    directory: "cp5-closure-knowledge"
+  - checkpoint_id: "MP-CP6"
+    checkpoint_name: "Next-Generation Product Feedback"
+    directory: "cp6-next-gen-feedback"
+previous_phase: PVT
+next_phase: null

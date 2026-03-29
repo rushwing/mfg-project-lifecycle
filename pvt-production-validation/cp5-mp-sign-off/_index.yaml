@@ -1,0 +1,117 @@
+checkpoint_id: "PVT-CP5"
+checkpoint_name: "Mass Production Sign-Off"
+checkpoint_name_zh: "量产签核"
+phase: PVT
+checkpoint_sequence: 5
+description: >
+  Formal MP sign-off gate. Issue PVT Exit Report, MP Release Recommendation,
+  Control Plan, Contingency/Escalation Plan, and Handover Package to Factory Ops.
+  This checkpoint is the NPI-to-MP transition.
+
+entry_criteria:
+  - "PVT-CP1 through PVT-CP4 complete"
+  - "Yield and UPH targets met and sustained"
+  - "SFC traceability validated"
+
+exit_criteria:
+  - "PVT Exit Report approved by MTE Manager, Quality Engineer, and PM"
+  - "MP Release Recommendation issued and signed"
+  - "Control Plan approved by Quality Engineer"
+  - "Contingency / Escalation Plan reviewed"
+  - "Handover Package delivered to Factory Ops"
+
+documents:
+  - doc_id: "PVT-CP5-PER-001"
+    title: "PVT Exit Report"
+    slug: "pvt-exit-report"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [PVT, MP, Yield, UPH, SFC, Traceability, IQ, OQ, CAPA]
+    required_sections:
+      - "1. Executive Summary"
+      - "2. PVT Build Overview"
+      - "3. Yield / UPH Results vs. MP Target"
+      - "4. SFC / Traceability Validation"
+      - "5. Open Issues and Waivers"
+      - "6. MP Readiness Assessment"
+      - "7. Sign-Off"
+
+  - doc_id: "PVT-CP5-MPR-002"
+    title: "MP Release Recommendation"
+    slug: "mp-release-recommendation"
+    doc_type: "plan"
+    owner_role: "MTE Manager"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [MP, PVT, Yield, UPH, "Test Escape"]
+    required_sections:
+      - "1. Purpose"
+      - "2. MP Release Criteria Met"
+      - "3. Outstanding Risks"
+      - "4. Recommendation"
+      - "5. Sign-Off"
+
+  - doc_id: "PVT-CP5-CTP-003"
+    title: "Control Plan"
+    slug: "control-plan"
+    doc_type: "plan"
+    owner_role: "Quality Engineer"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: [Yield, OEE, IQC, "Test Escape", CAPA, SFC]
+    required_sections:
+      - "1. Purpose"
+      - "2. Control Plan Table (Parameter / Specification / Measurement / Frequency / Action)"
+      - "3. Reaction Plan for Out-of-Control Events"
+      - "4. Revision History"
+
+  - doc_id: "PVT-CP5-CEP-004"
+    title: "Contingency / Escalation Plan"
+    slug: "contingency-escalation-plan"
+    doc_type: "plan"
+    owner_role: "MTE Manager"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [CAPA, "Test Escape", Yield, RAID]
+    required_sections:
+      - "1. Purpose"
+      - "2. Escalation Criteria"
+      - "3. Escalation Matrix (who to notify, when)"
+      - "4. Contingency Actions"
+      - "5. Revision History"
+
+  - doc_id: "PVT-CP5-HPF-005"
+    title: "Handover Package to Factory Ops"
+    slug: "handover-package-factory-ops"
+    doc_type: "plan"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [SOP, WI, SFC, Traceability, "Golden Unit", CAPA, ECO, ECN]
+    required_sections:
+      - "1. Purpose"
+      - "2. Documents Handed Over (checklist)"
+      - "3. Support Contact List"
+      - "4. Known Issues for MP Monitoring"
+      - "5. Sign-Off"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

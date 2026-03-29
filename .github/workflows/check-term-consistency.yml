@@ -1,0 +1,26 @@
+name: Check Term Consistency
+
+on:
+  pull_request:
+    paths:
+      - "**/*-template.md"
+      - "GLOSSARY.md"
+      - "scripts/check_term_consistency.py"
+      - "pyproject.toml"
+      - "uv.lock"
+
+jobs:
+  check-terms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Check term consistency against GLOSSARY.md
+        run: uv run python scripts/check_term_consistency.py

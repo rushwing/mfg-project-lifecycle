@@ -1,0 +1,122 @@
+checkpoint_id: "EVT-CP1"
+checkpoint_name: "Sample Receipt and Basic Bring-Up"
+checkpoint_name_zh: "样机回片与基础 Bring-Up"
+phase: EVT
+checkpoint_sequence: 1
+description: >
+  Receive first EVT hardware samples, perform board bring-up, establish test readiness
+  baseline, define Golden Sample criteria, and lock the HW/SW/FW version matrix.
+  This checkpoint gates test development start.
+
+entry_criteria:
+  - "EVT hardware samples received (min units per SKU as per Build Plan)"
+  - "P1 NPI Build Plan and RAID Log in place"
+
+exit_criteria:
+  - "Board bring-up checklist completed"
+  - "All major interfaces functional on at least 2 units"
+  - "Test Readiness Checklist signed by MTE Lead"
+  - "Golden Sample definition agreed and units identified"
+  - "HW/SW/FW Version Matrix baselined"
+
+documents:
+  - doc_id: "EVT-CP1-EBP-001"
+    title: "EVT Build Plan"
+    slug: "evt-build-plan"
+    doc_type: "plan"
+    owner_role: "NPI PM"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [EVT, NPI, "Golden Unit", Yield]
+    required_sections:
+      - "1. Purpose and Scope"
+      - "2. Build Quantity by SKU"
+      - "3. Build Schedule"
+      - "4. Test Objectives for This Build"
+      - "5. Exit Criteria"
+      - "6. Resource Plan"
+      - "7. Revision History"
+
+  - doc_id: "EVT-CP1-BBC-002"
+    title: "Board Bring-Up Checklist"
+    slug: "board-bringup-checklist"
+    doc_type: "checklist"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [FCT, DIAG]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [FCT, DIAG, "Golden Unit", DFT]
+    required_sections:
+      - "1. Purpose"
+      - "2. Pre-Power-On Checks"
+      - "3. Power-On Sequence"
+      - "4. Interface Bring-Up Checklist (PCIe / NVLink / HBM / etc.)"
+      - "5. Basic Functional Checks"
+      - "6. Issues Found"
+      - "7. Sign-Off"
+
+  - doc_id: "EVT-CP1-TRC-003"
+    title: "Test Readiness Checklist"
+    slug: "test-readiness-checklist"
+    doc_type: "checklist"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT, DIAG]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [TRP, ICT, FCT, DIAG, "Golden Unit", SFC, Fixture]
+    required_sections:
+      - "1. Purpose"
+      - "2. Hardware Readiness"
+      - "3. Test Program Readiness"
+      - "4. Fixture / Tooling Readiness"
+      - "5. SFC / Data Infrastructure Readiness"
+      - "6. Golden Sample Availability"
+      - "7. Sign-Off"
+
+  - doc_id: "EVT-CP1-GSD-004"
+    title: "Golden Sample Definition"
+    slug: "golden-sample-definition"
+    doc_type: "spec"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: ["Golden Unit", Retest, "False Fail", GR&R]
+    required_sections:
+      - "1. Purpose"
+      - "2. Golden Sample Selection Criteria"
+      - "3. Characterization Requirements"
+      - "4. Usage Policy (who can use, how often re-verified)"
+      - "5. Maintenance and Retirement Policy"
+      - "6. Golden Sample Inventory"
+      - "7. Revision History"
+
+  - doc_id: "EVT-CP1-VXM-005"
+    title: "HW / SW / FW Version Matrix"
+    slug: "hw-sw-fw-version-matrix"
+    doc_type: "tracker"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [ECO, ECN, NPI]
+    required_sections:
+      - "1. Purpose"
+      - "2. Version Matrix Table"
+      - "3. Change Log"
+      - "4. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

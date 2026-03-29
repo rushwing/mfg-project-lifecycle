@@ -1,0 +1,117 @@
+checkpoint_id: "MP-CP5"
+checkpoint_name: "Project Closure and Knowledge Archival"
+checkpoint_name_zh: "项目收尾与知识沉淀"
+phase: MP
+checkpoint_sequence: 5
+description: >
+  Project closure activities: MP phase summary, lessons learned, best practice
+  playbook, knowledge base update, and project closure report. These documents
+  are the primary input for the next-generation product NPI.
+
+entry_criteria:
+  - "EOL decision made OR annual knowledge archival cycle"
+
+exit_criteria:
+  - "MP Phase Summary Report approved"
+  - "Final Lessons Learned documented and distributed"
+  - "Best Practice / Playbook updated with program learnings"
+  - "Knowledge Base Update complete"
+  - "Project Closure Report signed"
+
+documents:
+  - doc_id: "MP-CP5-MSR-001"
+    title: "MP Phase Summary Report"
+    slug: "mp-phase-summary-report"
+    doc_type: "report"
+    owner_role: "MTE Manager"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [MP, Yield, UPH, OEE, DPM, "Test Escape", CAPA]
+    required_sections:
+      - "1. Executive Summary"
+      - "2. Production Volume Summary"
+      - "3. Yield and Quality Performance"
+      - "4. Key Issues and CAPAs"
+      - "5. Lessons Learned Summary"
+      - "6. Revision History"
+
+  - doc_id: "MP-CP5-FLL-002"
+    title: "Final Lessons Learned"
+    slug: "final-lessons-learned"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [DFT, DFX, Yield, GR&R, SFC, Traceability, CAPA]
+    required_sections:
+      - "1. Purpose"
+      - "2. NPI Phase Lessons (P1 / EVT / DVT / PVT)"
+      - "3. MP Operations Lessons"
+      - "4. Recommendations for Next Program"
+      - "5. Revision History"
+
+  - doc_id: "MP-CP5-BPP-003"
+    title: "Best Practice / Playbook"
+    slug: "best-practice-playbook"
+    doc_type: "playbook"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [DFT, DFX, GR&R, TRP, Yield, SFC, Traceability]
+    required_sections:
+      - "1. Purpose"
+      - "2. Test Architecture Best Practices"
+      - "3. Fixture Design Best Practices"
+      - "4. DFT/DFX Recommendation Patterns"
+      - "5. Yield Management Best Practices"
+      - "6. SFC Integration Best Practices"
+      - "7. Revision History"
+
+  - doc_id: "MP-CP5-KBU-004"
+    title: "Knowledge Base Update"
+    slug: "knowledge-base-update"
+    doc_type: "log"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [DFT, DFX, TRP, GR&R, Yield]
+    required_sections:
+      - "1. Purpose"
+      - "2. Documents Updated in KB"
+      - "3. New Templates Added"
+      - "4. Deprecated Documents"
+      - "5. Revision History"
+
+  - doc_id: "MP-CP5-PCR-005"
+    title: "Project Closure Report"
+    slug: "project-closure-report"
+    doc_type: "report"
+    owner_role: "NPI PM"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [NPI, MP, CAPEX, Yield, "Test Escape"]
+    required_sections:
+      - "1. Project Summary"
+      - "2. Objectives Met"
+      - "3. CAPEX Actuals vs. Budget"
+      - "4. Final Quality Metrics"
+      - "5. Project Close-Out Sign-Off"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

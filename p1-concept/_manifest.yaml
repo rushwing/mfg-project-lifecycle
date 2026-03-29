@@ -1,0 +1,33 @@
+phase_id: P1
+phase_name: "Concept / Feasibility / Pre-NPI"
+phase_name_zh: "概念/可行性/NPI前期"
+lifecycle_sequence: 1
+directory: "p1-concept"
+description: >
+  Pre-hardware phase covering product concept, feasibility analysis, test strategy
+  definition, test architecture planning, fixture/vendor pre-evaluation, and NPI
+  program mechanism establishment. No physical builds occur in P1. All outputs are
+  planning documents that gate EVT readiness.
+typical_duration_weeks: "8-16"
+primary_owner: "MTE Lead / NPI PM"
+key_milestones:
+  - "DFT/DFX requirements signed off by HW Design"
+  - "Test architecture reviewed and approved"
+  - "CAPEX budget approved"
+  - "NPI Build Plan v1 baselined"
+  - "RAID Log initialized with known risks"
+checkpoints:
+  - checkpoint_id: "P1-CP1"
+    checkpoint_name: "Requirements Clarification and Testability Input"
+    directory: "cp1-requirements-clarity"
+  - checkpoint_id: "P1-CP2"
+    checkpoint_name: "Test Architecture and Station Planning"
+    directory: "cp2-test-architecture-planning"
+  - checkpoint_id: "P1-CP3"
+    checkpoint_name: "Fixture / Equipment / Vendor Pre-Evaluation"
+    directory: "cp3-fixture-equipment-vendor"
+  - checkpoint_id: "P1-CP4"
+    checkpoint_name: "Program Mechanics Establishment"
+    directory: "cp4-program-mechanics"
+previous_phase: null
+next_phase: EVT

@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mfg-lifecycle/schemas/phase_manifest.schema.json",
+  "title": "Phase Manifest Schema",
+  "description": "JSON Schema for _manifest.yaml files at phase root directories",
+  "type": "object",
+  "required": ["phase_id", "phase_name", "phase_name_zh", "lifecycle_sequence", "checkpoints"],
+  "additionalProperties": true,
+  "properties": {
+    "phase_id": {
+      "type": "string",
+      "enum": ["P1", "EVT", "DVT", "PVT", "MP"]
+    },
+    "phase_name": { "type": "string" },
+    "phase_name_zh": { "type": "string" },
+    "lifecycle_sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "directory": { "type": "string" },
+    "description": { "type": "string" },
+    "typical_duration_weeks": {
+      "type": ["integer","string"],
+      "description": "Typical phase duration or range, e.g. 8 or '6-10'"
+    },
+    "primary_owner": { "type": "string" },
+    "key_milestones": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "checkpoints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["checkpoint_id", "directory"],
+        "properties": {
+          "checkpoint_id": { "type": "string" },
+          "checkpoint_name": { "type": "string" },
+          "directory": { "type": "string" }
+        }
+      }
+    },
+    "previous_phase": {
+      "type": ["string","null"],
+      "enum": ["P1","EVT","DVT","PVT","MP",null]
+    },
+    "next_phase": {
+      "type": ["string","null"],
+      "enum": ["P1","EVT","DVT","PVT","MP",null]
+    }
+  }
+}

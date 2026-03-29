@@ -1,0 +1,71 @@
+checkpoint_id: "PVT-CP6"
+checkpoint_name: "Phase Retrospective"
+checkpoint_name_zh: "阶段复盘"
+phase: PVT
+checkpoint_sequence: 6
+description: >
+  PVT phase retrospective and lessons learned. Capture everything that should
+  inform future NPI programs. Document open items that carry into MP monitoring.
+
+entry_criteria:
+  - "PVT-CP5 MP Sign-Off complete"
+
+exit_criteria:
+  - "PVT Lessons Learned document completed"
+  - "Open Issues for MP Tracker populated with all carry-over items"
+  - "Phase Retrospective Notes distributed to program team"
+
+documents:
+  - doc_id: "PVT-CP6-PLL-001"
+    title: "PVT Lessons Learned"
+    slug: "pvt-lessons-learned"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [PVT, MP, DFT, DFX, Yield, UPH, SFC, GR&R, CAPA]
+    required_sections:
+      - "1. Purpose"
+      - "2. What Went Well"
+      - "3. What Could Be Improved"
+      - "4. Recommendations for Next NPI"
+      - "5. Revision History"
+
+  - doc_id: "PVT-CP6-OIT-002"
+    title: "Open Issues for MP Tracker"
+    slug: "open-issues-mp-tracker"
+    doc_type: "tracker"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [CAPA, RAID, MP, "Test Escape"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Open Issues Table (Issue / Owner / MP Impact / Due Date)"
+      - "3. Revision History"
+
+  - doc_id: "PVT-CP6-PRN-003"
+    title: "Phase Retrospective Notes"
+    slug: "phase-retrospective-notes"
+    doc_type: "log"
+    owner_role: "NPI PM"
+    priority: "recommended"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [NPI, PVT, MP]
+    required_sections:
+      - "1. Meeting Date and Attendees"
+      - "2. Retrospective Findings"
+      - "3. Action Items"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

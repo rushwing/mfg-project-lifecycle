@@ -1,0 +1,120 @@
+checkpoint_id: "P1-CP2"
+checkpoint_name: "Test Architecture and Station Planning"
+checkpoint_name_zh: "测试架构与站位规划"
+phase: P1
+checkpoint_sequence: 2
+description: >
+  Define the manufacturing test architecture: station types, test flow sequence,
+  high-level coverage allocation, equipment needs, and initial UPH/capacity estimates.
+  This checkpoint establishes the structural framework that all subsequent test
+  development will follow.
+
+entry_criteria:
+  - "P1-CP1 DFT/DFX Requirements submitted to HW Design"
+  - "Test Strategy Overview approved"
+  - "Product architecture sufficiently defined to determine station needs"
+
+exit_criteria:
+  - "MFG Test Architecture Spec reviewed by MTE Lead, HW, and Program Manager"
+  - "Station Flow Diagram shows end-to-end test flow"
+  - "High-Level Coverage Matrix allocates coverage goals to each station"
+  - "Test Equipment List captures all required ATE/FCT/ICT/DIAG platforms"
+  - "Initial UPH/capacity estimate provided"
+
+documents:
+  - doc_id: "P1-CP2-TAS-001"
+    title: "MFG Test Architecture Spec"
+    slug: "mfg-test-architecture-spec"
+    doc_type: "spec"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [ICT, FCT, DIAG, ATE, "Boundary Scan", BIST, DFT]
+    required_sections:
+      - "1. Purpose and Scope"
+      - "2. Product Overview"
+      - "3. Test Station Architecture"
+      - "4. Inter-Station Data Flow"
+      - "5. Coverage Allocation by Station"
+      - "6. Key Technical Decisions and Rationale"
+      - "7. Assumptions and Dependencies"
+      - "8. Revision History"
+
+  - doc_id: "P1-CP2-SFD-002"
+    title: "Station Flow Diagram / Test Flow Diagram"
+    slug: "station-flow-diagram"
+    doc_type: "spec"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [SFC, ICT, FCT, DIAG, WIP, "False Fail", Retest]
+    required_sections:
+      - "1. Purpose"
+      - "2. Station Flow Diagram"
+      - "3. Flow Decision Points (Pass/Fail Routing)"
+      - "4. Repair / Rework Loop"
+      - "5. SFC Integration Points"
+      - "6. Revision History"
+
+  - doc_id: "P1-CP2-TCM-003"
+    title: "High-Level Test Coverage Matrix"
+    slug: "test-coverage-matrix-hl"
+    doc_type: "matrix"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: [DFT, BIST, "Boundary Scan", ICT, FCT, DIAG, "Coverage Hole"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Coverage Matrix (Functional Block vs. Test Station)"
+      - "3. Coverage Gaps and Mitigations"
+      - "4. Revision History"
+
+  - doc_id: "P1-CP2-TEL-004"
+    title: "Test Equipment List"
+    slug: "test-equipment-list"
+    doc_type: "tracker"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [ATE, ICT, FCT, DIAG, CAPEX]
+    required_sections:
+      - "1. Purpose"
+      - "2. Equipment List Table"
+      - "3. Procurement Status"
+      - "4. Revision History"
+
+  - doc_id: "P1-CP2-CAP-005"
+    title: "Capacity Planning Draft / UPH Estimation Draft"
+    slug: "capacity-planning-uph-draft"
+    doc_type: "analysis"
+    owner_role: "MTE Staff"
+    priority: "recommended"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [UPH, "Cycle Time", Bottleneck, "Takt Time"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Assumptions"
+      - "3. UPH Estimation by Station"
+      - "4. Capacity vs. Demand Analysis"
+      - "5. Risk and Sensitivity"
+      - "6. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

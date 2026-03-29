@@ -1,0 +1,120 @@
+checkpoint_id: "DVT-CP5"
+checkpoint_name: "Failure Analysis and Yield Improvement"
+checkpoint_name_zh: "失效分析与良率改善"
+phase: DVT
+checkpoint_sequence: 5
+description: >
+  Drive systematic yield improvement through failure analysis, Pareto-based
+  prioritization, retest analysis to reduce False Fails, and CAPA for yield excursions.
+  Establish yield baseline for PVT target-setting.
+
+entry_criteria:
+  - "DVT build test data available (≥ 50 units per station)"
+  - "Defect tracking list populated from DVT build"
+
+exit_criteria:
+  - "Pareto Report identifies top 5 failure modes covering ≥ 80% of failures"
+  - "FA completed for all P1 failure modes"
+  - "Retest Analysis shows False Fail rate < 2% for all test items"
+  - "CAPA issued and owners assigned for systemic yield issues"
+  - "Yield Trend Report shows yield trajectory toward PVT target"
+
+documents:
+  - doc_id: "DVT-CP5-FAR-001"
+    title: "FA Request / FA Report"
+    slug: "fa-request-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [FA, RCA, "True Fail", CAPA, "Test Escape"]
+    required_sections:
+      - "1. FA Request Section"
+      - "2. Unit Information and Failure Description"
+      - "3. FA Methodology"
+      - "4. FA Findings and Root Cause"
+      - "5. Corrective Action Recommendation"
+      - "6. Revision History"
+
+  - doc_id: "DVT-CP5-PAR-002"
+    title: "Pareto Report"
+    slug: "pareto-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Yield, "True Fail", "False Fail", FA, DPM]
+    required_sections:
+      - "1. Purpose"
+      - "2. Data Period and Sample Size"
+      - "3. Failure Mode Pareto (chart + table)"
+      - "4. Top 5 Failure Mode Analysis"
+      - "5. Actions"
+      - "6. Revision History"
+
+  - doc_id: "DVT-CP5-YTR-003"
+    title: "Yield Trend Report"
+    slug: "yield-trend-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "high"
+    controlled_terms: [Yield, DPM, "True Fail", "False Fail", "Test Escape"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Yield Trend Chart by Station"
+      - "3. Yield vs. Target"
+      - "4. Key Yield-Impacting Events"
+      - "5. Revision History"
+
+  - doc_id: "DVT-CP5-RTA-004"
+    title: "Retest Analysis Report"
+    slug: "retest-analysis-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT, DIAG]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Retest, "False Fail", "True Fail", "Marginal Fail", Yield, GR&R]
+    required_sections:
+      - "1. Purpose"
+      - "2. Retest Rate by Test Item"
+      - "3. Classification (True/False/Marginal)"
+      - "4. Top False Fail Root Causes"
+      - "5. Limit Optimization Actions"
+      - "6. Revision History"
+
+  - doc_id: "DVT-CP5-CAP-005"
+    title: "CAPA (Corrective Action and Preventive Action)"
+    slug: "capa-corrective-action-plan"
+    doc_type: "report"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [CAPA, FA, RCA, Yield, "True Fail", "Test Escape"]
+    required_sections:
+      - "1. Problem Statement"
+      - "2. Root Cause Summary"
+      - "3. Corrective Actions (immediate fix)"
+      - "4. Preventive Actions (recurrence prevention)"
+      - "5. Owner and Due Date"
+      - "6. Effectiveness Verification Plan"
+      - "7. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true

@@ -1,0 +1,82 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Extract version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Extract CHANGELOG section
+        id: changelog
+        run: |
+          python3 - <<'EOF'
+          import re, os, sys
+
+          version = os.environ["VERSION"]
+          changelog = open("CHANGELOG.md").read()
+
+          # Find the versioned section
+          pattern = rf"## \[{re.escape(version)}\][^\n]*\n(.*?)(?=\n---\n|\Z)"
+          match = re.search(pattern, changelog, re.DOTALL)
+          if not match:
+              print(f"WARNING: No section for [{version}] found in CHANGELOG.md", file=sys.stderr)
+              body = f"KB version {version} — see CHANGELOG.md for details."
+          else:
+              body = match.group(1).strip()
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              # Use multiline output delimiter
+              f.write("body<<CHANGELOG_EOF\n")
+              f.write(body + "\n")
+              f.write("CHANGELOG_EOF\n")
+          EOF
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+
+      - name: Collect KB stats
+        id: stats
+        run: |
+          templates=$(find . -name "*-template.md" | wc -l | tr -d ' ')
+          glossary=$(grep -c "^## " GLOSSARY.md || true)
+          echo "templates=${templates}" >> "$GITHUB_OUTPUT"
+          echo "glossary=${glossary}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "KB ${{ github.ref_name }}"
+          body: |
+            ## Changes
+
+            ${{ steps.changelog.outputs.body }}
+
+            ---
+
+            ## KB Stats
+
+            | Metric | Count |
+            |--------|------:|
+            | Template files | ${{ steps.stats.outputs.templates }} |
+            | GLOSSARY terms | ${{ steps.stats.outputs.glossary }} |
+
+            **Full changelog:** [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md)
+          draft: false
+          prerelease: false

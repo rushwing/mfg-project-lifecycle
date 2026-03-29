@@ -1,0 +1,36 @@
+phase_id: EVT
+phase_name: "Engineering Validation Test"
+phase_name_zh: "工程验证测试"
+lifecycle_sequence: 2
+directory: "evt-engineering-validation"
+description: >
+  First hardware build phase. Validates that the design meets engineering specifications.
+  Test infrastructure (fixtures, frameworks, test programs) is developed and debugged
+  on early silicon/hardware. Yield and UPH are not targets at EVT — the goal is to
+  achieve functional coverage and identify design issues.
+typical_duration_weeks: "12-20"
+primary_owner: "MTE Lead"
+key_milestones:
+  - "Board bring-up complete: all major interfaces functional"
+  - "TRP signed off (EVT-CP2)"
+  - "Test framework integrated and test programs running"
+  - "Fixture proto accepted (EVT-CP4)"
+  - "EVT exit criteria review passed (EVT-CP5)"
+checkpoints:
+  - checkpoint_id: "EVT-CP1"
+    checkpoint_name: "Sample Receipt and Basic Bring-Up"
+    directory: "cp1-bringup-test-readiness"
+  - checkpoint_id: "EVT-CP2"
+    checkpoint_name: "Test Requirements Freeze and Plan Elaboration"
+    directory: "cp2-test-requirements-freeze"
+  - checkpoint_id: "EVT-CP3"
+    checkpoint_name: "Test Framework Integration and Initial Program Development"
+    directory: "cp3-framework-sw-development"
+  - checkpoint_id: "EVT-CP4"
+    checkpoint_name: "Fixture Prototype and Equipment Bring-Up"
+    directory: "cp4-fixture-equipment-debug"
+  - checkpoint_id: "EVT-CP5"
+    checkpoint_name: "Issue Management and Phase Summary"
+    directory: "cp5-issue-mgmt-phase-summary"
+previous_phase: P1
+next_phase: DVT

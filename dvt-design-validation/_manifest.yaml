@@ -1,0 +1,40 @@
+phase_id: DVT
+phase_name: "Design Validation Test"
+phase_name_zh: "设计验证测试"
+lifecycle_sequence: 3
+directory: "dvt-design-validation"
+description: >
+  Second hardware build phase. Design is more mature; focus shifts from infrastructure
+  development to test coverage completeness, fixture qualification (GR&R), software
+  releasability, UPH/yield baseline establishment, and systematic failure analysis.
+  DVT exit gates PVT readiness.
+typical_duration_weeks: "10-16"
+primary_owner: "MTE Lead"
+key_milestones:
+  - "Test coverage gap analysis resolved (DVT-CP1)"
+  - "Fixture GR&R passed: %GR&R < 10% (DVT-CP2)"
+  - "Test SW release package available (DVT-CP3)"
+  - "UPH study completed: meets MP target (DVT-CP4)"
+  - "Yield baseline established: FPY target baseline (DVT-CP5)"
+  - "DVT exit criteria checklist signed (DVT-CP6)"
+checkpoints:
+  - checkpoint_id: "DVT-CP1"
+    checkpoint_name: "Test Completeness Improvement"
+    directory: "cp1-test-completeness"
+  - checkpoint_id: "DVT-CP2"
+    checkpoint_name: "Fixture Qualification and Repeatability Verification"
+    directory: "cp2-fixture-qualification"
+  - checkpoint_id: "DVT-CP3"
+    checkpoint_name: "Software Version Management and Releasability"
+    directory: "cp3-sw-version-releasability"
+  - checkpoint_id: "DVT-CP4"
+    checkpoint_name: "UPH and Capacity Assessment"
+    directory: "cp4-uph-capacity"
+  - checkpoint_id: "DVT-CP5"
+    checkpoint_name: "Failure Analysis and Yield Improvement"
+    directory: "cp5-failure-analysis-yield"
+  - checkpoint_id: "DVT-CP6"
+    checkpoint_name: "Phase Exit Review"
+    directory: "cp6-exit-review"
+previous_phase: EVT
+next_phase: PVT

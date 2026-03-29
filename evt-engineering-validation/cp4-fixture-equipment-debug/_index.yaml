@@ -1,0 +1,115 @@
+checkpoint_id: "EVT-CP4"
+checkpoint_name: "Fixture Prototype and Equipment Bring-Up"
+checkpoint_name_zh: "夹具打样与设备联调"
+phase: EVT
+checkpoint_sequence: 4
+description: >
+  Receive fixture prototype from vendor, debug hardware/contact issues,
+  establish equipment setup, and track vendor action items to closure.
+  Fixture qualification (GR&R) is planned but not yet executed at EVT.
+
+entry_criteria:
+  - "Fixture prototype received from vendor"
+  - "Test station hardware available"
+  - "EVT-CP2 Test Plan approved"
+
+exit_criteria:
+  - "Fixture Debug Report documents all issues and status"
+  - "All critical fixture defects resolved"
+  - "Equipment Setup Instruction available for station operators"
+  - "Vendor Action Tracker shows no open critical items"
+
+documents:
+  - doc_id: "EVT-CP4-FDS-001"
+    title: "Fixture Design Spec"
+    slug: "fixture-design-spec"
+    doc_type: "spec"
+    owner_role: "MTE Lead"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Fixture, ICT, FCT, ERS, CAPEX]
+    required_sections:
+      - "1. Purpose"
+      - "2. Fixture Type and Concept"
+      - "3. Mechanical Design"
+      - "4. Electrical Design"
+      - "5. Contact / Interface Points"
+      - "6. Safety Requirements"
+      - "7. Revision History"
+
+  - doc_id: "EVT-CP4-FBM-002"
+    title: "Fixture BOM"
+    slug: "fixture-bom"
+    doc_type: "tracker"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [Fixture, BOM, ECO]
+    required_sections:
+      - "1. Purpose"
+      - "2. BOM Table"
+      - "3. Revision History"
+
+  - doc_id: "EVT-CP4-FDR-003"
+    title: "Fixture Debug Report"
+    slug: "fixture-debug-report"
+    doc_type: "report"
+    owner_role: "MTE Staff"
+    priority: "critical"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "high"
+    controlled_terms: [Fixture, "False Fail", "True Fail", GR&R]
+    required_sections:
+      - "1. Purpose"
+      - "2. Debug Summary"
+      - "3. Issues Found Table"
+      - "4. Root Cause and Fix"
+      - "5. Open Items"
+      - "6. Revision History"
+
+  - doc_id: "EVT-CP4-ESI-004"
+    title: "Equipment Setup Instruction"
+    slug: "equipment-setup-instruction"
+    doc_type: "procedure"
+    owner_role: "MTE Staff"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [ICT, FCT, DIAG]
+    rag_chunk_strategy: "by-section"
+    embedding_priority: "medium"
+    controlled_terms: [Fixture, IQ, "Golden Unit"]
+    required_sections:
+      - "1. Purpose"
+      - "2. Equipment List"
+      - "3. Setup Procedure"
+      - "4. Verification Steps"
+      - "5. Troubleshooting"
+      - "6. Revision History"
+
+  - doc_id: "EVT-CP4-VAT-005"
+    title: "Vendor Action Tracker"
+    slug: "vendor-action-tracker"
+    doc_type: "tracker"
+    owner_role: "MTE Lead"
+    priority: "required"
+    product_families: [GPU, DC-L6, Automotive, Embedded]
+    test_stations: [Universal]
+    rag_chunk_strategy: "by-table"
+    embedding_priority: "medium"
+    controlled_terms: [Fixture, ERS, RFQ]
+    required_sections:
+      - "1. Purpose"
+      - "2. Action Tracker Table"
+      - "3. Revision History"
+
+bootstrap:
+  auto_stub: true
+  stub_sections_from_frontmatter: true
