@@ -15,6 +15,7 @@ product_families:
 - Embedded
 test_stations:
 - DIAG
+production_stages: [FATP]
 owner_role: MTE Staff
 status: template-stub
 created_date: '2026-03-29'

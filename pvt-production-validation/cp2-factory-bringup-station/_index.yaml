@@ -1,118 +1,182 @@
-checkpoint_id: "PVT-CP2"
-checkpoint_name: "Factory Line Bring-Up and Station Qualification"
-checkpoint_name_zh: "工厂导入与站位验证"
+checkpoint_id: PVT-CP2
+checkpoint_name: Factory Line Bring-Up and Station Qualification
+checkpoint_name_zh: 工厂导入与站位验证
 phase: PVT
 checkpoint_sequence: 2
-description: >
-  Execute factory line bring-up at production site. Qualify each test station through
-  IQ and OQ protocols. Verify site readiness (infrastructure, safety, SFC connectivity).
-  Complete production sign-off checklist.
+description: 'Execute factory line bring-up at production site. Qualify each test
+  station through IQ and OQ protocols. Verify site readiness (infrastructure, safety,
+  SFC connectivity). Complete production sign-off checklist.
 
+  '
 entry_criteria:
-  - "Factory site infrastructure ready (power, air, ESD, network)"
-  - "Test stations installed at factory"
-  - "IQ/OQ procedures approved (from Line Qualification Plan)"
-
+- Factory site infrastructure ready (power, air, ESD, network)
+- Test stations installed at factory
+- IQ/OQ procedures approved (from Line Qualification Plan)
 exit_criteria:
-  - "Line Bring-Up Checklist complete: all stations operational"
-  - "Site Readiness Checklist signed by Site Manager and MTE Lead"
-  - "IQ completed for all test stations"
-  - "OQ passed for all test stations"
-  - "Production Sign-Off Checklist approved by Factory Ops and MTE Manager"
-
+- 'Line Bring-Up Checklist complete: all stations operational'
+- Site Readiness Checklist signed by Site Manager and MTE Lead
+- IQ completed for all test stations
+- OQ passed for all test stations
+- Production Sign-Off Checklist approved by Factory Ops and MTE Manager
 documents:
-  - doc_id: "PVT-CP2-LBC-001"
-    title: "Line Bring-Up Checklist"
-    slug: "line-bringup-checklist"
-    doc_type: "checklist"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [IQ, OQ, SFC, Fixture, "Golden Unit"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Infrastructure Checklist"
-      - "3. Station Installation Checklist"
-      - "4. Network / SFC Connectivity Checklist"
-      - "5. Sign-Off"
-
-  - doc_id: "PVT-CP2-SRC-002"
-    title: "Site Readiness Checklist"
-    slug: "site-readiness-checklist"
-    doc_type: "checklist"
-    owner_role: "Factory Ops"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [SFC, IQ, OQ, SOP, WI]
-    required_sections:
-      - "1. Purpose"
-      - "2. Facility Readiness"
-      - "3. Staff Readiness (training completed)"
-      - "4. Document Readiness (SOPs, WIs available)"
-      - "5. System Readiness (SFC, ERP)"
-      - "6. Sign-Off"
-
-  - doc_id: "PVT-CP2-TIQ-003"
-    title: "Tester Installation Qualification (IQ)"
-    slug: "tester-iq-installation-qualification"
-    doc_type: "checklist"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG, ATE]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [IQ, OQ, Fixture, "Golden Unit", GR&R]
-    required_sections:
-      - "1. Purpose"
-      - "2. Equipment Under Qualification"
-      - "3. IQ Checklist (hardware, software, calibration)"
-      - "4. IQ Results"
-      - "5. Sign-Off"
-
-  - doc_id: "PVT-CP2-TOQ-004"
-    title: "Tester Operational Qualification (OQ)"
-    slug: "tester-oq-operational-qualification"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG, ATE]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [IQ, OQ, GR&R, "Golden Unit", "False Fail", Yield]
-    required_sections:
-      - "1. Purpose"
-      - "2. OQ Test Protocol"
-      - "3. OQ Results"
-      - "4. Acceptance Criteria vs. Results"
-      - "5. Conclusion"
-      - "6. Sign-Off"
-
-  - doc_id: "PVT-CP2-PSC-005"
-    title: "Production Sign-Off Checklist"
-    slug: "production-sign-off-checklist"
-    doc_type: "checklist"
-    owner_role: "MTE Manager"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [IQ, OQ, SFC, Traceability, SOP, WI, "Golden Unit"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Pre-Production Checklist"
-      - "3. IQ/OQ Completion Status"
-      - "4. First Article Inspection Results"
-      - "5. Sign-Off by All Stakeholders"
-
+- doc_id: PVT-CP2-LBC-001
+  title: Line Bring-Up Checklist
+  slug: line-bringup-checklist
+  doc_type: checklist
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - IQ
+  - OQ
+  - SFC
+  - Fixture
+  - Golden Unit
+  required_sections:
+  - 1. Purpose
+  - 2. Infrastructure Checklist
+  - 3. Station Installation Checklist
+  - 4. Network / SFC Connectivity Checklist
+  - 5. Sign-Off
+  production_stages:
+  - All
+- doc_id: PVT-CP2-SRC-002
+  title: Site Readiness Checklist
+  slug: site-readiness-checklist
+  doc_type: checklist
+  owner_role: Factory Ops
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - SFC
+  - IQ
+  - OQ
+  - SOP
+  - WI
+  required_sections:
+  - 1. Purpose
+  - 2. Facility Readiness
+  - 3. Staff Readiness (training completed)
+  - 4. Document Readiness (SOPs, WIs available)
+  - 5. System Readiness (SFC, ERP)
+  - 6. Sign-Off
+  production_stages:
+  - All
+- doc_id: PVT-CP2-TIQ-003
+  title: Tester Installation Qualification (IQ)
+  slug: tester-iq-installation-qualification
+  doc_type: checklist
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  - ATE
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - IQ
+  - OQ
+  - Fixture
+  - Golden Unit
+  - GR&R
+  required_sections:
+  - 1. Purpose
+  - 2. Equipment Under Qualification
+  - 3. IQ Checklist (hardware, software, calibration)
+  - 4. IQ Results
+  - 5. Sign-Off
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: PVT-CP2-TOQ-004
+  title: Tester Operational Qualification (OQ)
+  slug: tester-oq-operational-qualification
+  doc_type: report
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  - ATE
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - IQ
+  - OQ
+  - GR&R
+  - Golden Unit
+  - False Fail
+  - Yield
+  required_sections:
+  - 1. Purpose
+  - 2. OQ Test Protocol
+  - 3. OQ Results
+  - 4. Acceptance Criteria vs. Results
+  - 5. Conclusion
+  - 6. Sign-Off
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: PVT-CP2-PSC-005
+  title: Production Sign-Off Checklist
+  slug: production-sign-off-checklist
+  doc_type: checklist
+  owner_role: MTE Manager
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - IQ
+  - OQ
+  - SFC
+  - Traceability
+  - SOP
+  - WI
+  - Golden Unit
+  required_sections:
+  - 1. Purpose
+  - 2. Pre-Production Checklist
+  - 3. IQ/OQ Completion Status
+  - 4. First Article Inspection Results
+  - 5. Sign-Off by All Stakeholders
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

@@ -1,7 +1,7 @@
 # Document Index
 
 > **Auto-generated** by `scripts/generate_doc_index.py`. Do not edit manually.
-> Last updated: 2026-03-29  
+> Last updated: 2026-03-30  
 > Total templates: 136
 
 ## Legend

@@ -21,6 +21,7 @@
     "last_updated",
     "rag_chunk_strategy",
     "embedding_priority",
+    "production_stages",
     "controlled_terms",
     "required_sections"
   ],
@@ -104,6 +105,15 @@
         ]
       },
       "description": "Test stations this document is relevant to"
+    },
+    "production_stages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["SMT", "FATP", "PACK", "All"]
+      },
+      "description": "Physical production stages this document covers. Derived from test_stations: ICT→SMT, FCT/DIAG/BURN-IN/ATE/SYSTEM→FATP, OBA→PACK, SFC/Universal→All."
     },
     "owner_role": {
       "type": "string",

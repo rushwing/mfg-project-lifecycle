@@ -1,121 +1,179 @@
-checkpoint_id: "EVT-CP3"
-checkpoint_name: "Test Framework Integration and Initial Program Development"
-checkpoint_name_zh: "测试框架导入与初版程序开发"
+checkpoint_id: EVT-CP3
+checkpoint_name: Test Framework Integration and Initial Program Development
+checkpoint_name_zh: 测试框架导入与初版程序开发
 phase: EVT
 checkpoint_sequence: 3
-description: >
-  Integrate the manufacturing test framework (e.g., NVTE, custom ATE framework),
-  develop initial test program architecture, establish DIAG development plan,
-  define logging/traceability spec, and define SFC interface requirements.
+description: 'Integrate the manufacturing test framework (e.g., NVTE, custom ATE framework),
+  develop initial test program architecture, establish DIAG development plan, define
+  logging/traceability spec, and define SFC interface requirements.
 
+  '
 entry_criteria:
-  - "EVT-CP2 TRP and Test Plan signed off"
-  - "Test framework platform selected"
-  - "Development environment set up"
-
+- EVT-CP2 TRP and Test Plan signed off
+- Test framework platform selected
+- Development environment set up
 exit_criteria:
-  - "Test Framework Integration Plan reviewed by SW architect and MTE Lead"
-  - "SW Architecture for MFG Test documented"
-  - "DIAG Development Plan approved by MTE Lead"
-  - "Logging and Traceability Spec reviewed"
-  - "SFC Interface Requirement submitted to factory IT/SFC team"
-
+- Test Framework Integration Plan reviewed by SW architect and MTE Lead
+- SW Architecture for MFG Test documented
+- DIAG Development Plan approved by MTE Lead
+- Logging and Traceability Spec reviewed
+- SFC Interface Requirement submitted to factory IT/SFC team
 documents:
-  - doc_id: "EVT-CP3-TFI-001"
-    title: "Test Framework Integration Plan"
-    slug: "test-framework-integration-plan"
-    doc_type: "plan"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ICT, FCT, DIAG, SFC, Traceability]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Framework Architecture Overview"
-      - "3. Integration Steps and Schedule"
-      - "4. Platform Dependencies"
-      - "5. Risks and Mitigations"
-      - "6. Revision History"
-
-  - doc_id: "EVT-CP3-SWA-002"
-    title: "SW Architecture for MFG Test"
-    slug: "sw-architecture-mfg-test"
-    doc_type: "spec"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ICT, FCT, DIAG, SFC, ECO, ECN]
-    required_sections:
-      - "1. Purpose"
-      - "2. System Architecture Diagram"
-      - "3. Module Breakdown"
-      - "4. Station-Software Interface"
-      - "5. Configuration Management Approach"
-      - "6. Revision History"
-
-  - doc_id: "EVT-CP3-DDP-003"
-    title: "DIAG Development Plan"
-    slug: "diag-development-plan"
-    doc_type: "plan"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [DIAG, BIST, "Coverage Hole", TRP]
-    required_sections:
-      - "1. Purpose"
-      - "2. DIAG Coverage Goals"
-      - "3. Test Item Development Plan"
-      - "4. Schedule by Test Item"
-      - "5. Dependencies"
-      - "6. Revision History"
-
-  - doc_id: "EVT-CP3-LTS-004"
-    title: "Logging and Traceability Spec"
-    slug: "logging-traceability-spec"
-    doc_type: "spec"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG, SFC]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [SFC, Traceability, "Golden Unit"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Log File Format and Fields"
-      - "3. Serial Number / Traceability Requirements"
-      - "4. Data Upload to SFC"
-      - "5. Data Retention Policy"
-      - "6. Revision History"
-
-  - doc_id: "EVT-CP3-SFR-005"
-    title: "SFC Interface Requirement"
-    slug: "sfc-interface-requirement"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [SFC]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [SFC, Traceability, WIP]
-    required_sections:
-      - "1. Purpose"
-      - "2. SFC System Overview"
-      - "3. API / Interface Specification"
-      - "4. Data Fields Required"
-      - "5. Error Handling"
-      - "6. Revision History"
-
+- doc_id: EVT-CP3-TFI-001
+  title: Test Framework Integration Plan
+  slug: test-framework-integration-plan
+  doc_type: plan
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ICT
+  - FCT
+  - DIAG
+  - SFC
+  - Traceability
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Framework Architecture Overview
+  - 3. Integration Steps and Schedule
+  - 4. Platform Dependencies
+  - 5. Risks and Mitigations
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: EVT-CP3-SWA-002
+  title: SW Architecture for MFG Test
+  slug: sw-architecture-mfg-test
+  doc_type: spec
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ICT
+  - FCT
+  - DIAG
+  - SFC
+  - ECO
+  - ECN
+  required_sections:
+  - 1. Purpose
+  - 2. System Architecture Diagram
+  - 3. Module Breakdown
+  - 4. Station-Software Interface
+  - 5. Configuration Management Approach
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: EVT-CP3-DDP-003
+  title: DIAG Development Plan
+  slug: diag-development-plan
+  doc_type: plan
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - DIAG
+  - BIST
+  - Coverage Hole
+  - TRP
+  required_sections:
+  - 1. Purpose
+  - 2. DIAG Coverage Goals
+  - 3. Test Item Development Plan
+  - 4. Schedule by Test Item
+  - 5. Dependencies
+  - 6. Revision History
+  production_stages:
+  - FATP
+- doc_id: EVT-CP3-LTS-004
+  title: Logging and Traceability Spec
+  slug: logging-traceability-spec
+  doc_type: spec
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  - SFC
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - SFC
+  - Traceability
+  - Golden Unit
+  required_sections:
+  - 1. Purpose
+  - 2. Log File Format and Fields
+  - 3. Serial Number / Traceability Requirements
+  - 4. Data Upload to SFC
+  - 5. Data Retention Policy
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: EVT-CP3-SFR-005
+  title: SFC Interface Requirement
+  slug: sfc-interface-requirement
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - SFC
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - SFC
+  - Traceability
+  - WIP
+  required_sections:
+  - 1. Purpose
+  - 2. SFC System Overview
+  - 3. API / Interface Specification
+  - 4. Data Fields Required
+  - 5. Error Handling
+  - 6. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

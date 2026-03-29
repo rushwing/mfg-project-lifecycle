@@ -1,115 +1,166 @@
-checkpoint_id: "DVT-CP3"
-checkpoint_name: "Software Version Management and Releasability"
-checkpoint_name_zh: "软件版本管理与可发布性"
+checkpoint_id: DVT-CP3
+checkpoint_name: Software Version Management and Releasability
+checkpoint_name_zh: 软件版本管理与可发布性
 phase: DVT
 checkpoint_sequence: 3
-description: >
-  Achieve test software releasability: release notes for all test SW/FW/DIAG,
-  version release plan, configuration control matrix, software change log, and
-  ECO/ECN impact assessments. Ensures SW is production-ready and change-controlled.
+description: 'Achieve test software releasability: release notes for all test SW/FW/DIAG,
+  version release plan, configuration control matrix, software change log, and ECO/ECN
+  impact assessments. Ensures SW is production-ready and change-controlled.
 
+  '
 entry_criteria:
-  - "Test program functionally complete for DVT coverage targets"
-  - "No open P1 bugs in test SW"
-
+- Test program functionally complete for DVT coverage targets
+- No open P1 bugs in test SW
 exit_criteria:
-  - "Release Note (Test SW/FW/DIAG) issued and approved"
-  - "Version Release Plan covers through MP"
-  - "Configuration Control Matrix documents all version dependencies"
-  - "Software Change Log complete and version-controlled"
-  - "All ECO/ECN impacts assessed and reflected in test SW"
-
+- Release Note (Test SW/FW/DIAG) issued and approved
+- Version Release Plan covers through MP
+- Configuration Control Matrix documents all version dependencies
+- Software Change Log complete and version-controlled
+- All ECO/ECN impacts assessed and reflected in test SW
 documents:
-  - doc_id: "DVT-CP3-RNT-001"
-    title: "Release Note (Test SW / FW / DIAG)"
-    slug: "release-note-test-sw-fw-diag"
-    doc_type: "log"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ECO, ECN, DIAG, ICT, FCT]
-    required_sections:
-      - "1. Release Summary"
-      - "2. Version Numbers"
-      - "3. New Features / Changes"
-      - "4. Bug Fixes"
-      - "5. Known Issues"
-      - "6. Installation Instructions"
-      - "7. Revision History"
-
-  - doc_id: "DVT-CP3-VRP-002"
-    title: "Version Release Plan"
-    slug: "version-release-plan"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ECO, ECN, DVT, PVT, MP]
-    required_sections:
-      - "1. Purpose"
-      - "2. Planned Release Schedule"
-      - "3. Release Criteria"
-      - "4. Distribution and Deployment Plan"
-      - "5. Revision History"
-
-  - doc_id: "DVT-CP3-CCM-003"
-    title: "Configuration Control Matrix"
-    slug: "configuration-control-matrix"
-    doc_type: "matrix"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [ECO, ECN, BOM]
-    required_sections:
-      - "1. Purpose"
-      - "2. Configuration Matrix (HW Rev × SW Rev × FW Rev)"
-      - "3. Approved Combinations"
-      - "4. Revision History"
-
-  - doc_id: "DVT-CP3-SCL-004"
-    title: "Software Change Log"
-    slug: "software-change-log"
-    doc_type: "log"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "medium"
-    controlled_terms: [ECO, ECN]
-    required_sections:
-      - "1. Purpose"
-      - "2. Change Log Table"
-      - "3. Revision History"
-
-  - doc_id: "DVT-CP3-EIA-005"
-    title: "ECO / ECN Impact Assessment"
-    slug: "eco-ecn-impact-assessment"
-    doc_type: "analysis"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ECO, ECN, TRP, "Coverage Hole", GR&R]
-    required_sections:
-      - "1. Purpose"
-      - "2. ECO/ECN Summary"
-      - "3. Test Impact Assessment"
-      - "4. Required Test Updates"
-      - "5. Re-qualification Requirements"
-      - "6. Revision History"
-
+- doc_id: DVT-CP3-RNT-001
+  title: Release Note (Test SW / FW / DIAG)
+  slug: release-note-test-sw-fw-diag
+  doc_type: log
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ECO
+  - ECN
+  - DIAG
+  - ICT
+  - FCT
+  required_sections:
+  - 1. Release Summary
+  - 2. Version Numbers
+  - 3. New Features / Changes
+  - 4. Bug Fixes
+  - 5. Known Issues
+  - 6. Installation Instructions
+  - 7. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: DVT-CP3-VRP-002
+  title: Version Release Plan
+  slug: version-release-plan
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ECO
+  - ECN
+  - DVT
+  - PVT
+  - MP
+  required_sections:
+  - 1. Purpose
+  - 2. Planned Release Schedule
+  - 3. Release Criteria
+  - 4. Distribution and Deployment Plan
+  - 5. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP3-CCM-003
+  title: Configuration Control Matrix
+  slug: configuration-control-matrix
+  doc_type: matrix
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - ECO
+  - ECN
+  - BOM
+  required_sections:
+  - 1. Purpose
+  - 2. Configuration Matrix (HW Rev × SW Rev × FW Rev)
+  - 3. Approved Combinations
+  - 4. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP3-SCL-004
+  title: Software Change Log
+  slug: software-change-log
+  doc_type: log
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - ECO
+  - ECN
+  required_sections:
+  - 1. Purpose
+  - 2. Change Log Table
+  - 3. Revision History
+  production_stages:
+  - All
+- doc_id: DVT-CP3-EIA-005
+  title: ECO / ECN Impact Assessment
+  slug: eco-ecn-impact-assessment
+  doc_type: analysis
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ECO
+  - ECN
+  - TRP
+  - Coverage Hole
+  - GR&R
+  required_sections:
+  - 1. Purpose
+  - 2. ECO/ECN Summary
+  - 3. Test Impact Assessment
+  - 4. Required Test Updates
+  - 5. Re-qualification Requirements
+  - 6. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

@@ -1,120 +1,180 @@
-checkpoint_id: "PVT-CP1"
-checkpoint_name: "Mass Production Flow Validation"
-checkpoint_name_zh: "量产流程验证"
+checkpoint_id: PVT-CP1
+checkpoint_name: Mass Production Flow Validation
+checkpoint_name_zh: 量产流程验证
 phase: PVT
 checkpoint_sequence: 1
-description: >
-  Define and validate the end-to-end mass production test flow. Document all SOPs/WIs.
-  Develop operator training materials. Establish line qualification plan for factory
-  site bring-up.
+description: 'Define and validate the end-to-end mass production test flow. Document
+  all SOPs/WIs. Develop operator training materials. Establish line qualification
+  plan for factory site bring-up.
 
+  '
 entry_criteria:
-  - "DVT Exit Review approved"
-  - "PVT hardware samples received"
-  - "Factory site identified and production line infrastructure ready"
-
+- DVT Exit Review approved
+- PVT hardware samples received
+- Factory site identified and production line infrastructure ready
 exit_criteria:
-  - "MP Test Flow documented and approved by MTE Lead and Factory Ops"
-  - "SOPs/WIs completed for all stations"
-  - "Operator Training Materials reviewed and approved"
-  - "Line Qualification Plan issued"
-
+- MP Test Flow documented and approved by MTE Lead and Factory Ops
+- SOPs/WIs completed for all stations
+- Operator Training Materials reviewed and approved
+- Line Qualification Plan issued
 documents:
-  - doc_id: "PVT-CP1-PBP-001"
-    title: "PVT Build Plan"
-    slug: "pvt-build-plan"
-    doc_type: "plan"
-    owner_role: "NPI PM"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [PVT, MP, Yield, UPH, SFC]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Build Quantity by SKU"
-      - "3. Build Schedule"
-      - "4. PVT Test Objectives"
-      - "5. Exit Criteria"
-      - "6. Resource Plan"
-      - "7. Revision History"
-
-  - doc_id: "PVT-CP1-MTF-002"
-    title: "Mass Production Test Flow"
-    slug: "mp-test-flow"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ICT, FCT, DIAG, SFC, Traceability, WIP, Retest, "False Fail"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Production Flow Diagram"
-      - "3. Station Sequence"
-      - "4. Pass/Fail Routing Logic"
-      - "5. Repair/Rework Loop"
-      - "6. SFC Integration Points"
-      - "7. Revision History"
-
-  - doc_id: "PVT-CP1-SOP-003"
-    title: "SOP / WI (Work Instruction)"
-    slug: "sop-wi-work-instruction"
-    doc_type: "procedure"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [SOP, WI, Fixture, "Golden Unit", Retest]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Tools and Materials"
-      - "3. Step-by-Step Procedure"
-      - "4. Pass/Fail Response"
-      - "5. Safety Requirements"
-      - "6. Revision History"
-
-  - doc_id: "PVT-CP1-OTM-004"
-    title: "Operator Training Material"
-    slug: "operator-training-material"
-    doc_type: "procedure"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [SOP, WI, SFC, Traceability, "False Fail"]
-    required_sections:
-      - "1. Training Objectives"
-      - "2. Station Operation Guide"
-      - "3. Common Error Handling"
-      - "4. Competency Assessment Checklist"
-      - "5. Revision History"
-
-  - doc_id: "PVT-CP1-LQP-005"
-    title: "Line Qualification Plan"
-    slug: "line-qualification-plan"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [IQ, OQ, PQ, GR&R, UPH, SFC]
-    required_sections:
-      - "1. Purpose"
-      - "2. Station Qualification Sequence (IQ → OQ)"
-      - "3. Acceptance Criteria per Station"
-      - "4. Schedule"
-      - "5. Revision History"
-
+- doc_id: PVT-CP1-PBP-001
+  title: PVT Build Plan
+  slug: pvt-build-plan
+  doc_type: plan
+  owner_role: NPI PM
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - PVT
+  - MP
+  - Yield
+  - UPH
+  - SFC
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Build Quantity by SKU
+  - 3. Build Schedule
+  - 4. PVT Test Objectives
+  - 5. Exit Criteria
+  - 6. Resource Plan
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP1-MTF-002
+  title: Mass Production Test Flow
+  slug: mp-test-flow
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ICT
+  - FCT
+  - DIAG
+  - SFC
+  - Traceability
+  - WIP
+  - Retest
+  - False Fail
+  required_sections:
+  - 1. Purpose
+  - 2. Production Flow Diagram
+  - 3. Station Sequence
+  - 4. Pass/Fail Routing Logic
+  - 5. Repair/Rework Loop
+  - 6. SFC Integration Points
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP1-SOP-003
+  title: SOP / WI (Work Instruction)
+  slug: sop-wi-work-instruction
+  doc_type: procedure
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - SOP
+  - WI
+  - Fixture
+  - Golden Unit
+  - Retest
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Tools and Materials
+  - 3. Step-by-Step Procedure
+  - 4. Pass/Fail Response
+  - 5. Safety Requirements
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: PVT-CP1-OTM-004
+  title: Operator Training Material
+  slug: operator-training-material
+  doc_type: procedure
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - SOP
+  - WI
+  - SFC
+  - Traceability
+  - False Fail
+  required_sections:
+  - 1. Training Objectives
+  - 2. Station Operation Guide
+  - 3. Common Error Handling
+  - 4. Competency Assessment Checklist
+  - 5. Revision History
+  production_stages:
+  - All
+- doc_id: PVT-CP1-LQP-005
+  title: Line Qualification Plan
+  slug: line-qualification-plan
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - IQ
+  - OQ
+  - PQ
+  - GR&R
+  - UPH
+  - SFC
+  required_sections:
+  - 1. Purpose
+  - 2. Station Qualification Sequence (IQ → OQ)
+  - 3. Acceptance Criteria per Station
+  - 4. Schedule
+  - 5. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

@@ -19,6 +19,7 @@ test_stations:
 - DIAG
 - BURN-IN
 - SYSTEM
+production_stages: [SMT, FATP]
 owner_role: MTE Staff
 status: template-stub
 created_date: '2026-03-29'

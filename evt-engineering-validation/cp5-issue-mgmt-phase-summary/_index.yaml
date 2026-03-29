@@ -1,117 +1,176 @@
-checkpoint_id: "EVT-CP5"
-checkpoint_name: "Issue Management and Phase Summary"
-checkpoint_name_zh: "问题管理与阶段总结"
+checkpoint_id: EVT-CP5
+checkpoint_name: Issue Management and Phase Summary
+checkpoint_name_zh: 问题管理与阶段总结
 phase: EVT
 checkpoint_sequence: 5
-description: >
-  Manage and close EVT build issues, track defects, produce RCA for critical failures,
-  conduct the EVT Exit Criteria Review, and produce the EVT Phase Summary Report.
-  This checkpoint gates transition to DVT.
+description: 'Manage and close EVT build issues, track defects, produce RCA for critical
+  failures, conduct the EVT Exit Criteria Review, and produce the EVT Phase Summary
+  Report. This checkpoint gates transition to DVT.
 
+  '
 entry_criteria:
-  - "EVT build complete (all build units processed through test)"
-  - "Defect list populated with all test failures"
-  - "EVT-CP2 through EVT-CP4 checkpoints complete"
-
+- EVT build complete (all build units processed through test)
+- Defect list populated with all test failures
+- EVT-CP2 through EVT-CP4 checkpoints complete
 exit_criteria:
-  - "All Priority-1 defects have owner and resolution path"
-  - "Root Cause Analysis completed for all systemic failures"
-  - "EVT Exit Criteria Review conducted and documented"
-  - "EVT Phase Summary Report approved by MTE Manager and PM"
-  - "DVT readiness confirmed"
-
+- All Priority-1 defects have owner and resolution path
+- Root Cause Analysis completed for all systemic failures
+- EVT Exit Criteria Review conducted and documented
+- EVT Phase Summary Report approved by MTE Manager and PM
+- DVT readiness confirmed
 documents:
-  - doc_id: "EVT-CP5-DBR-001"
-    title: "EVT Daily Build Report"
-    slug: "evt-daily-build-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [Yield, UPH, WIP, "BOD / EOD", "False Fail", "True Fail"]
-    required_sections:
-      - "1. Build Date"
-      - "2. Units Tested / Pass / Fail Summary"
-      - "3. Top Issues"
-      - "4. Actions for Next Day"
-
-  - doc_id: "EVT-CP5-DTL-002"
-    title: "Defect Tracking List / Bug List"
-    slug: "defect-tracking-list"
-    doc_type: "tracker"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "high"
-    controlled_terms: ["True Fail", "False Fail", "Marginal Fail", FA, RCA, CAPA]
-    required_sections:
-      - "1. Purpose"
-      - "2. Defect Table"
-      - "3. Priority Classification"
-      - "4. Revision History"
-
-  - doc_id: "EVT-CP5-RCA-003"
-    title: "Root Cause Analysis Report (Initial)"
-    slug: "root-cause-analysis-report"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [RCA, FA, CAPA, "True Fail", "Test Escape", Yield]
-    required_sections:
-      - "1. Purpose"
-      - "2. Defect Summary"
-      - "3. Root Cause Findings"
-      - "4. Corrective Actions"
-      - "5. Preventive Actions"
-      - "6. Revision History"
-
-  - doc_id: "EVT-CP5-ECR-004"
-    title: "EVT Exit Criteria Review"
-    slug: "evt-exit-criteria-review"
-    doc_type: "checklist"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [EVT, DVT, TRP, "Coverage Hole", Yield, RAID]
-    required_sections:
-      - "1. Purpose"
-      - "2. Exit Criteria Checklist"
-      - "3. Open Items with Waiver Justification"
-      - "4. DVT Readiness Assessment"
-      - "5. Sign-Off"
-
-  - doc_id: "EVT-CP5-EPR-005"
-    title: "EVT Phase Summary Report"
-    slug: "evt-phase-summary-report"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [EVT, DVT, Yield, "Coverage Hole", FA, RCA, TRP]
-    required_sections:
-      - "1. Executive Summary"
-      - "2. Build Overview"
-      - "3. Test Coverage Achieved"
-      - "4. Key Failures and Root Causes"
-      - "5. Open Issues"
-      - "6. DVT Readiness and Recommendations"
-      - "7. Revision History"
-
+- doc_id: EVT-CP5-DBR-001
+  title: EVT Daily Build Report
+  slug: evt-daily-build-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - Yield
+  - UPH
+  - WIP
+  - BOD / EOD
+  - False Fail
+  - True Fail
+  required_sections:
+  - 1. Build Date
+  - 2. Units Tested / Pass / Fail Summary
+  - 3. Top Issues
+  - 4. Actions for Next Day
+  production_stages:
+  - All
+- doc_id: EVT-CP5-DTL-002
+  title: Defect Tracking List / Bug List
+  slug: defect-tracking-list
+  doc_type: tracker
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: high
+  controlled_terms:
+  - True Fail
+  - False Fail
+  - Marginal Fail
+  - FA
+  - RCA
+  - CAPA
+  required_sections:
+  - 1. Purpose
+  - 2. Defect Table
+  - 3. Priority Classification
+  - 4. Revision History
+  production_stages:
+  - All
+- doc_id: EVT-CP5-RCA-003
+  title: Root Cause Analysis Report (Initial)
+  slug: root-cause-analysis-report
+  doc_type: report
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - RCA
+  - FA
+  - CAPA
+  - True Fail
+  - Test Escape
+  - Yield
+  required_sections:
+  - 1. Purpose
+  - 2. Defect Summary
+  - 3. Root Cause Findings
+  - 4. Corrective Actions
+  - 5. Preventive Actions
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: EVT-CP5-ECR-004
+  title: EVT Exit Criteria Review
+  slug: evt-exit-criteria-review
+  doc_type: checklist
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - EVT
+  - DVT
+  - TRP
+  - Coverage Hole
+  - Yield
+  - RAID
+  required_sections:
+  - 1. Purpose
+  - 2. Exit Criteria Checklist
+  - 3. Open Items with Waiver Justification
+  - 4. DVT Readiness Assessment
+  - 5. Sign-Off
+  production_stages:
+  - All
+- doc_id: EVT-CP5-EPR-005
+  title: EVT Phase Summary Report
+  slug: evt-phase-summary-report
+  doc_type: report
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - EVT
+  - DVT
+  - Yield
+  - Coverage Hole
+  - FA
+  - RCA
+  - TRP
+  required_sections:
+  - 1. Executive Summary
+  - 2. Build Overview
+  - 3. Test Coverage Achieved
+  - 4. Key Failures and Root Causes
+  - 5. Open Issues
+  - 6. DVT Readiness and Recommendations
+  - 7. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

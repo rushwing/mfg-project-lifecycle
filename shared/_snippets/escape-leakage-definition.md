@@ -10,6 +10,7 @@ version: "1.0.0"
 status: "approved"
 product_families: [GPU, DC-L6, Automotive, Embedded]
 test_stations: [Universal]
+production_stages: [All]
 owner_role: "MTE Lead"
 created_date: "2026-03-29"
 last_updated: "2026-03-29"

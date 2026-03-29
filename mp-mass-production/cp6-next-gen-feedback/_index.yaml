@@ -1,103 +1,153 @@
-checkpoint_id: "MP-CP6"
-checkpoint_name: "Next-Generation Product Feedback"
-checkpoint_name_zh: "下一代产品反馈"
+checkpoint_id: MP-CP6
+checkpoint_name: Next-Generation Product Feedback
+checkpoint_name_zh: 下一代产品反馈
 phase: MP
 checkpoint_sequence: 6
-description: >
-  Feed manufacturing test learnings back to the next-generation product design team.
-  Covers DFT/DFX improvements, field return analysis, test escape root causes, and
-  formal NPI feedback to design. This is the closing loop of the manufacturing
+description: 'Feed manufacturing test learnings back to the next-generation product
+  design team. Covers DFT/DFX improvements, field return analysis, test escape root
+  causes, and formal NPI feedback to design. This is the closing loop of the manufacturing
   knowledge cycle.
 
+  '
 entry_criteria:
-  - "≥ 6 months of MP production data available"
-  - "Field return data available (RMA records)"
-
+- ≥ 6 months of MP production data available
+- Field return data available (RMA records)
 exit_criteria:
-  - "DFT/DFX Feedback Report submitted to HW Design team"
-  - "Field Return / RMA Analysis distributed to relevant teams"
-  - "Test Escape Summary reviewed by MTE Manager and Quality Engineer"
-  - "NPI Feedback formally presented in next-gen product kickoff"
-
+- DFT/DFX Feedback Report submitted to HW Design team
+- Field Return / RMA Analysis distributed to relevant teams
+- Test Escape Summary reviewed by MTE Manager and Quality Engineer
+- NPI Feedback formally presented in next-gen product kickoff
 documents:
-  - doc_id: "MP-CP6-DFF-001"
-    title: "DFT / DFX Feedback Report"
-    slug: "dft-dfx-feedback-report"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [DFT, DFX, "Coverage Hole", BIST, "Boundary Scan", ICT, FCT, DIAG]
-    required_sections:
-      - "1. Purpose"
-      - "2. DFT Gaps Found During Production"
-      - "3. DFX Issues (Assembly, Serviceability)"
-      - "4. Recommended DFT Changes for Next Gen"
-      - "5. Recommended DFX Changes for Next Gen"
-      - "6. Revision History"
-
-  - doc_id: "MP-CP6-FRA-002"
-    title: "Field Return / RMA Analysis Summary"
-    slug: "field-return-rma-analysis"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [RMA, "Test Escape", FA, CAPA, DPM, "Coverage Hole"]
-    required_sections:
-      - "1. Purpose"
-      - "2. RMA Data Summary"
-      - "3. Field Failure Mode Pareto"
-      - "4. Test Escape Analysis"
-      - "5. Coverage Improvement Recommendations"
-      - "6. Revision History"
-
-  - doc_id: "MP-CP6-TES-003"
-    title: "Test Escape Summary"
-    slug: "test-escape-summary"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: ["Test Escape", DPM, "Coverage Hole", FA, CAPA, DFT]
-    required_sections:
-      - "1. Purpose"
-      - "2. Total Escape Count and DPPM"
-      - "3. Escape Mode Analysis"
-      - "4. Root Cause Summary"
-      - "5. Coverage Gaps Identified"
-      - "6. Recommendations for Next Gen"
-      - "7. Revision History"
-
-  - doc_id: "MP-CP6-NFD-004"
-    title: "NPI Feedback to Design Team"
-    slug: "npi-feedback-to-design"
-    doc_type: "report"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [NPI, DFT, DFX, "Test Escape", "Coverage Hole", GR&R, Yield, UPH]
-    required_sections:
-      - "1. Executive Summary"
-      - "2. DFT/DFX Improvement Requests"
-      - "3. Test Infrastructure Lessons"
-      - "4. Yield and Quality Learnings"
-      - "5. Manufacturing Flow Improvements"
-      - "6. Priority Ranking"
-      - "7. Revision History"
-
+- doc_id: MP-CP6-DFF-001
+  title: DFT / DFX Feedback Report
+  slug: dft-dfx-feedback-report
+  doc_type: report
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - DFT
+  - DFX
+  - Coverage Hole
+  - BIST
+  - Boundary Scan
+  - ICT
+  - FCT
+  - DIAG
+  required_sections:
+  - 1. Purpose
+  - 2. DFT Gaps Found During Production
+  - 3. DFX Issues (Assembly, Serviceability)
+  - 4. Recommended DFT Changes for Next Gen
+  - 5. Recommended DFX Changes for Next Gen
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP6-FRA-002
+  title: Field Return / RMA Analysis Summary
+  slug: field-return-rma-analysis
+  doc_type: report
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - RMA
+  - Test Escape
+  - FA
+  - CAPA
+  - DPM
+  - Coverage Hole
+  required_sections:
+  - 1. Purpose
+  - 2. RMA Data Summary
+  - 3. Field Failure Mode Pareto
+  - 4. Test Escape Analysis
+  - 5. Coverage Improvement Recommendations
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP6-TES-003
+  title: Test Escape Summary
+  slug: test-escape-summary
+  doc_type: report
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Test Escape
+  - DPM
+  - Coverage Hole
+  - FA
+  - CAPA
+  - DFT
+  required_sections:
+  - 1. Purpose
+  - 2. Total Escape Count and DPPM
+  - 3. Escape Mode Analysis
+  - 4. Root Cause Summary
+  - 5. Coverage Gaps Identified
+  - 6. Recommendations for Next Gen
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP6-NFD-004
+  title: NPI Feedback to Design Team
+  slug: npi-feedback-to-design
+  doc_type: report
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - NPI
+  - DFT
+  - DFX
+  - Test Escape
+  - Coverage Hole
+  - GR&R
+  - Yield
+  - UPH
+  required_sections:
+  - 1. Executive Summary
+  - 2. DFT/DFX Improvement Requests
+  - 3. Test Infrastructure Lessons
+  - 4. Yield and Quality Learnings
+  - 5. Manufacturing Flow Improvements
+  - 6. Priority Ranking
+  - 7. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

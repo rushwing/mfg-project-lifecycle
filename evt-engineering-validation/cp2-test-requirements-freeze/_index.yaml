@@ -1,138 +1,215 @@
-checkpoint_id: "EVT-CP2"
-checkpoint_name: "Test Requirements Freeze and Plan Elaboration"
-checkpoint_name_zh: "测试需求冻结与方案细化"
+checkpoint_id: EVT-CP2
+checkpoint_name: Test Requirements Freeze and Plan Elaboration
+checkpoint_name_zh: 测试需求冻结与方案细化
 phase: EVT
 checkpoint_sequence: 2
-description: >
-  All test requirements are baselined and signed off. Individual test plans for ICT,
-  FCT, and DIAG are elaborated. Detailed coverage matrix produced. Pass/fail criteria
-  frozen before test program development begins. This is the most critical planning
-  gate in EVT.
+description: 'All test requirements are baselined and signed off. Individual test
+  plans for ICT, FCT, and DIAG are elaborated. Detailed coverage matrix produced.
+  Pass/fail criteria frozen before test program development begins. This is the most
+  critical planning gate in EVT.
 
+  '
 entry_criteria:
-  - "EVT-CP1 Test Readiness Checklist signed"
-  - "All major interfaces functional on bring-up units"
-  - "Golden Sample units identified and characterized"
-
+- EVT-CP1 Test Readiness Checklist signed
+- All major interfaces functional on bring-up units
+- Golden Sample units identified and characterized
 exit_criteria:
-  - "TRP signed off by MTE Lead, HW Design Lead, and Program Manager"
-  - "Test Plan (ICT/FCT/DIAG) reviewed by station owners"
-  - "Detailed Test Coverage Matrix: ≥ 80% functional coverage documented"
-  - "Pass/Fail Criteria formally defined and reviewed"
-  - "Test Case List reviewed and assigned to test engineer owners"
-
+- TRP signed off by MTE Lead, HW Design Lead, and Program Manager
+- Test Plan (ICT/FCT/DIAG) reviewed by station owners
+- 'Detailed Test Coverage Matrix: ≥ 80% functional coverage documented'
+- Pass/Fail Criteria formally defined and reviewed
+- Test Case List reviewed and assigned to test engineer owners
 documents:
-  - doc_id: "EVT-CP2-TRP-001"
-    title: "TRP (Test Requirement Plan / Test Readiness Plan)"
-    slug: "trp-test-readiness-plan"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [TRP, ICT, FCT, DIAG, DFT, "Coverage Hole", "Test Escape", EVT, DVT, PVT]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Product Overview and SKU List"
-      - "3. Test Objectives by Phase"
-      - "4. Test Station Strategy and Coverage Goals"
-      - "5. Pass/Fail Philosophy"
-      - "6. Defect Coverage and Escape Risk"
-      - "7. Test Program Development Plan"
-      - "8. Phase Exit Criteria"
-      - "9. Open Issues and Risks"
-      - "10. Approval Sign-Off"
-      - "11. Revision History"
-
-  - doc_id: "EVT-CP2-TCP-002"
-    title: "Test Plan (ICT / FCT / DIAG)"
-    slug: "test-plan-ict-fct-diag"
-    doc_type: "plan"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [ICT, FCT, DIAG, "False Fail", "True Fail", "Golden Unit", Retest, "Pass/Fail Criteria", Yield]
-    required_sections:
-      - "1. Purpose and Scope"
-      - "2. Station Overview"
-      - "3. Test Sequence"
-      - "4. Test Items and Coverage"
-      - "5. Pass / Fail Criteria"
-      - "6. Retest Policy"
-      - "7. Data Logging Requirements"
-      - "8. Known Limitations"
-      - "9. Revision History"
-
-  - doc_id: "EVT-CP2-TCM-003"
-    title: "Test Coverage Matrix (Detailed)"
-    slug: "test-coverage-matrix-detailed"
-    doc_type: "matrix"
-    owner_role: "MTE Staff"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "high"
-    controlled_terms: [DFT, BIST, "Boundary Scan", ICT, FCT, DIAG, "Coverage Hole"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Coverage Matrix (Functional Block × Station)"
-      - "3. Coverage Holes and Mitigations"
-      - "4. Revision History"
-
-  - doc_id: "EVT-CP2-FCP-004"
-    title: "Failure Criteria / Pass-Fail Criteria"
-    slug: "failure-criteria-pass-fail"
-    doc_type: "spec"
-    owner_role: "MTE Lead"
-    priority: "critical"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: ["False Fail", "True Fail", "Marginal Fail", "Test Escape", Retest, Yield]
-    required_sections:
-      - "1. Purpose"
-      - "2. Pass / Fail Definition by Station"
-      - "3. Marginal Fail Handling Policy"
-      - "4. Retest Allowance Policy"
-      - "5. Escalation Criteria"
-      - "6. Revision History"
-
-  - doc_id: "EVT-CP2-TCL-005"
-    title: "Test Case List / Test Item Spec"
-    slug: "test-case-list-item-spec"
-    doc_type: "spec"
-    owner_role: "MTE Staff"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-table"
-    embedding_priority: "high"
-    controlled_terms: [ICT, FCT, DIAG, "Coverage Hole", BIST, "Boundary Scan"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Test Case Table (ID / Name / Station / Coverage Target / Owner)"
-      - "3. Revision History"
-
+- doc_id: EVT-CP2-TRP-001
+  title: TRP (Test Requirement Plan / Test Readiness Plan)
+  slug: trp-test-readiness-plan
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - TRP
+  - ICT
+  - FCT
+  - DIAG
+  - DFT
+  - Coverage Hole
+  - Test Escape
+  - EVT
+  - DVT
+  - PVT
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Product Overview and SKU List
+  - 3. Test Objectives by Phase
+  - 4. Test Station Strategy and Coverage Goals
+  - 5. Pass/Fail Philosophy
+  - 6. Defect Coverage and Escape Risk
+  - 7. Test Program Development Plan
+  - 8. Phase Exit Criteria
+  - 9. Open Issues and Risks
+  - 10. Approval Sign-Off
+  - 11. Revision History
+  production_stages:
+  - All
+- doc_id: EVT-CP2-TCP-002
+  title: Test Plan (ICT / FCT / DIAG)
+  slug: test-plan-ict-fct-diag
+  doc_type: plan
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - ICT
+  - FCT
+  - DIAG
+  - False Fail
+  - True Fail
+  - Golden Unit
+  - Retest
+  - Pass/Fail Criteria
+  - Yield
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Station Overview
+  - 3. Test Sequence
+  - 4. Test Items and Coverage
+  - 5. Pass / Fail Criteria
+  - 6. Retest Policy
+  - 7. Data Logging Requirements
+  - 8. Known Limitations
+  - 9. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: EVT-CP2-TCM-003
+  title: Test Coverage Matrix (Detailed)
+  slug: test-coverage-matrix-detailed
+  doc_type: matrix
+  owner_role: MTE Staff
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: high
+  controlled_terms:
+  - DFT
+  - BIST
+  - Boundary Scan
+  - ICT
+  - FCT
+  - DIAG
+  - Coverage Hole
+  required_sections:
+  - 1. Purpose
+  - 2. Coverage Matrix (Functional Block × Station)
+  - 3. Coverage Holes and Mitigations
+  - 4. Revision History
+  production_stages:
+  - All
+- doc_id: EVT-CP2-FCP-004
+  title: Failure Criteria / Pass-Fail Criteria
+  slug: failure-criteria-pass-fail
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: critical
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - False Fail
+  - True Fail
+  - Marginal Fail
+  - Test Escape
+  - Retest
+  - Yield
+  required_sections:
+  - 1. Purpose
+  - 2. Pass / Fail Definition by Station
+  - 3. Marginal Fail Handling Policy
+  - 4. Retest Allowance Policy
+  - 5. Escalation Criteria
+  - 6. Revision History
+  production_stages:
+  - All
+- doc_id: EVT-CP2-TCL-005
+  title: Test Case List / Test Item Spec
+  slug: test-case-list-item-spec
+  doc_type: spec
+  owner_role: MTE Staff
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-table
+  embedding_priority: high
+  controlled_terms:
+  - ICT
+  - FCT
+  - DIAG
+  - Coverage Hole
+  - BIST
+  - Boundary Scan
+  required_sections:
+  - 1. Purpose
+  - 2. Test Case Table (ID / Name / Station / Coverage Target / Owner)
+  - 3. Revision History
+  production_stages:
+  - SMT
+  - FATP
 depends_on:
-  - checkpoint_id: "EVT-CP1"
-    required_docs: ["EVT-CP1-TRC-003", "EVT-CP1-GSD-004"]
-    reason: "Test readiness and golden sample availability are gate conditions for requirements freeze."
-
+- checkpoint_id: EVT-CP1
+  required_docs:
+  - EVT-CP1-TRC-003
+  - EVT-CP1-GSD-004
+  reason: Test readiness and golden sample availability are gate conditions for requirements
+    freeze.
 feeds_into:
-  - checkpoint_id: "EVT-CP3"
-    consumed_docs: ["EVT-CP2-TRP-001", "EVT-CP2-TCP-002"]
-    reason: "TRP and Test Plan drive the test framework integration plan and DIAG development plan."
-  - checkpoint_id: "DVT-CP1"
-    consumed_docs: ["EVT-CP2-TCM-003"]
-    reason: "DVT updates the detailed coverage matrix from EVT baseline."
-
+- checkpoint_id: EVT-CP3
+  consumed_docs:
+  - EVT-CP2-TRP-001
+  - EVT-CP2-TCP-002
+  reason: TRP and Test Plan drive the test framework integration plan and DIAG development
+    plan.
+- checkpoint_id: DVT-CP1
+  consumed_docs:
+  - EVT-CP2-TCM-003
+  reason: DVT updates the detailed coverage matrix from EVT baseline.
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

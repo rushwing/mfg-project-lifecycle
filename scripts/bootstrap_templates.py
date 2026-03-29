@@ -55,6 +55,30 @@ def find_index_files(phase_filter: str | None = None) -> list[Path]:
     return found
 
 
+_STATION_TO_STAGE: dict[str, str | None] = {
+    "ICT": "SMT",
+    "FCT": "FATP",
+    "DIAG": "FATP",
+    "BURN-IN": "FATP",
+    "ATE": "FATP",
+    "SYSTEM": "FATP",
+    "OBA": "PACK",
+    "SFC": None,       # spans all stages
+    "Universal": None, # stage-agnostic
+}
+
+
+def derive_production_stages(test_stations: list[str]) -> list[str]:
+    """Map test_stations to production stages. SFC and Universal → All."""
+    if not test_stations or any(s in test_stations for s in ("Universal", "SFC")):
+        return ["All"]
+    seen: list[str] = []
+    for stage in ("SMT", "FATP", "PACK"):
+        if any(_STATION_TO_STAGE.get(s) == stage for s in test_stations):
+            seen.append(stage)
+    return seen if seen else ["All"]
+
+
 def build_frontmatter(doc: dict, checkpoint_id: str, phase: str, checkpoint_name: str) -> str:
     """Build YAML frontmatter string from a document entry in _index.yaml."""
     product_families = doc.get("product_families", ["GPU", "DC-L6", "Automotive", "Embedded"])
@@ -79,6 +103,7 @@ def build_frontmatter(doc: dict, checkpoint_id: str, phase: str, checkpoint_name
         "priority": doc.get("priority", "required"),
         "product_families": product_families,
         "test_stations": test_stations,
+        "production_stages": doc.get("production_stages", derive_production_stages(test_stations)),
         "owner_role": doc.get("owner_role", "MTE Staff"),
         "status": "template-stub",
         "created_date": REPO_DATE,

@@ -1,113 +1,168 @@
-checkpoint_id: "MP-CP4"
-checkpoint_name: "Continuous Improvement"
-checkpoint_name_zh: "持续改善"
+checkpoint_id: MP-CP4
+checkpoint_name: Continuous Improvement
+checkpoint_name_zh: 持续改善
 phase: MP
 checkpoint_sequence: 4
-description: >
-  Drive ongoing improvements to yield, test time, cost, and station efficiency.
+description: 'Drive ongoing improvements to yield, test time, cost, and station efficiency.
   Prioritize improvement projects based on Pareto data and business impact.
 
+  '
 entry_criteria:
-  - "MP operations stable (≥ 30 days after handover)"
-  - "Sufficient yield and downtime data for Pareto analysis"
-
+- MP operations stable (≥ 30 days after handover)
+- Sufficient yield and downtime data for Pareto analysis
 exit_criteria:
-  - "N/A — ongoing program"
-
+- N/A — ongoing program
 documents:
-  - doc_id: "MP-CP4-YIP-001"
-    title: "Yield Improvement Plan"
-    slug: "yield-improvement-plan"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "required"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "high"
-    controlled_terms: [Yield, "True Fail", "False Fail", DPM, CAPA, FA]
-    required_sections:
-      - "1. Purpose"
-      - "2. Current Yield Baseline"
-      - "3. Target Yield"
-      - "4. Top Failure Modes (Pareto)"
-      - "5. Improvement Actions with Owners"
-      - "6. Tracking Mechanism"
-      - "7. Revision History"
-
-  - doc_id: "MP-CP4-CRP-002"
-    title: "Cost Reduction Plan"
-    slug: "cost-reduction-plan"
-    doc_type: "plan"
-    owner_role: "MTE Manager"
-    priority: "recommended"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [UPH, "Cycle Time", Bottleneck, CAPEX]
-    required_sections:
-      - "1. Purpose"
-      - "2. Cost Reduction Opportunities"
-      - "3. Project List with Expected Savings"
-      - "4. Schedule"
-      - "5. Revision History"
-
-  - doc_id: "MP-CP4-TTO-003"
-    title: "Test Time Optimization Report"
-    slug: "test-time-optimization-report"
-    doc_type: "report"
-    owner_role: "MTE Staff"
-    priority: "recommended"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [ICT, FCT, DIAG]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [UPH, "Cycle Time", Bottleneck, "False Fail", Yield]
-    required_sections:
-      - "1. Purpose"
-      - "2. Current Test Time Breakdown"
-      - "3. Optimization Candidates"
-      - "4. Risk Assessment (yield impact)"
-      - "5. Results"
-      - "6. Revision History"
-
-  - doc_id: "MP-CP4-SCP-004"
-    title: "Station Consolidation Proposal"
-    slug: "station-consolidation-proposal"
-    doc_type: "plan"
-    owner_role: "MTE Lead"
-    priority: "optional"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [UPH, "Cycle Time", Bottleneck, CAPEX, "Coverage Hole"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Current Station Map"
-      - "3. Consolidation Proposal"
-      - "4. Coverage Impact Analysis"
-      - "5. Cost/Benefit"
-      - "6. Approval"
-
-  - doc_id: "MP-CP4-PAP-005"
-    title: "Preventive Action Plan"
-    slug: "preventive-action-plan"
-    doc_type: "plan"
-    owner_role: "Quality Engineer"
-    priority: "recommended"
-    product_families: [GPU, DC-L6, Automotive, Embedded]
-    test_stations: [Universal]
-    rag_chunk_strategy: "by-section"
-    embedding_priority: "medium"
-    controlled_terms: [CAPA, OEE, IQC, "Test Escape"]
-    required_sections:
-      - "1. Purpose"
-      - "2. Risk-Based Preventive Actions"
-      - "3. Implementation Plan"
-      - "4. Revision History"
-
+- doc_id: MP-CP4-YIP-001
+  title: Yield Improvement Plan
+  slug: yield-improvement-plan
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: required
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - Yield
+  - True Fail
+  - False Fail
+  - DPM
+  - CAPA
+  - FA
+  required_sections:
+  - 1. Purpose
+  - 2. Current Yield Baseline
+  - 3. Target Yield
+  - 4. Top Failure Modes (Pareto)
+  - 5. Improvement Actions with Owners
+  - 6. Tracking Mechanism
+  - 7. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP4-CRP-002
+  title: Cost Reduction Plan
+  slug: cost-reduction-plan
+  doc_type: plan
+  owner_role: MTE Manager
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - UPH
+  - Cycle Time
+  - Bottleneck
+  - CAPEX
+  required_sections:
+  - 1. Purpose
+  - 2. Cost Reduction Opportunities
+  - 3. Project List with Expected Savings
+  - 4. Schedule
+  - 5. Revision History
+  production_stages:
+  - All
+- doc_id: MP-CP4-TTO-003
+  title: Test Time Optimization Report
+  slug: test-time-optimization-report
+  doc_type: report
+  owner_role: MTE Staff
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - ICT
+  - FCT
+  - DIAG
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - UPH
+  - Cycle Time
+  - Bottleneck
+  - False Fail
+  - Yield
+  required_sections:
+  - 1. Purpose
+  - 2. Current Test Time Breakdown
+  - 3. Optimization Candidates
+  - 4. Risk Assessment (yield impact)
+  - 5. Results
+  - 6. Revision History
+  production_stages:
+  - SMT
+  - FATP
+- doc_id: MP-CP4-SCP-004
+  title: Station Consolidation Proposal
+  slug: station-consolidation-proposal
+  doc_type: plan
+  owner_role: MTE Lead
+  priority: optional
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - UPH
+  - Cycle Time
+  - Bottleneck
+  - CAPEX
+  - Coverage Hole
+  required_sections:
+  - 1. Purpose
+  - 2. Current Station Map
+  - 3. Consolidation Proposal
+  - 4. Coverage Impact Analysis
+  - 5. Cost/Benefit
+  - 6. Approval
+  production_stages:
+  - All
+- doc_id: MP-CP4-PAP-005
+  title: Preventive Action Plan
+  slug: preventive-action-plan
+  doc_type: plan
+  owner_role: Quality Engineer
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - CAPA
+  - OEE
+  - IQC
+  - Test Escape
+  required_sections:
+  - 1. Purpose
+  - 2. Risk-Based Preventive Actions
+  - 3. Implementation Plan
+  - 4. Revision History
+  production_stages:
+  - All
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true
