@@ -21,6 +21,7 @@ uv sync
 | `check_term_consistency.py` | Check `controlled_terms` against `GLOSSARY.md` | PR |
 | `validate_structure.py` | Check index–file consistency and cross-references | PR |
 | `generate_doc_index.py` | Generate `DOC_INDEX.md` | Push to main |
+| `validate_i18n.py` | Validate `i18n/` YAML and `doc_id` coverage | PR |
 | `bump_version.py` | Bump KB version in `pyproject.toml` + update `CHANGELOG.md` | Manual |
 
 ## Common Workflows
