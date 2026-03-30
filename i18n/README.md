@@ -29,10 +29,10 @@ Benefits:
 
 ## Two-Tier Section Heading Localization
 
-There are 520 unique section-heading labels across all 140 templates.
+Across all lifecycle templates there are hundreds of unique `required_sections` labels.
 `section_titles.yaml` covers only ~8 **universal structural headings** that appear in almost every document (Purpose and Scope, Revision History, Exit Criteria, etc.).
 
-The remaining ~448 headings are **document-specific** (e.g. "Coverage Summary by Station", "Bottleneck Station Identification", "BIST Coverage Requirements"). These cannot be enumerated statically — they are different for every template. They are translated **dynamically by the RAG agent at generation time**:
+The remaining headings are **document-specific** (e.g. "Coverage Summary by Station", "Bottleneck Station Identification", "BIST Coverage Requirements"). These cannot be enumerated statically — they are different for every template. They are translated **dynamically by the RAG agent at generation time**:
 
 ```
 Static path  (this file):
