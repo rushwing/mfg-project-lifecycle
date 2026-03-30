@@ -100,12 +100,12 @@ When editing `_index.yaml` or frontmatter, the constrained enums are:
 | `rag_chunk_strategy` | `by-section`, `by-table`, `monolithic`, `split-h2` |
 | `embedding_priority` | `high`, `medium`, `low`, `exclude` |
 | `owner_role` | `MTE Lead`, `MTE Staff`, `MTE Manager`, `NPI PM`, `Quality Engineer`, `Factory Ops` |
-| `test_stations` | `ICT`, `FCT`, `DIAG`, `BURN-IN`, `ATE`, `SYSTEM`, `OBA`, `SFC`, `Universal` |
+| `test_stations` | `ICT`, `FCT`, `DIAG`, `BURN-IN`, `ATE`, `SYSTEM`, `OBA`, `SFC`, `AOI`, `AXI`, `3D-SPI`, `HALT`, `HASS`, `Universal` |
 | `product_families` | `GPU`, `DC-L6`, `Automotive`, `Embedded`, `Universal` |
 | `production_stages` | `SMT`, `FATP`, `PACK`, `All` |
 | `priority` | `critical`, `required`, `recommended`, `optional` (lifecycle templates only; not required for Universal/snippets) |
 
-The `production_stages` field is derived from `test_stations` by `bootstrap_templates.py` (`ICT`→`SMT`, `FCT/DIAG/BURN-IN/ATE/SYSTEM`→`FATP`, `OBA`→`PACK`, `SFC/Universal`→`All`).
+The `production_stages` field is derived from `test_stations` by `bootstrap_templates.py` (`ICT/AOI/AXI/3D-SPI`→`SMT`, `FCT/DIAG/BURN-IN/ATE/SYSTEM/HALT/HASS`→`FATP`, `OBA`→`PACK`, `SFC/Universal`→`All`).
 
 ### i18n
 
@@ -113,11 +113,11 @@ The `production_stages` field is derived from `test_stations` by `bootstrap_temp
 
 | File | Purpose |
 |------|---------|
-| `i18n/doc_titles.yaml` | Localized document titles for all 140 `doc_id`s (135 lifecycle + 5 snippets) |
+| `i18n/doc_titles.yaml` | Localized document titles for all 144 `doc_id`s (139 lifecycle + 5 snippets) |
 | `i18n/section_titles.yaml` | Localized headings for ~8 universal structural sections (Purpose and Scope, Revision History, etc.); document-specific headings are translated dynamically by the RAG agent at generation time |
 | `i18n/README.md` | Usage instructions and RAG agent integration example |
 
-**Multilingual canonical forms in GLOSSARY.md:** Each of the 65 terms has three additional lines after `**Canonical Form:** \`X\``:
+**Multilingual canonical forms in GLOSSARY.md:** Each of the 70 terms has three additional lines after `**Canonical Form:** \`X\``:
 ```
 **Canonical Form (zh-CN):** `简体中文`
 **Canonical Form (zh-TW):** `繁體中文`
