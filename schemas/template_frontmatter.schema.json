@@ -101,6 +101,11 @@
           "SYSTEM",
           "OBA",
           "SFC",
+          "AOI",
+          "AXI",
+          "3D-SPI",
+          "HALT",
+          "HASS",
           "Universal"
         ]
       },
@@ -113,7 +118,7 @@
         "type": "string",
         "enum": ["SMT", "FATP", "PACK", "All"]
       },
-      "description": "Physical production stages this document covers. Derived from test_stations: ICT→SMT, FCT/DIAG/BURN-IN/ATE/SYSTEM→FATP, OBA→PACK, SFC/Universal→All."
+      "description": "Physical production stages this document covers. Derived from test_stations: ICT/AOI/AXI/3D-SPI→SMT, FCT/DIAG/BURN-IN/ATE/SYSTEM/HALT/HASS→FATP, OBA→PACK, SFC/Universal→All."
     },
     "owner_role": {
       "type": "string",

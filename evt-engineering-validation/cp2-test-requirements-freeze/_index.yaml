@@ -192,6 +192,41 @@ documents:
   production_stages:
   - SMT
   - FATP
+- doc_id: EVT-CP2-AOI-006
+  title: AOI / AXI / 3D-SPI Coverage Plan
+  slug: aoi-axi-3dspi-coverage-plan
+  doc_type: spec
+  owner_role: MTE Lead
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - AOI
+  - AXI
+  - 3D-SPI
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - AOI
+  - AXI
+  - DFT
+  - Coverage Hole
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. SMT Inspection Station Configuration
+  - 3. AOI Coverage Requirements by Board Region
+  - 4. AXI Coverage Requirements (BGA / Hidden Joints)
+  - 5. 3D-SPI Coverage and Paste Volume Limits
+  - 6. Defect Classification and Escape Risk
+  - 7. Revision History
+  production_stages:
+  - SMT
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 depends_on:
 - checkpoint_id: EVT-CP1
   required_docs:

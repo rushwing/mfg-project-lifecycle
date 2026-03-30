@@ -57,14 +57,19 @@ def find_index_files(phase_filter: str | None = None) -> list[Path]:
 
 _STATION_TO_STAGE: dict[str, str | None] = {
     "ICT": "SMT",
+    "AOI": "SMT",       # Automated Optical Inspection — SMT line
+    "AXI": "SMT",       # Automated X-ray Inspection — SMT line
+    "3D-SPI": "SMT",    # 3D Solder Paste Inspection — SMT line
     "FCT": "FATP",
     "DIAG": "FATP",
     "BURN-IN": "FATP",
     "ATE": "FATP",
     "SYSTEM": "FATP",
+    "HALT": "FATP",     # Highly Accelerated Life Testing — system level
+    "HASS": "FATP",     # Highly Accelerated Stress Screening — system level
     "OBA": "PACK",
-    "SFC": None,       # spans all stages
-    "Universal": None, # stage-agnostic
+    "SFC": None,        # spans all stages
+    "Universal": None,  # stage-agnostic
 }
 
 

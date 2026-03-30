@@ -23,8 +23,8 @@ Benefits:
 | Code | Language | Factory | doc_titles | section_titles |
 |------|----------|---------|-----------|---------------|
 | `en` | English | — | Ground truth | Ground truth |
-| `zh-CN` | Simplified Chinese | 深圳 | ✅ 140/140 | ✅ 8 structural labels; remainder via RAG |
-| `zh-TW` | Traditional Chinese | 台湾 | ✅ 140/140 | ✅ 8 structural labels; remainder via RAG |
+| `zh-CN` | Simplified Chinese | 深圳 | ✅ 144/144 | ✅ 8 structural labels; remainder via RAG |
+| `zh-TW` | Traditional Chinese | 台湾 | ✅ 144/144 | ✅ 8 structural labels; remainder via RAG |
 | `vi` | Vietnamese | Vietnam | 🔲 Stub | 🔲 Stub |
 
 ## Two-Tier Section Heading Localization
@@ -122,10 +122,10 @@ Then generate the full document body under each translated heading.
 When ready to add full Vietnamese support:
 
 1. Replace all `vi: "(pending)"` entries in `doc_titles.yaml` and `section_titles.yaml`
-2. Add `**Canonical Form (vi):**` lines in `GLOSSARY.md` for all 65 terms (currently stubbed as `*(pending)*`)
+2. Add `**Canonical Form (vi):**` lines in `GLOSSARY.md` for all 70 terms (currently stubbed as `*(pending)*`)
 3. Update the language table above
 
 ## Coverage
 
-- `doc_titles.yaml`: 140 entries (135 lifecycle docs + 5 shared snippets)
+- `doc_titles.yaml`: 144 entries (139 lifecycle docs + 5 shared snippets)
 - `section_titles.yaml`: 8 entries — only labels that appear verbatim in current `required_sections` values and warrant a locked translation; all other headings handled by RAG agent at runtime

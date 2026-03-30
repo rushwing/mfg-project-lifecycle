@@ -234,6 +234,71 @@ embedding_priority: high
 
 ---
 
+### AOI
+**Canonical Form:** `AOI`
+**Canonical Form (zh-CN):** `自动光学检测`
+**Canonical Form (zh-TW):** `自動光學檢測`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Automated Optical Inspection
+**Definition:** Automated visual inspection system using cameras and image processing algorithms to detect SMT assembly defects including missing components, misalignment, wrong polarity, solder bridges, and insufficient solder. Typically placed after solder paste printing (as 3D-SPI) and after reflow on the SMT line.
+**Do Not Confuse With:** AXI (AOI uses visible light/cameras; AXI uses X-ray to see through components and under BGA joints). ICT (AOI inspects visual/placement defects; ICT tests electrical continuity).
+**Phase Context:** EVT through MP.
+**Example Usage:** "AOI/AXI Coverage Plan must achieve ≥95% SMT defect coverage before DVT-CP2 exit."
+
+---
+
+### AXI
+**Canonical Form:** `AXI`
+**Canonical Form (zh-CN):** `自动X射线检测`
+**Canonical Form (zh-TW):** `自動X射線檢測`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Automated X-ray Inspection, X-ray Inspection
+**Definition:** Automated inspection system using X-ray imaging to detect SMT defects not visible optically, including BGA solder joint voids, bridging under components, missing balls, and cold joints. Essential for boards with BGAs or high-density bottom-side components.
+**Do Not Confuse With:** AOI (AXI uses X-ray to see hidden joints; AOI uses visible light for surface inspection). 3D-SPI (3D-SPI inspects paste before reflow; AXI inspects joints after reflow).
+**Phase Context:** EVT through MP.
+**Example Usage:** "AXI void rate for BGA solder joints must be < 25% by area per IPC-7095 before DVT-CP2 sign-off."
+
+---
+
+### 3D SPI
+**Canonical Form:** `3D SPI`
+**Canonical Form (zh-CN):** `三维锡膏检测`
+**Canonical Form (zh-TW):** `三維錫膏檢測`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** 3D-SPI, Solder Paste Inspection, 3D Solder Paste Inspection
+**Definition:** Automated inspection system using structured light or laser to measure the 3D profile of solder paste deposits after stencil printing and before component placement. Measures paste volume, height, area, and offset. Critical SPC control point for SMT yield.
+**Do Not Confuse With:** AOI (3D-SPI inspects paste before reflow; AOI inspects assembled boards after reflow). AXI (3D-SPI inspects paste deposits; AXI inspects solder joints after reflow).
+**Phase Context:** EVT through MP.
+**Example Usage:** "3D SPI data feeds the SPC Control Chart for solder paste volume at the SMT line entry gate."
+
+---
+
+### HALT
+**Canonical Form:** `HALT`
+**Canonical Form (zh-CN):** `高加速寿命测试`
+**Canonical Form (zh-TW):** `高加速壽命測試`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Highly Accelerated Life Testing
+**Definition:** Accelerated reliability stress test using step-stress profiles (temperature cycling, vibration, combined stress) to rapidly identify design weaknesses and latent defects in engineering samples. HALT applies stresses beyond spec limits intentionally to find failure margins — it is a discovery tool, not a pass/fail test.
+**Do Not Confuse With:** HASS (HASS is a production screening test for latent defects; HALT is an engineering design evaluation tool). Burn-In (Burn-In operates within spec limits; HALT exceeds them to find failure modes).
+**Phase Context:** DVT (design robustness evaluation).
+**Example Usage:** "HALT Test Protocol defines the step-stress profile and failure criteria for DVT thermal/vibration margin evaluation."
+
+---
+
+### HASS
+**Canonical Form:** `HASS`
+**Canonical Form (zh-CN):** `高加速应力筛选`
+**Canonical Form (zh-TW):** `高加速應力篩選`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Highly Accelerated Stress Screening
+**Definition:** Production screening process derived from HALT results that applies accelerated stress profiles (within product limits, above normal operating conditions) to 100% of production units to precipitate and screen out latent manufacturing defects before shipment. Unlike HALT, HASS is a production pass/fail screen.
+**Do Not Confuse With:** HALT (HALT finds design failure margins; HASS screens production units using proven stress levels). Burn-In (Burn-In uses thermal soak only; HASS uses combined temperature cycling and vibration). HAST (Highly Accelerated Stress Test — a moisture/humidity-focused reliability test; different domain).
+**Phase Context:** PVT-CP3 qualification, MP production screening.
+**Example Usage:** "HASS Screening Procedure must demonstrate < 0.1% false precipitation rate before PVT exit."
+
+---
+
 ## Document and Process Terms
 
 ### TRP
@@ -565,14 +630,14 @@ embedding_priority: high
 
 ### PFMEA
 **Canonical Form:** `PFMEA`
-**Canonical Form (zh-CN):** `制程失效模式与影响分析`
-**Canonical Form (zh-TW):** `製程失效模式與影響分析`
+**Canonical Form (zh-CN):** `制程失效模式与效应分析`
+**Canonical Form (zh-TW):** `製程失效模式與效應分析`
 **Canonical Form (vi):** *(pending)*
-**Aliases:** Process FMEA, Manufacturing FMEA
-**Definition:** Process Failure Mode and Effects Analysis. A structured risk analysis of each manufacturing process step, identifying potential failure modes, their effects on the product, potential causes, current controls, and a Risk Priority Number (RPN = Severity × Occurrence × Detection) used to prioritize corrective actions. PFMEA is the upstream input to the Control Plan.
-**Do Not Confuse With:** DFMEA (Design FMEA — conducted by the design team on the product design, not the manufacturing process). PFMEA focuses on process steps and workmanship defects; DFMEA focuses on design-induced failure modes.
-**Phase Context:** Created in P1/EVT when the manufacturing process is first defined; updated through DVT/PVT as the process matures. Mandatory for Automotive product families.
-**Example Usage:** "The PFMEA for the FCT station identified insufficient pogo-pin pressure as a high-occurrence failure mode (RPN = 144); fixture redesign was triggered."
+**Aliases:** Process FMEA, Process Failure Mode and Effects Analysis
+**Definition:** Structured risk analysis methodology applied to manufacturing processes to identify potential failure modes, their causes, effects, and detection controls. Each failure mode is scored on Severity, Occurrence, and Detection (1–10 each) to calculate an RPN. High-RPN items require mitigation actions before production.
+**Do Not Confuse With:** DFMEA (Design FMEA — focuses on product design failures; PFMEA focuses on process failures). FTA (Fault Tree Analysis — top-down deductive; PFMEA is bottom-up inductive).
+**Phase Context:** P1-CP2 initiation, updated through DVT.
+**Example Usage:** "PFMEA must be completed for all SMT and FATP process steps before DVT-CP1 exit."
 
 ---
 
@@ -582,23 +647,23 @@ embedding_priority: high
 **Canonical Form (zh-TW):** `風險優先數`
 **Canonical Form (vi):** *(pending)*
 **Aliases:** Risk Priority Number
-**Definition:** Risk Priority Number. A composite risk score in FMEA: RPN = Severity (1–10) × Occurrence (1–10) × Detection (1–10). Range: 1–1000. Items with RPN ≥ 100 or Severity ≥ 8 require documented corrective actions. After actions are implemented, RPN is recalculated to confirm risk reduction.
-**Do Not Confuse With:** Risk score in RAID log (qualitative High/Medium/Low); RPN is a quantitative FMEA-specific metric.
-**Phase Context:** Used in PFMEA and DFMEA throughout EVT–PVT.
-**Example Usage:** "Initial RPN for the open-solder failure mode was 210; post-reflow profile optimization reduced it to 48."
+**Definition:** Composite risk score used in PFMEA. `RPN = Severity × Occurrence × Detection` where each factor is rated 1–10. Higher RPN indicates higher risk requiring mitigation. Typical action threshold is RPN ≥ 100 or Severity ≥ 8.
+**Do Not Confuse With:** DPPM (DPPM is a measured production quality metric; RPN is a prospective risk estimate). Risk score (RPN is the FMEA-specific formula; other risk frameworks use different calculations).
+**Phase Context:** P1-CP2, DVT.
+**Example Usage:** "All PFMEA items with RPN > 100 must have mitigation actions documented before DVT exit."
 
 ---
 
 ### SPC
 **Canonical Form:** `SPC`
-**Canonical Form (zh-CN):** `统计过程控制`
+**Canonical Form (zh-CN):** `统计制程控制`
 **Canonical Form (zh-TW):** `統計製程管制`
 **Canonical Form (vi):** *(pending)*
 **Aliases:** Statistical Process Control
-**Definition:** Statistical Process Control. The use of control charts and statistical methods to monitor manufacturing process variables in real time, distinguishing normal process variation (common cause) from signals requiring intervention (special cause). Common chart types: X-bar/R for continuous variables, P-chart for proportion defective, np-chart for defect counts.
-**Do Not Confuse With:** Process Capability (Cpk — a static capability metric computed from a data set); SPC is a real-time dynamic monitoring system. A process can be in statistical control but still have poor capability, and vice versa.
-**Phase Context:** Baselines established during PVT; operated continuously in MP.
-**Example Usage:** "FCT yield SPC chart triggered a Western Electric Rule 2 violation on Day 7 of MP ramp; root cause was a firmware version mismatch."
+**Definition:** Real-time process monitoring methodology using control charts to detect statistically significant shifts or trends in process parameters before they produce defects. SPC distinguishes between common-cause variation (inherent process noise) and special-cause variation (assignable, requiring corrective action).
+**Do Not Confuse With:** Cpk (Cpk measures process capability relative to spec limits; SPC monitors process stability over time). APC (Advanced Process Control is a feedback control system; SPC is a monitoring/detection tool).
+**Phase Context:** MP (sustained production monitoring).
+**Example Usage:** "SPC Control Chart for solder paste height triggers an alert when 7 consecutive measurements fall on one side of the mean."
 
 ---
 
@@ -607,24 +672,24 @@ embedding_priority: high
 **Canonical Form (zh-CN):** `控制图`
 **Canonical Form (zh-TW):** `管制圖`
 **Canonical Form (vi):** *(pending)*
-**Aliases:** Shewhart Chart, Process Control Chart
-**Definition:** A time-series chart used in SPC with a center line (process mean), Upper Control Limit (UCL), and Lower Control Limit (LCL) set at ±3σ from the mean. Points outside control limits or patterns matching the Western Electric Rules indicate a special cause requiring investigation.
-**Do Not Confuse With:** Specification limits (USL/LSL — engineering tolerances set by product requirements, wider than control limits); control limits are derived from process variation, not product tolerances.
-**Phase Context:** MP daily operations and continuous improvement.
-**Example Usage:** "The X-bar control chart for ICT test time showed the process drifting toward UCL over 3 shifts, indicating fixture wear."
+**Aliases:** Shewhart Chart, Process Control Chart, X-bar R Chart, X-bar S Chart
+**Definition:** Statistical chart used in SPC with a centerline (process mean) and upper/lower control limits (UCL/LCL) set at ±3σ from the mean. Points outside control limits or exhibiting non-random patterns (7-point runs, trends) indicate special-cause variation requiring investigation.
+**Do Not Confuse With:** Spec limits (Control limits are statistical bounds based on process variation; spec limits are engineering requirements — a process can be in control but out of spec, or in spec but out of control).
+**Phase Context:** MP.
+**Example Usage:** "Control Chart for FCT test cycle time showed a mean shift after the conveyor maintenance event."
 
 ---
 
 ### Cpk
 **Canonical Form:** `Cpk`
-**Canonical Form (zh-CN):** `过程能力指数`
-**Canonical Form (zh-TW):** `製程能力指標`
+**Canonical Form (zh-CN):** `制程能力指数`
+**Canonical Form (zh-TW):** `製程能力指數`
 **Canonical Form (vi):** *(pending)*
-**Aliases:** Process Capability Index, Cp, Pp, Ppk
-**Definition:** Process Capability Index. Measures how well a process output fits within specification limits relative to natural process variation. Cpk = min(USL − μ, μ − LSL) / (3σ). Thresholds: Cpk < 1.00 = incapable; 1.00–1.33 = marginal; ≥ 1.33 = capable; ≥ 1.67 = highly capable (Automotive target). Cp measures potential capability (ignoring mean offset); Cpk measures actual capability. Pp/Ppk use overall σ from a study; Cp/Cpk use within-subgroup σ from ongoing SPC charts.
-**Do Not Confuse With:** Yield (a yield of 99% does not imply Cpk ≥ 1.33; a bimodal process can have high yield but poor Cpk and latent risk). Cpk should only be computed after the process is in statistical control.
-**Phase Context:** Computed at DVT/PVT to qualify the manufacturing process; monitored in MP continuous improvement.
-**Example Usage:** "GR&R passed (< 10% study variation), but Cpk for the RF power measurement was 0.91 — recalibration raised it to 1.45."
+**Aliases:** Process Capability Index, Cpk Index
+**Definition:** Statistical measure of a process's ability to produce output within specification limits, accounting for both process spread and centering. `Cpk = min((USL − μ) / 3σ, (μ − LSL) / 3σ)`. Cpk ≥ 1.33 is typically required for production release; Cpk ≥ 1.67 for critical parameters.
+**Do Not Confuse With:** Cp (Cp measures only process spread without centering; Cpk accounts for off-center processes — Cpk ≤ Cp always). SPC (SPC monitors process stability over time; Cpk is a snapshot capability metric).
+**Phase Context:** PVT-CP3 capability study, MP monitoring.
+**Example Usage:** "Process Capability Report shows Cpk = 1.45 for solder paste volume, meeting the 1.33 threshold for MP sign-off."
 
 ---
 
@@ -633,11 +698,11 @@ embedding_priority: high
 **Canonical Form (zh-CN):** `八步骤问题解决法`
 **Canonical Form (zh-TW):** `八步驟問題解決法`
 **Canonical Form (vi):** *(pending)*
-**Aliases:** Eight Disciplines, 8D Report, G8D, Global 8D
-**Definition:** Eight Disciplines Problem Solving. A structured 8-step methodology for resolving significant quality problems: D1 (form the team), D2 (describe the problem), D3 (interim containment), D4 (root cause identification), D5 (permanent corrective actions), D6 (implement and validate), D7 (systemic preventive actions), D8 (recognize the team). Required by automotive customers (IATF 16949) for significant field or production quality escapes.
-**Do Not Confuse With:** CAPA (a broader quality system requirement; 8D is a specific structured format often used to fulfill a CAPA). RCA (D4 is the RCA step within 8D; standalone RCA does not include containment, validation, or systemic prevention).
-**Phase Context:** Triggered during EVT–MP when a high-severity defect or Test Escape is identified; mandatory for customer-facing field escapes.
-**Example Usage:** "A field return cluster triggered a G8D; D4 identified a marginal solder joint on the power rail; D7 updated the PFMEA and tightened the paste volume spec in the SOP."
+**Aliases:** 8 Disciplines, Eight Disciplines, 8D Report, G8D
+**Definition:** Structured eight-step problem-solving methodology for quality issues: (D1) Team, (D2) Problem Description, (D3) Interim Containment, (D4) Root Cause, (D5) Corrective Actions, (D6) Verify Effectiveness, (D7) Prevent Recurrence, (D8) Recognize Team. Produces a formal 8D Report as a customer-facing quality deliverable.
+**Do Not Confuse With:** CAPA (CAPA is an internal quality system record; 8D is a structured report often required externally by customers or auditors). RCA (RCA is the root cause process, equivalent to D4; 8D is the full problem-solving structure).
+**Phase Context:** MP-CP3 (anomaly response).
+**Example Usage:** "Customer-facing 8D Report must be submitted within 10 business days of a Test Escape event."
 
 ---
 
