@@ -76,6 +76,12 @@ P1-CP2-CAP-005:
   zh-TW: "產能規劃草案 / UPH估算草案"
   vi: "(pending)"
 
+P1-CP2-PFM-006:
+  en: "Process FMEA (PFMEA)"
+  zh-CN: "制程失效模式与影响分析（PFMEA）"
+  zh-TW: "製程失效模式與影響分析（PFMEA）"
+  vi: "(pending)"
+
 P1-CP3-FCP-001:
   en: "Fixture Concept Proposal"
   zh-CN: "治具概念方案"
@@ -666,6 +672,12 @@ MP-CP1-DEL-005:
   zh-TW: "停機 / 升級處理日誌"
   vi: "(pending)"
 
+MP-CP1-SPC-006:
+  en: "SPC Control Chart"
+  zh-CN: "统计过程控制图"
+  zh-TW: "統計製程管制圖"
+  vi: "(pending)"
+
 MP-CP2-MRN-001:
   en: "MP Release Note"
   zh-CN: "量产发布说明"
@@ -726,6 +738,12 @@ MP-CP3-CAR-005:
   zh-TW: "遏制行動報告"
   vi: "(pending)"
 
+MP-CP3-8DR-006:
+  en: "8D Problem Solving Report"
+  zh-CN: "八步骤问题解决报告"
+  zh-TW: "八步驟問題解決報告"
+  vi: "(pending)"
+
 MP-CP4-YIP-001:
   en: "Yield Improvement Plan"
   zh-CN: "良率改善计划"
@@ -754,6 +772,12 @@ MP-CP4-PAP-005:
   en: "Preventive Action Plan"
   zh-CN: "预防行动计划"
   zh-TW: "預防行動計畫"
+  vi: "(pending)"
+
+MP-CP4-CPK-006:
+  en: "Process Capability Report (Cpk)"
+  zh-CN: "过程能力报告（Cpk）"
+  zh-TW: "製程能力報告（Cpk）"
   vi: "(pending)"
 
 MP-CP5-MSR-001:

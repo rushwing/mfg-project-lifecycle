@@ -163,6 +163,40 @@ documents:
   - 4. Revision History
   production_stages:
   - All
+- doc_id: MP-CP4-CPK-006
+  title: Process Capability Report (Cpk)
+  slug: process-capability-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: medium
+  controlled_terms:
+  - Cpk
+  - SPC
+  - GR&R
+  - Yield
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Measurement Parameters and Specifications
+  - 3. Data Collection Methodology
+  - 4. Process Capability Analysis (Cp / Cpk / Pp / Ppk)
+  - 5. Histogram and Distribution Analysis
+  - 6. Capability by Station
+  - 7. Recommendations
+  - 8. Revision History
+  production_stages:
+  - All
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

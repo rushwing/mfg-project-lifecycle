@@ -153,6 +153,39 @@ documents:
   - 4. Revision History
   production_stages:
   - All
+- doc_id: MP-CP1-SPC-006
+  title: SPC Control Chart
+  slug: spc-control-chart
+  doc_type: tracker
+  owner_role: Quality Engineer
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-table
+  embedding_priority: medium
+  controlled_terms:
+  - SPC
+  - Control Chart
+  - Cpk
+  - Yield
+  required_sections:
+  - 1. Purpose and Scope
+  - 2. Monitored Parameters and Control Limits
+  - 3. Control Chart Data (X-bar / R / P / np)
+  - 4. Out-of-Control Signal Analysis
+  - 5. Western Electric Rule Violations
+  - 6. Corrective Action Log
+  - 7. Revision History
+  production_stages:
+  - All
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true

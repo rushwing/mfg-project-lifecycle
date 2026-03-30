@@ -113,11 +113,11 @@ The `production_stages` field is derived from `test_stations` by `bootstrap_temp
 
 | File | Purpose |
 |------|---------|
-| `i18n/doc_titles.yaml` | Localized document titles for all 136 `doc_id`s (131 lifecycle + 5 snippets) |
+| `i18n/doc_titles.yaml` | Localized document titles for all 140 `doc_id`s (135 lifecycle + 5 snippets) |
 | `i18n/section_titles.yaml` | Localized headings for ~8 universal structural sections (Purpose and Scope, Revision History, etc.); document-specific headings are translated dynamically by the RAG agent at generation time |
 | `i18n/README.md` | Usage instructions and RAG agent integration example |
 
-**Multilingual canonical forms in GLOSSARY.md:** Each of the 59 terms has three additional lines after `**Canonical Form:** \`X\``:
+**Multilingual canonical forms in GLOSSARY.md:** Each of the 65 terms has three additional lines after `**Canonical Form:** \`X\``:
 ```
 **Canonical Form (zh-CN):** `简体中文`
 **Canonical Form (zh-TW):** `繁體中文`

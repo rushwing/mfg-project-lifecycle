@@ -563,6 +563,84 @@ embedding_priority: high
 
 ---
 
+### PFMEA
+**Canonical Form:** `PFMEA`
+**Canonical Form (zh-CN):** `制程失效模式与影响分析`
+**Canonical Form (zh-TW):** `製程失效模式與影響分析`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Process FMEA, Manufacturing FMEA
+**Definition:** Process Failure Mode and Effects Analysis. A structured risk analysis of each manufacturing process step, identifying potential failure modes, their effects on the product, potential causes, current controls, and a Risk Priority Number (RPN = Severity × Occurrence × Detection) used to prioritize corrective actions. PFMEA is the upstream input to the Control Plan.
+**Do Not Confuse With:** DFMEA (Design FMEA — conducted by the design team on the product design, not the manufacturing process). PFMEA focuses on process steps and workmanship defects; DFMEA focuses on design-induced failure modes.
+**Phase Context:** Created in P1/EVT when the manufacturing process is first defined; updated through DVT/PVT as the process matures. Mandatory for Automotive product families.
+**Example Usage:** "The PFMEA for the FCT station identified insufficient pogo-pin pressure as a high-occurrence failure mode (RPN = 144); fixture redesign was triggered."
+
+---
+
+### RPN
+**Canonical Form:** `RPN`
+**Canonical Form (zh-CN):** `风险优先数`
+**Canonical Form (zh-TW):** `風險優先數`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Risk Priority Number
+**Definition:** Risk Priority Number. A composite risk score in FMEA: RPN = Severity (1–10) × Occurrence (1–10) × Detection (1–10). Range: 1–1000. Items with RPN ≥ 100 or Severity ≥ 8 require documented corrective actions. After actions are implemented, RPN is recalculated to confirm risk reduction.
+**Do Not Confuse With:** Risk score in RAID log (qualitative High/Medium/Low); RPN is a quantitative FMEA-specific metric.
+**Phase Context:** Used in PFMEA and DFMEA throughout EVT–PVT.
+**Example Usage:** "Initial RPN for the open-solder failure mode was 210; post-reflow profile optimization reduced it to 48."
+
+---
+
+### SPC
+**Canonical Form:** `SPC`
+**Canonical Form (zh-CN):** `统计过程控制`
+**Canonical Form (zh-TW):** `統計製程管制`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Statistical Process Control
+**Definition:** Statistical Process Control. The use of control charts and statistical methods to monitor manufacturing process variables in real time, distinguishing normal process variation (common cause) from signals requiring intervention (special cause). Common chart types: X-bar/R for continuous variables, P-chart for proportion defective, np-chart for defect counts.
+**Do Not Confuse With:** Process Capability (Cpk — a static capability metric computed from a data set); SPC is a real-time dynamic monitoring system. A process can be in statistical control but still have poor capability, and vice versa.
+**Phase Context:** Baselines established during PVT; operated continuously in MP.
+**Example Usage:** "FCT yield SPC chart triggered a Western Electric Rule 2 violation on Day 7 of MP ramp; root cause was a firmware version mismatch."
+
+---
+
+### Control Chart
+**Canonical Form:** `Control Chart`
+**Canonical Form (zh-CN):** `控制图`
+**Canonical Form (zh-TW):** `管制圖`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Shewhart Chart, Process Control Chart
+**Definition:** A time-series chart used in SPC with a center line (process mean), Upper Control Limit (UCL), and Lower Control Limit (LCL) set at ±3σ from the mean. Points outside control limits or patterns matching the Western Electric Rules indicate a special cause requiring investigation.
+**Do Not Confuse With:** Specification limits (USL/LSL — engineering tolerances set by product requirements, wider than control limits); control limits are derived from process variation, not product tolerances.
+**Phase Context:** MP daily operations and continuous improvement.
+**Example Usage:** "The X-bar control chart for ICT test time showed the process drifting toward UCL over 3 shifts, indicating fixture wear."
+
+---
+
+### Cpk
+**Canonical Form:** `Cpk`
+**Canonical Form (zh-CN):** `过程能力指数`
+**Canonical Form (zh-TW):** `製程能力指標`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Process Capability Index, Cp, Pp, Ppk
+**Definition:** Process Capability Index. Measures how well a process output fits within specification limits relative to natural process variation. Cpk = min(USL − μ, μ − LSL) / (3σ). Thresholds: Cpk < 1.00 = incapable; 1.00–1.33 = marginal; ≥ 1.33 = capable; ≥ 1.67 = highly capable (Automotive target). Cp measures potential capability (ignoring mean offset); Cpk measures actual capability. Pp/Ppk use overall σ from a study; Cp/Cpk use within-subgroup σ from ongoing SPC charts.
+**Do Not Confuse With:** Yield (a yield of 99% does not imply Cpk ≥ 1.33; a bimodal process can have high yield but poor Cpk and latent risk). Cpk should only be computed after the process is in statistical control.
+**Phase Context:** Computed at DVT/PVT to qualify the manufacturing process; monitored in MP continuous improvement.
+**Example Usage:** "GR&R passed (< 10% study variation), but Cpk for the RF power measurement was 0.91 — recalibration raised it to 1.45."
+
+---
+
+### 8D
+**Canonical Form:** `8D`
+**Canonical Form (zh-CN):** `八步骤问题解决法`
+**Canonical Form (zh-TW):** `八步驟問題解決法`
+**Canonical Form (vi):** *(pending)*
+**Aliases:** Eight Disciplines, 8D Report, G8D, Global 8D
+**Definition:** Eight Disciplines Problem Solving. A structured 8-step methodology for resolving significant quality problems: D1 (form the team), D2 (describe the problem), D3 (interim containment), D4 (root cause identification), D5 (permanent corrective actions), D6 (implement and validate), D7 (systemic preventive actions), D8 (recognize the team). Required by automotive customers (IATF 16949) for significant field or production quality escapes.
+**Do Not Confuse With:** CAPA (a broader quality system requirement; 8D is a specific structured format often used to fulfill a CAPA). RCA (D4 is the RCA step within 8D; standalone RCA does not include containment, validation, or systemic prevention).
+**Phase Context:** Triggered during EVT–MP when a high-severity defect or Test Escape is identified; mandatory for customer-facing field escapes.
+**Example Usage:** "A field return cluster triggered a G8D; D4 identified a marginal solder joint on the power rail; D7 updated the PFMEA and tightened the paste volume spec in the SOP."
+
+---
+
 ## Efficiency and Capacity Terms
 
 ### UPH

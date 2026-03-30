@@ -158,6 +158,42 @@ documents:
   - 5. Revision History
   production_stages:
   - All
+- doc_id: MP-CP3-8DR-006
+  title: 8D Problem Solving Report
+  slug: 8d-problem-solving-report
+  doc_type: report
+  owner_role: Quality Engineer
+  priority: recommended
+  product_families:
+  - GPU
+  - DC-L6
+  - Automotive
+  - Embedded
+  test_stations:
+  - Universal
+  rag_chunk_strategy: by-section
+  embedding_priority: high
+  controlled_terms:
+  - 8D
+  - RPN
+  - CAPA
+  - RCA
+  - Test Escape
+  required_sections:
+  - D1. Problem-Solving Team
+  - D2. Problem Description
+  - D3. Interim Containment Actions
+  - D4. Root Cause Analysis
+  - D5. Permanent Corrective Actions
+  - D6. Implementation and Validation
+  - D7. Preventive Actions (Systemic)
+  - D8. Team and Individual Recognition
+  - Revision History
+  production_stages:
+  - All
+  bootstrap:
+    auto_stub: true
+    stub_sections_from_frontmatter: true
 bootstrap:
   auto_stub: true
   stub_sections_from_frontmatter: true
