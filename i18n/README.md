@@ -23,13 +23,13 @@ Benefits:
 | Code | Language | Factory | doc_titles | section_titles |
 |------|----------|---------|-----------|---------------|
 | `en` | English | — | Ground truth | Ground truth |
-| `zh-CN` | Simplified Chinese | 深圳 | ✅ 136/136 | ✅ 8 structural labels; remainder via RAG |
-| `zh-TW` | Traditional Chinese | 台湾 | ✅ 136/136 | ✅ 8 structural labels; remainder via RAG |
+| `zh-CN` | Simplified Chinese | 深圳 | ✅ 140/140 | ✅ 8 structural labels; remainder via RAG |
+| `zh-TW` | Traditional Chinese | 台湾 | ✅ 140/140 | ✅ 8 structural labels; remainder via RAG |
 | `vi` | Vietnamese | Vietnam | 🔲 Stub | 🔲 Stub |
 
 ## Two-Tier Section Heading Localization
 
-There are 456 unique section-heading labels across all 136 templates.
+There are 520 unique section-heading labels across all 140 templates.
 `section_titles.yaml` covers only ~8 **universal structural headings** that appear in almost every document (Purpose and Scope, Revision History, Exit Criteria, etc.).
 
 The remaining ~448 headings are **document-specific** (e.g. "Coverage Summary by Station", "Bottleneck Station Identification", "BIST Coverage Requirements"). These cannot be enumerated statically — they are different for every template. They are translated **dynamically by the RAG agent at generation time**:
@@ -122,10 +122,10 @@ Then generate the full document body under each translated heading.
 When ready to add full Vietnamese support:
 
 1. Replace all `vi: "(pending)"` entries in `doc_titles.yaml` and `section_titles.yaml`
-2. Add `**Canonical Form (vi):**` lines in `GLOSSARY.md` for all 59 terms (currently stubbed as `*(pending)*`)
+2. Add `**Canonical Form (vi):**` lines in `GLOSSARY.md` for all 65 terms (currently stubbed as `*(pending)*`)
 3. Update the language table above
 
 ## Coverage
 
-- `doc_titles.yaml`: 136 entries (131 lifecycle docs + 5 shared snippets)
+- `doc_titles.yaml`: 140 entries (135 lifecycle docs + 5 shared snippets)
 - `section_titles.yaml`: 8 entries — only labels that appear verbatim in current `required_sections` values and warrant a locked translation; all other headings handled by RAG agent at runtime
